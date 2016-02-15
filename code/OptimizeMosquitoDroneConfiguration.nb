@@ -1,0 +1,347 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12052,        338]
+NotebookOptionsPosition[     11387,        309]
+NotebookOutlinePosition[     11745,        325]
+CellTagsIndexPosition[     11702,        322]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "OptimizeMosquitoDroneConfiguration.nb\n",
+ StyleBox["Mosquito Eliminating Screens", "Code"],
+ "\n",
+ StyleBox["Aaron T. Becker\nSimulates different arrangements of mosquito \
+screens and examines how well they work.", "Text"]
+}], "Section",
+ CellChangeTimes->{{3.66412001256577*^9, 3.664120065293371*^9}, {
+   3.6641203100095787`*^9, 3.664120312094975*^9}, 3.664360710177981*^9}],
+
+Cell[TextData[{
+ "Assume the drone is a square, with each side 2 ",
+ StyleBox["RadRob",
+  FontSlant->"Italic"],
+ ". \nTo hover, the drone must push air down with velocity ",
+ StyleBox["velocity_down",
+  FontSlant->"Italic"],
+ " to apply a force that cancels the pull of gravity. The drone has mass ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["mRob",
+     FontSlant->"Italic"], ".", "  "}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "\n",
+ StyleBox["mRob *g = massFlow*velocity_down\nmass * gravity = (density air * \
+Area_robotCrossSection* velocity_down)*velocity_down\nkg  ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"*", 
+     FractionBox["m", 
+      SuperscriptBox["s", "2"]]}], "="}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["kg", 
+       SuperscriptBox["m", "3"]], "*", 
+      SuperscriptBox["m", "2"], "*", 
+      FractionBox["m", "s"]}], ")"}], "*"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ Cell[BoxData[
+  FormBox[
+   FractionBox["m", "s"], TraditionalForm]]],
+ "\nthe units work!\n",
+ StyleBox["velocity_down",
+  FontSlant->"Italic"],
+ " = ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox[
+    FractionBox[
+     RowBox[{"mass", " ", "*", " ", "gravity", " "}], 
+     StyleBox[
+      RowBox[{"density", " ", "air", " ", "*", " ", "Area_robotCrossSection"}],
+      FontSlant->"Italic"]]], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.6641201073200493`*^9, 3.664120271782539*^9}, {
+  3.664360668225534*^9, 3.6643606777027597`*^9}, {3.664360712489916*^9, 
+  3.664360827337554*^9}, {3.664360929597048*^9, 3.664360935989523*^9}, {
+  3.664360978742375*^9, 3.664361008559538*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"mRob", " ", "=", " ", "2"}], " ", ";", " ", 
+  RowBox[{"(*", "kg", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"densityAir", " ", "=", " ", "1.225"}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"kg", "/", "m3"}], ",", " ", 
+    RowBox[{"Air", " ", "density"}], ",", 
+    RowBox[{"like", " ", "air", " ", "pressure"}], ",", 
+    RowBox[{"decreases", " ", "with", " ", "increasing", " ", 
+     RowBox[{"altitude", ".", " ", "It"}], " ", "also", " ", "changes", " ", 
+     "with", " ", "variation", " ", "in", " ", "temperature", " ", "or", " ", 
+     
+     RowBox[{"humidity", ".", "At"}], " ", "sea", " ", "level", " ", "and", 
+     " ", "at", " ", "15", " ", "\[Degree]C", " ", "air", " ", "has", " ", 
+     "a", " ", "density", " ", "of", " ", "approximately", " ", "1.225", " ", 
+     
+     RowBox[{"kg", "/", "m3"}], " ", "according", " ", "to", " ", "ISA", " ", 
+     
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"International", " ", "Standard", " ", "Atmosphere"}], ")"}], 
+      "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"AreaRobot", " ", "=", " ", 
+   SuperscriptBox[
+    RowBox[{"(", "0.71", 
+     StyleBox[")",
+      FontSlant->"Italic"]}], "2"]}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Propellers", ":", 
+     RowBox[{"10", "\[DoublePrime]", " ", "diameter"}]}], ",", 
+    RowBox[{
+     RowBox[{"18", " ", 
+      RowBox[{"in", ".", 
+       RowBox[{"(", 
+        RowBox[{"46", " ", "cm"}], ")"}]}], " ", "motor"}], "-", "to", "-", 
+     "motor"}], ",", " ", 
+    RowBox[{"28", " ", "inches", " ", "is", " ", "71", " ", "cm"}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"RobotMass", " ", "=", " ", "2"}], ";", 
+  RowBox[{"(*", " ", 
+   RowBox[{"kg", ",", " ", 
+    RowBox[{
+     RowBox[{"https", ":"}], "//", 
+     RowBox[{
+      RowBox[{"3", 
+       RowBox[{
+        RowBox[{"dr", ".", "com"}], "/", "solo"}]}], "-", "gopro", "-", 
+      "drone", "-", 
+      RowBox[{"specs", "/"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"velocity_down", 
+   StyleBox["=",
+    FontSlant->"Italic"], 
+   SqrtBox[
+    FractionBox[
+     RowBox[{"mRob", " ", "*", "9.871"}], 
+     RowBox[{
+     "densityAir", "*", " ", "AreaRobot"}]]]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"velocity_down", " ", "in", " ", 
+    RowBox[{"m", "/", "s"}], "*", "60", " ", 
+    RowBox[{"s", "/", "min"}], "*", "60", " ", 
+    RowBox[{
+     RowBox[{"min", "/", "hr"}], "/", "1000"}], 
+    RowBox[{"m", "/", "km"}]}], "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.664360847636113*^9, 3.6643609708223877`*^9}, {
+  3.6643610154201593`*^9, 3.664361120989786*^9}, {3.664361151956382*^9, 
+  3.6643612262918777`*^9}, {3.6643615325159616`*^9, 3.6643615396297407`*^9}, {
+  3.664361641871208*^9, 3.664361644935541*^9}, {3.664361692376631*^9, 
+  3.6643617104345503`*^9}}],
+
+Cell[BoxData["5.654174149697724`"], "Output",
+ CellChangeTimes->{3.66436164541348*^9, 3.664361708454626*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"5.654174149697724`", "*", "60", "*", 
+   RowBox[{"60", "/", "1000"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.664361612026099*^9, 3.664361649354003*^9}}],
+
+Cell[BoxData["20.355026938911806`"], "Output",
+ CellChangeTimes->{{3.6643616180949907`*^9, 3.664361649699604*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"r", " ", "=", " ", "1"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"w", " ", "=", " ", "0.1"}], ",", " ", 
+       RowBox[{"s", " ", "=", "1.5"}], 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"width", " ", "of", " ", "screen"}], ",", " ", 
+         RowBox[{"screen", " ", "is", " ", "s", "*", "s"}]}], "*)"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"h", " ", "=", " ", "2"}]}], " ", 
+      RowBox[{"(*", 
+       RowBox[{
+       "distance", " ", "screen", " ", "is", " ", "below", " ", "the", " ", 
+        "quadcopter"}], "*)"}], "\[IndentingNewLine]", "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Black", ",", " ", 
+          RowBox[{"Rectangle", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "r"}], ",", 
+              RowBox[{"-", "w"}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"r", ",", "w"}], "}"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", "White", ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{"\"\<Quadcopter\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0"}], "}"}]}], "]"}]}], "\[IndentingNewLine]",
+          "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"(*", "screen", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"Rotate", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"Yellow", ",", 
+             RowBox[{"EdgeForm", "[", "Black", "]"}], ",", " ", 
+             RowBox[{"Rectangle", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"-", "r"}], ",", 
+                 RowBox[{
+                  RowBox[{"-", "w"}], "-", "h"}]}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"r", ",", 
+                 RowBox[{"w", "-", "h"}]}], "}"}]}], "]"}], ",", "Black", ",", 
+             RowBox[{"Text", "[", 
+              RowBox[{"\"\<Screen\>\"", ",", 
+               RowBox[{"{", 
+                RowBox[{"0", ",", 
+                 RowBox[{"-", "h"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+           "\[Theta]"}], "]"}], "\[IndentingNewLine]", "}"}]}], 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}], "]"}]}], "]"}], 
+   ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", 
+     RowBox[{"\[Pi]", "/", "2"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.664558485782897*^9, 3.664558622517221*^9}, {
+  3.6645586778150663`*^9, 3.6645586927279167`*^9}, {3.664558734757204*^9, 
+  3.6645589467887783`*^9}, {3.664559361693611*^9, 3.66455945962982*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Theta]$$ = 0.6031857894892403, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Theta]$$], 0, Rational[1, 2] Pi}}, 
+    Typeset`size$$ = {318., {214., 218.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Theta]$201337$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`\[Theta]$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$201337$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`r$ = 1, $CellContext`w$ = 0.1, $CellContext`s$ = 
+         1.5, $CellContext`h$ = 2}, 
+        Graphics[{{Black, 
+           
+           Rectangle[{-$CellContext`r$, -$CellContext`w$}, {$CellContext`r$, \
+$CellContext`w$}], White, 
+           Text["Quadcopter", {0, 0}]}, {
+           Rotate[{Yellow, 
+             EdgeForm[Black], 
+             
+             Rectangle[{-$CellContext`r$, -$CellContext`w$ - \
+$CellContext`h$}, {$CellContext`r$, $CellContext`w$ - $CellContext`h$}], 
+             Black, 
+             Text[
+             "Screen", {0, -$CellContext`h$}]}, $CellContext`\[Theta]$$]}}]], 
+      "Specifications" :> {{$CellContext`\[Theta]$$, 0, Rational[1, 2] Pi}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{363., {258., 263.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.664558740333131*^9, 3.664558788629822*^9}, 
+   3.6645589337304373`*^9, {3.664559370869008*^9, 3.66455945986099*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 619},
+WindowMargins->{{23, Automatic}, {Automatic, 17}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 397, 8, 138, "Section"],
+Cell[980, 32, 1791, 56, 203, "Text"],
+Cell[CellGroupData[{
+Cell[2796, 92, 2842, 72, 232, "Input"],
+Cell[5641, 166, 108, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5786, 172, 199, 4, 28, "Input"],
+Cell[5988, 178, 114, 1, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6139, 184, 2860, 70, 267, "Input"],
+Cell[9002, 256, 2357, 49, 538, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
