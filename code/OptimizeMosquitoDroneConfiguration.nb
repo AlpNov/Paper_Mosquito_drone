@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13130,        367]
-NotebookOptionsPosition[     12425,        337]
-NotebookOutlinePosition[     12783,        353]
-CellTagsIndexPosition[     12740,        350]
+NotebookDataLength[     13190,        369]
+NotebookOptionsPosition[     12485,        339]
+NotebookOutlinePosition[     12843,        355]
+CellTagsIndexPosition[     12800,        352]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,12 +26,14 @@ V_robot,horizontal, \[Theta], and s  (fix s< r?)
 2.) find exponential fit to mosquito density as function of height
 3.) combine 1 and 2 -- what is the optimal configuration
 4.)  velocity down is not a constant.... can we make a better
+do your best
 
   
   \
 \>", "Text",
  CellChangeTimes->{{3.664559706379416*^9, 3.664559774273353*^9}, {
-  3.664559894246208*^9, 3.6645599375078363`*^9}}],
+  3.664559894246208*^9, 3.6645599375078363`*^9}, {3.66456010240893*^9, 
+  3.66456010580711*^9}}],
 
 Cell[CellGroupData[{
 
@@ -352,21 +354,21 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 466, 13, 182, "Text"],
+Cell[558, 20, 526, 15, 201, "Text"],
 Cell[CellGroupData[{
-Cell[1049, 37, 397, 8, 138, "Section"],
-Cell[1449, 47, 1791, 56, 203, "Text"],
+Cell[1109, 39, 397, 8, 138, "Section"],
+Cell[1509, 49, 1791, 56, 203, "Text"],
 Cell[CellGroupData[{
-Cell[3265, 107, 2842, 72, 232, "Input"],
-Cell[6110, 181, 108, 1, 28, "Output"]
+Cell[3325, 109, 2842, 72, 232, "Input"],
+Cell[6170, 183, 108, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6255, 187, 199, 4, 28, "Input"],
-Cell[6457, 193, 114, 1, 28, "Output"]
+Cell[6315, 189, 199, 4, 28, "Input"],
+Cell[6517, 195, 114, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6608, 199, 3127, 78, 284, "Input"],
-Cell[9738, 279, 2659, 54, 566, "Output"]
+Cell[6668, 201, 3127, 78, 284, "Input"],
+Cell[9798, 281, 2659, 54, 566, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
