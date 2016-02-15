@@ -10,16 +10,31 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12052,        338]
-NotebookOptionsPosition[     11387,        309]
-NotebookOutlinePosition[     11745,        325]
-CellTagsIndexPosition[     11702,        322]
+NotebookDataLength[     13130,        367]
+NotebookOptionsPosition[     12425,        337]
+NotebookOutlinePosition[     12783,        353]
+CellTagsIndexPosition[     12740,        350]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell["\<\
+
+For An :
+1.)  calculate the volume of air cleaned by the screen as a function of \
+V_robot,horizontal, \[Theta], and s  (fix s< r?)
+2.) find exponential fit to mosquito density as function of height
+3.) combine 1 and 2 -- what is the optimal configuration
+4.)  velocity down is not a constant.... can we make a better
+
+  
+  \
+\>", "Text",
+ CellChangeTimes->{{3.664559706379416*^9, 3.664559774273353*^9}, {
+  3.664559894246208*^9, 3.6645599375078363`*^9}}],
 
 Cell[CellGroupData[{
+
 Cell[TextData[{
  "OptimizeMosquitoDroneConfiguration.nb\n",
  StyleBox["Mosquito Eliminating Screens", "Code"],
@@ -182,16 +197,16 @@ Cell[BoxData["20.355026938911806`"], "Output",
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{"Module", "[", 
     RowBox[{
-     RowBox[{"{", 
+     RowBox[{"{", "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"r", " ", "=", " ", "1"}], ",", "\[IndentingNewLine]", 
-       RowBox[{"w", " ", "=", " ", "0.1"}], ",", " ", 
-       RowBox[{"s", " ", "=", "1.5"}], 
+       RowBox[{"w", " ", "=", " ", "0.1"}], 
        RowBox[{"(*", 
         RowBox[{
          RowBox[{"width", " ", "of", " ", "screen"}], ",", " ", 
@@ -233,11 +248,13 @@ Cell[BoxData[
               RowBox[{
                RowBox[{"{", 
                 RowBox[{
-                 RowBox[{"-", "r"}], ",", 
+                 RowBox[{
+                  RowBox[{"-", "s"}], "/", "2"}], ",", 
                  RowBox[{
                   RowBox[{"-", "w"}], "-", "h"}]}], "}"}], ",", 
                RowBox[{"{", 
-                RowBox[{"r", ",", 
+                RowBox[{
+                 RowBox[{"s", "/", "2"}], ",", 
                  RowBox[{"w", "-", "h"}]}], "}"}]}], "]"}], ",", "Black", ",", 
              RowBox[{"Text", "[", 
               RowBox[{"\"\<Screen\>\"", ",", 
@@ -249,49 +266,59 @@ Cell[BoxData[
    ",", " ", 
    RowBox[{"{", 
     RowBox[{"\[Theta]", ",", "0", ",", 
-     RowBox[{"\[Pi]", "/", "2"}]}], "}"}]}], "]"}]], "Input",
+     RowBox[{"\[Pi]", "/", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"s", ",", "1.5"}], "}"}], ",", "0.1", ",", " ", 
+     RowBox[{"2", " ", "r"}]}], "}"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.664558485782897*^9, 3.664558622517221*^9}, {
   3.6645586778150663`*^9, 3.6645586927279167`*^9}, {3.664558734757204*^9, 
-  3.6645589467887783`*^9}, {3.664559361693611*^9, 3.66455945962982*^9}}],
+  3.6645589467887783`*^9}, {3.664559361693611*^9, 3.66455945962982*^9}, {
+  3.664559784522573*^9, 3.6645598790038643`*^9}}],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`\[Theta]$$ = 0.6031857894892403, 
+   DynamicModuleBox[{$CellContext`s$$ = 
+    1.9520000000000002`, $CellContext`\[Theta]$$ = 0.5497787143782138, 
     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`\[Theta]$$], 0, Rational[1, 2] Pi}}, 
-    Typeset`size$$ = {318., {214., 218.}}, Typeset`update$$ = 0, 
-    Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`\[Theta]$201337$$ = 0}, 
+      Hold[$CellContext`\[Theta]$$], 0, Rational[1, 2] Pi}, {{
+       Hold[$CellContext`s$$], 1.5}, 0.1, 2}}, Typeset`size$$ = {
+    325., {214., 218.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Theta]$202201$$ = 
+    0, $CellContext`s$202202$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`\[Theta]$$ = 0}, 
+     1, StandardForm, 
+      "Variables" :> {$CellContext`s$$ = 1.5, $CellContext`\[Theta]$$ = 0}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$201337$$, 0]}, 
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$202201$$, 0], 
+        Hold[$CellContext`s$$, $CellContext`s$202202$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, "Body" :> 
-      Module[{$CellContext`r$ = 1, $CellContext`w$ = 0.1, $CellContext`s$ = 
-         1.5, $CellContext`h$ = 2}, 
+      Module[{$CellContext`w$ = 0.1, $CellContext`h$ = 2}, 
         Graphics[{{Black, 
            
-           Rectangle[{-$CellContext`r$, -$CellContext`w$}, {$CellContext`r$, \
+           Rectangle[{-$CellContext`r, -$CellContext`w$}, {$CellContext`r, \
 $CellContext`w$}], White, 
            Text["Quadcopter", {0, 0}]}, {
            Rotate[{Yellow, 
              EdgeForm[Black], 
              
-             Rectangle[{-$CellContext`r$, -$CellContext`w$ - \
-$CellContext`h$}, {$CellContext`r$, $CellContext`w$ - $CellContext`h$}], 
-             Black, 
+             Rectangle[{(-$CellContext`s$$)/
+               2, -$CellContext`w$ - $CellContext`h$}, {$CellContext`s$$/
+               2, $CellContext`w$ - $CellContext`h$}], Black, 
              Text[
              "Screen", {0, -$CellContext`h$}]}, $CellContext`\[Theta]$$]}}]], 
-      "Specifications" :> {{$CellContext`\[Theta]$$, 0, Rational[1, 2] Pi}}, 
-      "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{363., {258., 263.}},
+      "Specifications" :> {{$CellContext`\[Theta]$$, 0, Rational[1, 2] 
+         Pi}, {{$CellContext`s$$, 1.5}, 0.1, 2}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{370., {272., 277.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -303,7 +330,8 @@ $CellContext`h$}, {$CellContext`r$, $CellContext`w$ - $CellContext`h$}],
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{{3.664558740333131*^9, 3.664558788629822*^9}, 
-   3.6645589337304373`*^9, {3.664559370869008*^9, 3.66455945986099*^9}}]
+   3.6645589337304373`*^9, {3.664559370869008*^9, 3.66455945986099*^9}, {
+   3.664559779872459*^9, 3.6645598469227962`*^9}, 3.664559880317761*^9}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -324,20 +352,21 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 466, 13, 182, "Text"],
 Cell[CellGroupData[{
-Cell[580, 22, 397, 8, 138, "Section"],
-Cell[980, 32, 1791, 56, 203, "Text"],
+Cell[1049, 37, 397, 8, 138, "Section"],
+Cell[1449, 47, 1791, 56, 203, "Text"],
 Cell[CellGroupData[{
-Cell[2796, 92, 2842, 72, 232, "Input"],
-Cell[5641, 166, 108, 1, 28, "Output"]
+Cell[3265, 107, 2842, 72, 232, "Input"],
+Cell[6110, 181, 108, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5786, 172, 199, 4, 28, "Input"],
-Cell[5988, 178, 114, 1, 28, "Output"]
+Cell[6255, 187, 199, 4, 28, "Input"],
+Cell[6457, 193, 114, 1, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6139, 184, 2860, 70, 267, "Input"],
-Cell[9002, 256, 2357, 49, 538, "Output"]
+Cell[6608, 199, 3127, 78, 284, "Input"],
+Cell[9738, 279, 2659, 54, 566, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
