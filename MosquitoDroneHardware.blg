@@ -13,44 +13,44 @@ Database file #1: ./bib/mosquitorefs.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 11 entries,
+You've used 15 entries,
             4039 wiz_defined-function locations,
-            889 strings with 9603 characters,
-and the built_in function-call counts, 8810 in all, are:
-= -- 727
-> -- 196
-< -- 79
-+ -- 103
-- -- 33
-* -- 449
-:= -- 1353
-add.period$ -- 25
-call.type$ -- 11
-change.case$ -- 11
-chr.to.int$ -- 162
-cite$ -- 11
-duplicate$ -- 636
-empty$ -- 697
-format.name$ -- 43
-if$ -- 2017
+            914 strings with 10410 characters,
+and the built_in function-call counts, 11788 in all, are:
+= -- 996
+> -- 259
+< -- 104
++ -- 137
+- -- 44
+* -- 587
+:= -- 1813
+add.period$ -- 33
+call.type$ -- 15
+change.case$ -- 15
+chr.to.int$ -- 210
+cite$ -- 15
+duplicate$ -- 863
+empty$ -- 913
+format.name$ -- 57
+if$ -- 2705
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 111
-newline$ -- 56
-num.names$ -- 11
-pop$ -- 230
+int.to.str$ -- 15
+missing$ -- 147
+newline$ -- 68
+num.names$ -- 15
+pop$ -- 301
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 674
+skip$ -- 919
 stack$ -- 0
-substring$ -- 390
-swap$ -- 535
-text.length$ -- 25
+substring$ -- 522
+swap$ -- 725
+text.length$ -- 34
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 11
+type$ -- 15
 warning$ -- 0
-while$ -- 47
-width$ -- 13
-write$ -- 135
+while$ -- 60
+width$ -- 17
+write$ -- 176

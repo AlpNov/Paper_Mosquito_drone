@@ -24,6 +24,8 @@
 \usepackage{overpic}
 \graphicspath{{./pictures/},{./pictures/pdf/},{./pictures/ps/},{./pictures/png/},{./pictures/jpg/}}
 \usepackage{amsmath}
+\usepackage[table,xcdraw]{xcolor}
+\newcommand{\todo}[1]{\vspace{5 mm}\par \noindent \framebox{\begin{minipage}[c]{0.98 \columnwidth} \ttfamily\flushleft \textcolor{red}{#1}\end{minipage}}\vspace{5 mm}\par}
 
 \title{\LARGE \bf
 Using Unmanned Vehicles With Instrumented Bug Zappers\\ To Detect \& Eliminate Mosquitoes
@@ -73,11 +75,16 @@ A multi-copter drone carrying a high-voltage, instrumented bug-zapping screen. A
   
   \subsection{Mosquito Control Solutions}
   
-  larvicide
+  \todo{we need someone to read these papers (saved in the github) and give 1 sentences summaries of each.}
   
-  genetic
   
-  mosquito-electrocuting traps     \cite{maliti2015development} WHat is this?
+  For an overview, see \cite{peter2005tick}
+  
+  larvicide \cite{larvicides2005guidelines}
+  
+  genetic  \cite{hill2005arthropod} \cite{marshall2009malaria}
+  
+  mosquito-electrocuting traps     \cite{maliti2015development} What is this?
   
   
     \subsection{Robotic Pest Management}
@@ -169,7 +176,7 @@ h_m &= d_s\left(\frac{v_d}{v_f}\cos(\theta) + \sin(\theta) \right)
 \end{align}
 The optimal angle is therefore a function of forward and propwash velocity:
 \begin{align} \label{eq:OptimalScreenAngle}
-\mathrm{ArcTan}\left(\frac{vd}{\sqrt{v_d^2 + v_f^2}}, \frac{v_f}{\sqrt{v_d^2 + v_f^2}}\right)
+\mathrm{ArcTan}\left(\frac{vf}{v_d}\right)
 \end{align}
 
 To ensure the maximum number of mosquitos are collected, the screen must be sufficiently below the drone $ h_s > \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f}$  and the bottom of the screen must not touch the ground, $ h_d > h_s + \frac{d_s}{2} \sin(\theta) $.
@@ -178,7 +185,7 @@ To ensure the maximum number of mosquitos are collected, the screen must be suff
 \centering
 \begin{overpic}[width=0.9\columnwidth]{AngleVsSpeed.pdf}\end{overpic}
 \caption{\label{fig:AngleVsSpeed}
-The volume cleared by a drone is a function of screen angle $\theta$ and forward velocity $v_f$. The dotted line shows the optimal angle, \eqref{eq:OptimalScreenAngle} } 
+The volume cleared by a drone is a function of screen angle $\theta$ and forward velocity $v_f$. The dotted line shows the optimal angle given in \eqref{eq:OptimalScreenAngle}. } 
 \end{figure}
  
   Mosquitos are not distributed uniformly vertically.  Gillies and Wilkes performed a series of experiments measuring the number of mosquitos caught in suction traps at 0,0.5,1,1.5,2,3,4,5,6m above ground. the traps were operated in open grassland in the Gambia from 20:30 to 2:00 during the night \cite{gillies1976vertical}.  The \emph{Mansonia spp.} flies close to the ground, while the \emph{Cx. poicilipes} prefers to fly higher in the air. Changing the flying height of our drones will target different mosquito populations.
