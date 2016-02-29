@@ -21,14 +21,19 @@
 %\usepackage{times} % assumes new font selection scheme installed
 %\usepackage{amsmath} % assumes amsmath package installed
 %\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{overpic}
+\graphicspath{{./pictures/},{./pictures/pdf/},{./pictures/ps/},{./pictures/png/},{./pictures/jpg/}}
+\usepackage{amsmath}
+\usepackage[table,xcdraw]{xcolor}
+\newcommand{\todo}[1]{\vspace{5 mm}\par \noindent \framebox{\begin{minipage}[c]{0.98 \columnwidth} \ttfamily\flushleft \textcolor{red}{#1}\end{minipage}}\vspace{5 mm}\par}
 
 \title{\LARGE \bf
 Using Unmanned Vehicles With Instrumented Bug Zappers\\ To Detect \& Eliminate Mosquitoes
 }
 
 
-\author{An Nguyen$^{1}$, Kyle Walker$^{1}$, Nhan Phung$^{1}$, Vinh Truong$^{1}$, Erik Van Aller$^{1}$ and Aaron T. Becker$^{1}$% <-this % stops a space
-\thanks{$^{1}$ An Nguyen, Kyle Walker, Nhan Phung, Vinh Truong, Erik Van Aller, and Aaron T. Becker are with the ECE Department at the University of Houston, TX
+\author{Mary C. Burbage, An Nguyen, Kyle Walker, Nhan Phung, Vinh Truong, Erik Van Aller and Aaron T. Becker% <-this % stops a space
+\thanks{M. Burbage, A. Nguyen, K. Walker, N. Phung, V. Truong, E. Van Aller, and A. Becker are with the ECE Department at the University of Houston, TX
         {\tt\small atbecker@uh.edu}}%
 }
 
@@ -44,55 +49,195 @@ Using Unmanned Vehicles With Instrumented Bug Zappers\\ To Detect \& Eliminate M
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-
-Mosquito-borne diseases kill millions of humans each year. Popular methods to control mosquitoes such as pesticides or adulticides are effective, but they introduce long-term damage to the environment. Traditional electrified screens (bug zappers) use UV light to attract pests, but have an large bycatch of non-pest insects. This paper introduces techniques using bug zapper mounted on unmanned vehicles to autonomously seek out mosquitoes in their breeding grounds such as ponds and swarms and effectively eliminate mosquitoes. Instrumentation on the bug zapper log the GPS location ,altitude,  weather details, and time of each fried mosquito. Mosquito controllers can use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
+Mosquitoes are a vector for several deadly diseases, including the Zika virus that is currently spreading rapidly in Latin America.
+Mosquito-borne diseases kill millions of humans each year. Popular methods to control mosquitoes such as pesticides or adulticides are effective, but they introduce long-term damage to the environment. Traditional electrified screens (bug zappers) use UV light to attract pests, but have an large bycatch of non-pest insects. This paper introduces techniques using a electrified screens (bug zappers) mounted on unmanned vehicles to autonomously seek out mosquitoes in their breeding grounds and eliminate mosquitoes. Instrumentation on the bug zapper logs the GPS location, altitude, weather details, and time of each mosquito elimination. Mosquito controllers can use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
+This paper examines design considerations, presents a working prototype system of drone and instrumented bug-zapper, and introduces a simulator for swarms of mosquitos and a mosquito-eliminating drone.  
 \end{abstract}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{INTRODUCTION}
+\section{Introduction}
+
+Mosquito-borne diseases kill millions of humans each year. Popular methods to control mosquitoes such as pesticides or adulticides are effective, but they introduce long-term damage to the environment. Traditional electrified screens (bug zappers) use UV light to attract pests, but have a large bycatch of non-pest insects. This paper introduces techniques using bug zapper mounted on unmanned vehicles to autonomously seek out mosquitoes in their breeding grounds such as ponds and swarms and effectively eliminate mosquitoes. Instrumentation on the bug zapper log the GPS location ,altitude,  weather details, and time of each fried mosquito. Mosquito controllers can use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
+
+This is accomplished by simulating a large number of mosquitoes within a rectangular area. Each mosquito obeys a biased random walk flight pattern. Each mobile robot is capable of eliminating any modeled mosquito that intersects its path.  The mobile robots can detect the time each mosquito is eliminated, share this information with neighboring drones, and use this data as feedback for a motion policy.
 
 
+  \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{DroneAndNet.pdf}\end{overpic}
+\caption{\label{fig:DroneAndNet}
+A multi-copter drone carrying a high-voltage, instrumented bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and for each  mosquito strike records the time GPS location, altitude and weather information.} 
+\end{figure}
+  
+  
+  \section{Related Work}
+  
+  \subsection{Mosquito Control Solutions}
+  
+  \todo{we need someone to read these papers (saved in the github) and give 1 sentences summaries of each.}
+  
+  
+  For an overview, see \cite{peter2005tick}
+  
+  larvicide \cite{larvicides2005guidelines}
+  
+  genetic  \cite{hill2005arthropod} \cite{marshall2009malaria}
+  
+  mosquito-electrocuting traps     \cite{maliti2015development} What is this?
+  
+  
+    \subsection{Robotic Pest Management}
+    
 
-\section{PROCEDURE FOR PAPER SUBMISSION}
+    
+Eradication mosquito breeding sites:    \cite{anupa2014identification}
+    
+Photonic (active laser) fence for mosquitos \cite{kare2010build,boonsri2012laser}
+    
+A wireless sensor system for monitoring mosquito populations \cite{hur2015low}
+    
+    \subsection{Robotic coverage}
+    Robotic coverage has a long history. The basic problem is to design a path for a robot that ensures the robot visits within $r$ distance of every point on the workspace.  For an overview see \cite{Choset2001}.  This work has been extended to use multiple coverage robots in a variety of ways, including using simple behaviors for the robots \cite{spears2006physics,Koenig2001}.
+    The key difference in mosquito coverage problem is that the mosquitos can move and so a cleared area can again become contaminated. We instead have a probability of coverage, as in~\cite{Das2011}  This is closely related to the art gallery problem~\cite{lee1986computational}, but with limited range of visibility.
+    
+    
+  
+  \section{Design}
+  
+  
 
-\subsection{Selecting a Template (Heading 2)}
+  
+   \subsection{Electronics}
+   
+     
+  block diagram of microcontroller and zapper Fig. \ref{fig:Block_Diagram}%Kyle
+  Circuit diagram of bug-zapper and probe circuit  Fig. \ref{fig:CircuitDiagram}%Kyle
+  
+  
+                \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{Block_Diagram_RevB.pdf}\end{overpic}
+\caption{\label{fig:Block_Diagram}
+Block diagram of microcontroller and bug-zapper: The system is powered by a 9 [V] Lithium Polymer battery applied directly to the power jack of the Arduino. The 9 [V] is also regulated down to 3 [V] where it is applied to the voltage multiplier circuit that will power the mesh of the net, as shown in Fig. \ref{fig:CircuitDiagram}. The net outputs a high voltage that is brought down by a protection circuit to a suitable level for the ADC of the Arduino. The Arduino will utilize a GPS shield for 
+} 
+\end{figure}
+  
+  
+  
+                \begin{figure}
+\centering
+\begin{overpic}[width=1.0\columnwidth]{CircuitDiagram.pdf}\end{overpic}
+\caption{\label{fig:CircuitDiagram}
+  Circuit diagram of bug-zapper and probe circuit.  {\bf Bug-zapper:} (from left) using a BJT (Q1) and center tap transformer a DC input voltage is inverted to AC and applied to the primary winding of the transformer where it is stepped up (1:1000). The voltage at the secondary winding of the transformer is boosted and rectified to a high voltage output capacitor that is applied to the inner layer of the mesh.  {\bf Probe:} (right) a voltage divider is used to lower the voltage so that it can be monitored by the microcontroller and a Zener diode (D4) is placed in parallel to protect the ADC input.
+  } 
+\end{figure}
+  
 
+  
+  
+  Oscilloscope trace  from mosquito elimination
+  
+  Math describing the size of screen that can be caried
+  
+  
+  \subsection{Energy Budget}
+  
+  how many mAh to keep an LxL screen charged?
+  How many mAH to kill one mosquito: describe the experiment procedure and extrapolate the results
+  
+  
+  
+  
+  \subsection{Location of screen}
+ The drone must carry the bug-zapping screen, and the location of this screen determines the efficacy of the mosquito drone, measured in mosquitos eliminated per second of flight time.
+ 
+ 
+    \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{DroneConfigs.pdf}\end{overpic}
+\caption{\label{fig:DroneConfigs}
+The drone suspends a square bug-zapping screen beneath it.  Propwash pushes incoming mosquitos downwards, and the drone clears a volume $h_m \times 2 r_s \times v_f$.} 
+\end{figure}
 
-\subsection{Maintaining the Integrity of the Specifications}
+ To hover, the drone must push sufficient air down with velocity $v_d$ to apply a force that cancels the pull of gravity. 
+ The drone has mass $m_{d}$ and has a square-shaped cross section of size $d_d \times d_d$.  The mass flow of air through the drone's props is equal to the produce of the change in velocity of the air, the density of the air $\rho_a$, and the cross section area.
+We assume that air above the quadcopter is quiescent, so the velocity change of the air is $v_d$ m/s.
+ \begin{align} \label{eq:forceBalanceForDrone}
+ \text{Force gravity} & = \left(\text{mass flow}\right) \cdot \text{air velocity} \nonumber \\
+m_{d} g &= (v_d \cdot  \rho_a \cdot  d_d^2 ) \cdot  v_d \\
+ \text{kg} \cdot \frac{ \text{m}}{ \text{s}^2}&= \left( \frac{ \text{m}}{\text{s}} \cdot  \frac{ \text{kg}}{\text{m}^3}  \cdot \text{m}^2 \right) \cdot  \frac{ \text{m}}{\text{s}}\nonumber
+\end{align}
 
+This means the velocity of air beneath the drone (the propwash) is
+ \begin{align} \label{eq:dronePropwash}
+v_d = \sqrt{ \frac{ m_d g}{\rho_a d_d^2} }
+\end{align}
+The drone testing site in Houston Texas is 15 m above sea level. At sea level the density of air $\rho_a$ is 1.225 kg/m$^3$.
+The 3DR Solo drone weighs 2 kg with diameter 0.71 m\footnote{https://3dr.com/solo-gopro-drone-specs/}. The acceleration due to gravity is 9.871 $\frac{m}{s^2}$.  These values in \eqref{eq:dronePropwash} give $v_d = 5.6$ m/s.
 
+For manufacturing ease, the electrified screen is square, size $d_s \times d_s$. The mosquito species we are initially targeting are low altitude flyers, so the screen is suspended a distance $h_s$ beneath the drone flying at height $h_d$.
+Suspending this screen beneath the drone also requires less weight that a rigid frame to hold the screen above the drone.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
+A key question is what distance $h_d$ the screen should be suspended from the drone, and the optimal angle $\theta$.  The goal is to clear the greatest volume of mosquitos per second, a volume defined by the drone forward velocity $v_f$ and the cross sectional area $h_m \times d_s$ cleared by the screen, as shown in Fig.~\ref{fig:AngleVsSpeed}.
 
-\section{MATH}
+Due to propwash, a mosquito in level flight will fall relative to the drone at a rate of $v_d/v_f$.  As shown in Fig.~\ref{fig:DroneConfigs}, we can extend lines with slope $v_d/v_f$ from the screens trailing edge to $h_{top}$ and from the leading edge to $h_{bottom}$
+ \begin{align} \label{eq:ClearedCrossSection}
+h_{top} &= h_d - h_s + \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f} \nonumber \\
+h_{top} &= h_d - h_s - \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f}  \nonumber \\
+h_m &= d_s\left(\frac{v_d}{v_f}\cos(\theta) + \sin(\theta) \right)
+\end{align}
+The optimal angle is therefore a function of forward and propwash velocity:
+\begin{align} \label{eq:OptimalScreenAngle}
+\mathrm{ArcTan}\left(\frac{vf}{v_d}\right)
+\end{align}
 
+To ensure the maximum number of mosquitos are collected, the screen must be sufficiently below the drone $ h_s > \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f}$  and the bottom of the screen must not touch the ground, $ h_d > h_s + \frac{d_s}{2} \sin(\theta) $.
 
-\subsection{Abbreviations and Acronyms} Define abbreviations and acronyms the first time they are used in the text, even after they have been defined in the abstract. Abbreviations such as IEEE, SI, MKS, CGS, sc, dc, and rms do not have to be defined. Do not use abbreviations in the title or heads unless they are unavoidable.
+      \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{AngleVsSpeed.pdf}\end{overpic}
+\caption{\label{fig:AngleVsSpeed}
+The volume cleared by a drone is a function of screen angle $\theta$ and forward velocity $v_f$. The dotted line shows the optimal angle given in \eqref{eq:OptimalScreenAngle}. } 
+\end{figure}
+ 
+  Mosquitos are not distributed uniformly vertically.  Gillies and Wilkes performed a series of experiments measuring the number of mosquitos caught in suction traps at 0,0.5,1,1.5,2,3,4,5,6m above ground. the traps were operated in open grassland in the Gambia from 20:30 to 2:00 during the night \cite{gillies1976vertical}.  The \emph{Mansonia spp.} flies close to the ground, while the \emph{Cx. poicilipes} prefers to fly higher in the air. Changing the flying height of our drones will target different mosquito populations.
+  
+  
+    \section{Simulation}
+    
+        \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{SimulationSetup.pdf}\end{overpic}
+\caption{\label{fig:SimulationSetup}
+The drone.} 
+\end{figure}
 
-\subsection{Units}
+        \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
+\caption{\label{fig:SimulationResults}
+The drone.} 
+\end{figure}
 
+    
+    \section{Experiment}
+    
+    
+            \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
+\caption{\label{fig:SimulationResults}
+To calibrate the system, three instrumented bug-zappers were carried on a 2.5 m pole.} 
+\end{figure}
 
+        \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
+\caption{\label{fig:SimulationResults}
+    map with GPS path and kill locations superimposed} 
+\end{figure}
 
-
-\subsection{Equations}
-
-
-
-\subsection{Some Common Mistakes}
-
-
-
-\section{USING THE TEMPLATE}
-
-
-\subsection{Headings, etc}
-
-
-
-\subsection{Figures and Tables}
-
-
-
-\section{CONCLUSIONS}
+\section{Conclusion}
 
 
 
@@ -105,11 +250,11 @@ Mosquito-borne diseases kill millions of humans each year. Popular methods to co
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{APPENDIX}
+%\section*{APPENDIX}
 
 
 
-\section*{ACKNOWLEDGMENT}
+%\section*{ACKNOWLEDGMENT}
 
 
 
@@ -117,19 +262,20 @@ Mosquito-borne diseases kill millions of humans each year. Popular methods to co
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\bibliographystyle{IEEEtran}
+\bibliography{./bib/mosquitorefs}%
 
-
-\begin{thebibliography}{99}
-
-\bibitem{c1} D. V. Maliti, N. J. Govella, G. F. Killeen, N. Mirzai, P. C. D. Johnson Development and evaluation of mosquito-electrocuting traps as alternatives to the human landing catch technique for sampling host-seeking malaria vectors, Malaria Journal, vol. 14:502, Dec. 2015
-\bibitem{c2} Anupa Elizabeth, P.; Saravana Mohan, M.; Philip Samuel, P.; Pandian, S.R.; Tyagi, B.K.,Identification and eradication of mosquito breeding sites using wireless networking and electromechanical technologies, in Recent Trends in Information Technology (ICRTIT), 2014 International Conference, Chennai, 2014, pp. 1-6.
-\bibitem{c3} Hur, B.; Eisenstadt, W., Low-power wireless climate monitoring system with RFID security access feature for mosquito and pathogen research, in Mobile and Secure Services (MOBISECSERV), 2015 First Conference, Gainsville, pp.1-5, 20-21 Feb. 2015
-
-
-
-
-
-\end{thebibliography}
+%\begin{thebibliography}{99}
+%
+%\bibitem{c1} D. V. Maliti, N. J. Govella, G. F. Killeen, N. Mirzai, P. C. D. Johnson Development and evaluation of mosquito-electrocuting traps as alternatives to the human landing catch technique for sampling host-seeking malaria vectors, Malaria Journal, vol. 14:502, Dec. 2015
+%\bibitem{c2} Anupa Elizabeth, P.; Saravana Mohan, M.; Philip Samuel, P.; Pandian, S.R.; Tyagi, B.K.,Identification and eradication of mosquito breeding sites using wireless networking and electromechanical technologies, in Recent Trends in Information Technology (ICRTIT), 2014 International Conference, Chennai, 2014, pp. 1-6.
+%\bibitem{c3} Hur, B.; Eisenstadt, W., Low-power wireless climate monitoring system with RFID security access feature for mosquito and pathogen research, in Mobile and Secure Services (MOBISECSERV), 2015 First Conference, Gainsville, pp.1-5, 20-21 Feb. 2015
+%
+%
+%
+%
+%
+%\end{thebibliography}
 
 
 
