@@ -105,24 +105,36 @@ A wireless sensor system for monitoring mosquito populations \cite{hur2015low}
   
   \section{Design}
   
+  
+
+  
    \subsection{Electronics}
-  Circuit diagram of bug-zapper and probe circuit %Kyle
+   
+     
+  block diagram of microcontroller and zapper Fig. \ref{fig:Block_Diagram}%Kyle
+  Circuit diagram of bug-zapper and probe circuit  Fig. \ref{fig:CircuitDiagram}%Kyle
+  
+  
                 \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
-\caption{\label{fig:SimulationResults}
-  Circuit diagram of bug-zapper and probe circuit.} 
+\begin{overpic}[width=0.9\columnwidth]{Block_Diagram_RevB.pdf}\end{overpic}
+\caption{\label{fig:Block_Diagram}
+Block diagram of microcontroller and bug-zapper: The system is powered by a 9 [V] Lithium Polymer battery applied directly to the power jack of the Arduino. The 9 [V] is also regulated down to 3 [V] where it is applied to the voltage multiplier circuit that will power the mesh of the net, as shown in Fig. \ref{fig:CircuitDiagram}. The net outputs a high voltage that is brought down by a protection circuit to a suitable level for the ADC of the Arduino. The Arduino will utilize a GPS shield for 
+} 
 \end{figure}
   
   
-  block diagram of microcontroller and zapper%Kyle
   
-              \begin{figure}
+                \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
-\caption{\label{fig:SimulationResults}
-Block diagram of microcontroller and bug-zapper} 
+\begin{overpic}[width=1.0\columnwidth]{CircuitDiagram.pdf}\end{overpic}
+\caption{\label{fig:CircuitDiagram}
+  Circuit diagram of bug-zapper and probe circuit.  {\bf Bug-zapper:} (from left) using a BJT (Q1) and center tap transformer a DC input voltage is inverted to AC and applied to the primary winding of the transformer where it is stepped up (1:1000). The voltage at the secondary winding of the transformer is boosted and rectified to a high voltage output capacitor that is applied to the inner layer of the mesh.  {\bf Probe:} (right) a voltage divider is used to lower the voltage so that it can be monitored by the microcontroller and a Zener diode (D4) is placed in parallel to protect the ADC input.
+  } 
 \end{figure}
+  
+
+  
   
   Oscilloscope trace  from mosquito elimination
   
