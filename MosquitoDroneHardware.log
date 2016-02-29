@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  29 FEB 2016 14:25
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  29 FEB 2016 16:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -453,9 +453,11 @@ File: ./pictures/SimulationResults.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./pictures/SimulationResults.pdf used on input line 28
 1.
 (pdftex.def)             Requested size: 221.14479pt x 114.2615pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [4 <./pictures/RandomPath.pdf> <./pictures/SImulationSetupEnd.pdf> <./pictures
-/SImulationSetupTime0.pdf>]
-(./MosquitoDroneHardware.bbl)
+/SImulationSetupTime0.pdf>] (./MosquitoDroneHardware.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -497,7 +499,7 @@ onts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/tim
 es/utmbi8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on MosquitoDroneHardware.pdf (5 pages, 1243145 bytes).
+Output written on MosquitoDroneHardware.pdf (5 pages, 1243189 bytes).
 PDF statistics:
  769 PDF objects out of 1000 (max. 8388607)
  474 compressed objects within 5 object streams
