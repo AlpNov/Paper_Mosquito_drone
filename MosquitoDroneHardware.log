@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  29 FEB 2016 17:32
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  1 MAR 2016 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -387,14 +387,14 @@ Package pdftex.def Info: ./pictures/DroneConfigs.pdf used on input line 158.
 (pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
  [2 <./pictures/Block_Diagram_RevB.pdf> <./pictures/CircuitDiagram.pdf> <./pict
 ures/DroneConfigs.pdf>]
-<./pictures/AngleVsSpeed.pdf, id=230, 722.7pt x 542.025pt>
+<./pictures/AngleVsSpeed.pdf, id=271, 722.7pt x 542.025pt>
 File: ./pictures/AngleVsSpeed.pdf Graphic file (type pdf)
 
 <use ./pictures/AngleVsSpeed.pdf>
 Package pdftex.def Info: ./pictures/AngleVsSpeed.pdf used on input line 198.
 (pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
 
-<./pictures/SimulationResults.pdf, id=231, 402.42534pt x 207.9264pt>
+<./pictures/SimulationResults.pdf, id=272, 402.42534pt x 207.9264pt>
 File: ./pictures/SimulationResults.pdf Graphic file (type pdf)
 
 <use ./pictures/SimulationResults.pdf>
@@ -402,7 +402,7 @@ Package pdftex.def Info: ./pictures/SimulationResults.pdf used on input line 21
 1.
 (pdftex.def)             Requested size: 221.14479pt x 114.2615pt.
 
-<./pictures/BoustrophedonPath.pdf, id=232, 299.1175pt x 315.1775pt>
+<./pictures/BoustrophedonPath.pdf, id=273, 299.1175pt x 315.1775pt>
 File: ./pictures/BoustrophedonPath.pdf Graphic file (type pdf)
 
 <use ./pictures/BoustrophedonPath.pdf>
@@ -410,14 +410,14 @@ Package pdftex.def Info: ./pictures/BoustrophedonPath.pdf used on input line 21
 9.
 (pdftex.def)             Requested size: 221.14479pt x 233.02089pt.
 
-<./pictures/RandomPath.pdf, id=233, 301.125pt x 313.17pt>
+<./pictures/RandomPath.pdf, id=274, 301.125pt x 313.17pt>
 File: ./pictures/RandomPath.pdf Graphic file (type pdf)
 
 <use ./pictures/RandomPath.pdf>
 Package pdftex.def Info: ./pictures/RandomPath.pdf used on input line 227.
 (pdftex.def)             Requested size: 221.14479pt x 229.99797pt.
 
-<./pictures/SImulationSetupEnd.pdf, id=234, 298.11375pt x 316.18124pt>
+<./pictures/SImulationSetupEnd.pdf, id=275, 298.11375pt x 316.18124pt>
 File: ./pictures/SImulationSetupEnd.pdf Graphic file (type pdf)
 
 <use ./pictures/SImulationSetupEnd.pdf>
@@ -425,7 +425,7 @@ Package pdftex.def Info: ./pictures/SImulationSetupEnd.pdf used on input line 2
 35.
 (pdftex.def)             Requested size: 221.14479pt x 234.5494pt.
 
-<./pictures/SImulationSetupTime0.pdf, id=235, 316.18124pt x 301.125pt>
+<./pictures/SImulationSetupTime0.pdf, id=276, 316.18124pt x 301.125pt>
 File: ./pictures/SImulationSetupTime0.pdf Graphic file (type pdf)
 
 <use ./pictures/SImulationSetupTime0.pdf>
@@ -453,11 +453,9 @@ File: ./pictures/SimulationResults.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./pictures/SimulationResults.pdf used on input line 28
 1.
 (pdftex.def)             Requested size: 221.14479pt x 114.2615pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [4 <./pictures/RandomPath.pdf> <./pictures/SImulationSetupEnd.pdf> <./pictures
-/SImulationSetupTime0.pdf>] (./MosquitoDroneHardware.bbl)
+/SImulationSetupTime0.pdf>]
+(./MosquitoDroneHardware.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -481,7 +479,7 @@ Here is how much of TeX's memory you used:
  6725 multiletter control sequences out of 15000+200000
  41915 words of font info for 82 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,12n,35p,977b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,11n,35p,977b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -492,17 +490,16 @@ ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive
 2/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2012/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2012/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2012/texmf-dist/f
-onts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/typ
-e1/urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/tim
-es/utmbi8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmr8a
-.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on MosquitoDroneHardware.pdf (5 pages, 1243189 bytes).
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2012/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2012/texmf-dis
+t/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/
+type1/urw/times/utmb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/
+times/utmbi8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on MosquitoDroneHardware.pdf (5 pages, 1262443 bytes).
 PDF statistics:
- 769 PDF objects out of 1000 (max. 8388607)
- 474 compressed objects within 5 object streams
+ 807 PDF objects out of 1000 (max. 8388607)
+ 495 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

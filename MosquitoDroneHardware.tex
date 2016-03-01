@@ -157,7 +157,7 @@ Block diagram of microcontroller and bug-zapper: The system is powered by a 9 [V
 \centering
 \begin{overpic}[width=0.9\columnwidth]{DroneConfigs.pdf}\end{overpic}
 \caption{\label{fig:DroneConfigs}
-The drone suspends a square bug-zapping screen beneath it.  Propwash pushes incoming mosquitos downwards, and the drone clears a volume $h_m \times 2 r_s \times v_f$.} 
+The drone suspends a square bug-zapping screen beneath it.  Propwash pushes incoming mosquitos downwards, and the drone clears a volume $h_m \times d_s \times v_f$.} 
 \end{figure}
 
  To hover, the drone must push sufficient air down with velocity $v_d$ to apply a force that cancels the pull of gravity. 
@@ -165,8 +165,8 @@ The drone suspends a square bug-zapping screen beneath it.  Propwash pushes inco
 We assume that air above the quadcopter is quiescent, so the velocity change of the air is $v_d$ m/s.
  \begin{align} \label{eq:forceBalanceForDrone}
  \text{Force gravity} & = \left(\text{mass flow}\right) \cdot \text{air velocity} \nonumber \\
-m_{d} g &= (v_d \cdot  \rho_a \cdot  d_d^2 ) \cdot  v_d \\
- \text{kg} \cdot \frac{ \text{m}}{ \text{s}^2}&= \left( \frac{ \text{m}}{\text{s}} \cdot  \frac{ \text{kg}}{\text{m}^3}  \cdot \text{m}^2 \right) \cdot  \frac{ \text{m}}{\text{s}}\nonumber
+ m_{d} \cdot  g &= (v_d \cdot  \rho_a \cdot  d_d^2 ) \cdot  v_d 
+% \text{kg} \cdot \frac{ \text{m}}{ \text{s}^2}&= \left( \frac{ \text{m}}{\text{s}} \cdot  \frac{ \text{kg}}{\text{m}^3}  \cdot \text{m}^2 \right) \cdot  \frac{ \text{m}}{\text{s}}\nonumber
 \end{align}
 
 This means the velocity of air beneath the drone (the propwash) is
@@ -183,8 +183,8 @@ A key question is what distance $h_d$ the screen should be suspended from the dr
 Due to propwash, a mosquito in level flight will fall relative to the drone at a rate of $v_d/v_f$.  As shown in Fig.~\ref{fig:DroneConfigs}, we can extend lines with slope $v_d/v_f$ from the screens trailing edge to $h_{top}$ and from the leading edge to $h_{bottom}$
  \begin{align} \label{eq:ClearedCrossSection}
 h_{top} &= h_d - h_s + \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f} \nonumber \\
-h_{top} &= h_d - h_s - \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f}  \nonumber \\
-h_m &= d_s\left(\frac{v_d}{v_f}\cos(\theta) + \sin(\theta) \right)
+h_{bottom} &= h_d - h_s - \frac{d_s}{2} \sin(\theta) +  \frac{d_d - d_s\cos(\theta)}{2}  \frac{v_d}{v_f}  \nonumber \\
+h_m &= h_{top} - h_{bottom} =  d_s\left(\frac{v_d}{v_f}\cos(\theta) + \sin(\theta) \right)
 \end{align}
 The optimal angle is therefore a function of forward and propwash velocity:
 \begin{align} \label{eq:OptimalScreenAngle}
@@ -245,7 +245,25 @@ A 100x100m image with one thousand simulated mosquitoes (black markers).  The mo
 \end{figure}
     
     
-    This simulation runs in \textsc{Matlab}.  One thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  Each mosquito moves according to a biased random walk at a speed up to 0.4 m/s and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes’ preference for vegetative areas.  In order to allow the mosquito positions to be more natural, the mosquito movement routine runs five thousand times, simulating 1.4 hours of flying time, before the robot begins to search.  Because mosquitoes do not care about boundaries, the toroidal assumption keeps them in the workspace.Two different routines handle the robot’s path.  The first uses a random bounce algorithm.  The robot begins in the center of the workspace and moves with a heading that varies randomly up to $\pm$0.2 rad off of its previous heading and bounces off the perimeter of the workspace with a random heading equally biased around all points of the circle except for those outside the workspace.  The velocity is set at a prescribed speed.The second algorithm uses a boustrophedon path.  The robot begins in one corner of the workspace and methodically progresses back and forth, advancing one screen width at each turn.  If it covers the entire field in the allotted time, it begins covering the field again.In order to keep the routines comparable, the robots use the same speed and same number of iterations.  These simulations used 12 m/s and fifteen minutes of flying time.  They also used the same image for biasing the mosquito flight.For the main body of the simulation, a loop runs a series of iterations in which each mosquito moves one step and the robot moves one step.  In that step, the path traced by the bug-zapping screen is calculated, and any mosquitoes in that path are considered to have been killed.ResultsOne hundred trials were performed with each coverage path.  The boustrophedon successfully covered the entire field in every trial ($\mu$=100\%, $\sigma$=0\%) and exhaustively covered a portion of the area a second time, while the random bounce covered only 67.9\% of the field ($\mu$=67.9\%, $\sigma$=1.0\%) with an unknown amount of overlap.  As a result, the boustrophedon killed significantly more mosquitoes ($\mu$=87.7\%, $\sigma$=1.1\%) than the random bounce ($\mu$=68.6\%, $\sigma$=2.7\%).  In fact, the smallest number of mosquitoes killed in 100 trials by the boustrophedon (84.1\%) was considerably larger than the largest number killed by the random bounce (75.1\%).%Data%The files used for this run of simulations are as follows:%MosquitoFlightSimv2p0.m%MosquitoSimv2p2randombounce.m%MosquitoSimv2p2boustrophedon.m%MosquitoSimComparev1p0.m%%All are located in the Dropbox code folder.%Raw data are located in the Excel file Simulation Results.xlsx.
+    This simulation runs in \textsc{Matlab}.  One thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  Each mosquito moves according to a biased random walk at a speed up to 0.4 m/s and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes’ preference for vegetative areas.  In order to allow the mosquito positions to be more natural, the mosquito movement routine runs five thousand times, simulating 1.4 hours of flying time, before the robot begins to search.  Because mosquitoes do not care about boundaries, the toroidal assumption keeps them in the workspace.
+Two different routines handle the robot’s path.  The first uses a random bounce algorithm.  The robot begins in the center of the workspace and moves with a heading that varies randomly up to $\pm$0.2 rad off of its previous heading and bounces off the perimeter of the workspace with a random heading equally biased around all points of the circle except for those outside the workspace.  The velocity is set at a prescribed speed.
+The second algorithm uses a boustrophedon path.  The robot begins in one corner of the workspace and methodically progresses back and forth, advancing one screen width at each turn.  If it covers the entire field in the allotted time, it begins covering the field again.
+In order to keep the routines comparable, the robots use the same speed and same number of iterations.  These simulations used 12 m/s and fifteen minutes of flying time.  They also used the same image for biasing the mosquito flight.
+For the main body of the simulation, a loop runs a series of iterations in which each mosquito moves one step and the robot moves one step.  In that step, the path traced by the bug-zapping screen is calculated, and any mosquitoes in that path are considered to have been killed.
+
+Results
+One hundred trials were performed with each coverage path.  The boustrophedon successfully covered the entire field in every trial ($\mu$=100\%, $\sigma$=0\%) and exhaustively covered a portion of the area a second time, while the random bounce covered only 67.9\% of the field ($\mu$=67.9\%, $\sigma$=1.0\%) with an unknown amount of overlap.  As a result, the boustrophedon killed significantly more mosquitoes ($\mu$=87.7\%, $\sigma$=1.1\%) than the random bounce ($\mu$=68.6\%, $\sigma$=2.7\%).  In fact, the smallest number of mosquitoes killed in 100 trials by the boustrophedon (84.1\%) was considerably larger than the largest number killed by the random bounce (75.1\%).
+
+
+%Data
+%The files used for this run of simulations are as follows:
+%MosquitoFlightSimv2p0.m
+%MosquitoSimv2p2randombounce.m
+%MosquitoSimv2p2boustrophedon.m
+%MosquitoSimComparev1p0.m
+%
+%All are located in the Dropbox code folder.
+%Raw data are located in the Excel file Simulation Results.xlsx.
 %    
     
     \section{Experiment}
@@ -266,7 +284,11 @@ To calibrate the system, three instrumented bug-zappers were carried on a 2.5 m 
 \end{figure}
 
 \section{Conclusion and Future Work}
-Covering the field thoroughly leads to a higher success rate when killing mosquitoes.  Because the mosquitoes move around, the robot will not kill all the mosquitoes in a single trial as some can fly into a previously covered area as the robot approaches them, but the chances of killing the mosquitoes increase as the coverage increases.%Future workThere are a number of refinements to the algorithm that could be pursued in future work.  The mosquito biasing algorithm could be made less near-sighted and look at an array of pixels further from the current location of the mosquito.  Some modifications to the robot flight may force it to take turns more slowly or handle environmental disturbances.  A bias away from the robot may be added to the mosquito heading.  The model may be expanded to three dimensions.  An alternative search path that looks for mosquitoes randomly then exhaustively covers areas dense in mosquitoes may be compared to the existing algorithms.  These and many other considerations may be included to make a more realistic model for future work.
+
+Covering the field thoroughly leads to a higher success rate when killing mosquitoes.  Because the mosquitoes move around, the robot will not kill all the mosquitoes in a single trial as some can fly into a previously covered area as the robot approaches them, but the chances of killing the mosquitoes increase as the coverage increases.
+
+%Future work
+There are a number of refinements to the algorithm that could be pursued in future work.  The mosquito biasing algorithm could be made less near-sighted and look at an array of pixels further from the current location of the mosquito.  Some modifications to the robot flight may force it to take turns more slowly or handle environmental disturbances.  A bias away from the robot may be added to the mosquito heading.  The model may be expanded to three dimensions.  An alternative search path that looks for mosquitoes randomly then exhaustively covers areas dense in mosquitoes may be compared to the existing algorithms.  These and many other considerations may be included to make a more realistic model for future work.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
