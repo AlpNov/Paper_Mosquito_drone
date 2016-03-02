@@ -76,7 +76,7 @@ A multi-copter drone carrying a high-voltage, instrumented bug-zapping screen. A
   
   \subsection{Mosquito Control Solutions}
   
-	Mosquito control has a long history with efforts associated both with eliminating breeding grounds and destroying living mosquitoes \cite{peter2005tick}.  An array of insecticidal compounds has been used with different application methods, concentrations, and quantities, including both larvicides and compounds directed at adult mosquitoes \cite{larvicides2005guidelines}.
+	Mosquito control has a long history with efforts associated both with eliminating breeding grounds and destroying living mosquitoes \cite{peter2005tick}.  An array of insecticidal compounds has been used with different application methods, concentrations, and quantities, including both larvicides and compounds directed at adult mosquitoes \cite{larvicides2005guidelines}.  The Mosquito Control Division of Harris county was established in 1964.  In addition to control tasks, they perform weekly surveys of mosquito populations at 268 traps through out the county~\cite{dennett2007associations}.
 	
 	Various traps have been designed to capture and/or kill mosquitoes with increasing sophistication in imitating human bait as designers strive to achieve a trap that can rival the attraction of a live human \cite{maliti2015development}.  In recent history, methods have also included genetically modifying mosquitoes so that they either cannot reproduce effectively or cannot transmit diseases successfully \cite{marshall2009malaria}, and with the recent genomic mapping of mosquito species, new ideas for more targeted work have been formulated \cite{hill2005arthropod}.
  
@@ -159,9 +159,8 @@ Then the propwash, the velocity of air beneath the drone, is
 v_d = \sqrt{ \frac{ m_d g}{\rho_a d_d^2} }
 \end{align}
 The drone testing site in Houston, Texas is 15 m above sea level. At sea level the density of air $\rho_a$ is 1.225 kg/m$^3$.
-The 3DR Solo drone weighs 2 kg with diameter 0.71 m\footnote{https://3dr.com/solo-gopro-drone-specs/}. The acceleration due to gravity is 9.871 $\frac{m}{s^2}$.  Substituting these values into \eqref{eq:dronePropwash} gives $v_d = 5.6$ m/s.
+The 3DR Solo drone weighs 2 kg with diameter 0.71 m~\cite{Sollenberger2015}. The acceleration due to gravity is 9.871 $\frac{m}{s^2}$.  Substituting these values into \eqref{eq:dronePropwash} gives $v_d = 5.6$ m/s.
 
-\todo{change footnote to reference}
 
 For manufacturing ease, the electrified screen is a square measuring $d_s$ on each side. The mosquito species we are initially targeting fly at low altitude, so the screen is suspended a distance $h_s$ beneath the drone flying at height $h_d$.
 Suspending this screen beneath the drone improves efficiency because a hanging screen requires less weight than a rigid frame to hold the screen above the drone.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
@@ -234,9 +233,9 @@ One hundred trials were performed with each coverage path and the results evalua
 
         \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
+\begin{overpic}[width=0.9\columnwidth]{SimulationResults.jpg}\end{overpic}
 \caption{\label{fig:SimulationResults}
-Comparison of percentage of area covered and percentage of mosquitoes killed for the boustrophedon and random bounce coverage patterns.} 
+Comparison of percentage of area covered and percentage of mosquitoes killed for the boustrophedon and random bounce coverage patterns.  Plots show aggregate results of 100 trials, using the workspace shown in Fig.~\ref{fig:SImulationSetupTime0}.}
 \todo{replace results bar graph with box plot}
 \end{figure}
 
@@ -262,14 +261,14 @@ Comparison of percentage of area covered and percentage of mosquitoes killed for
             \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
-\caption{\label{fig:SimulationResults}
+\caption{\label{fig:BugZapperOnPole}
 To calibrate the system, three instrumented bug zappers were carried on a 2.5 m pole.} 
 \end{figure}
 
         \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
-\caption{\label{fig:SimulationResults}
+\caption{\label{fig:GPSpathAndKill}
     map with GPS path and kill locations superimposed} 
 \end{figure}
 

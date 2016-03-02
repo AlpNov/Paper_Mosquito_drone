@@ -31,14 +31,12 @@ W.~H. Organization, ``Guidelines for laboratory and field testing of mosquito
   larvicides,'' \emph{WORLD HEALTH ORGANIZATION COMMUNICABLE DISEASE CONTROL,
   PREVENTION AND ERADICATION WHO PESTICIDE EVALUATION SCHEME}, 2005.
 
-\bibitem{hill2005arthropod}
-C.~A. Hill, F.~C. Kafatos, S.~K. Stansfield, and F.~H. Collins,
-  ``Arthropod-borne diseases: vector control in the genomics era,''
-  \emph{Nature Reviews Microbiology}, vol.~3, no.~3, pp. 262--268, 2005.
-
-\bibitem{marshall2009malaria}
-J.~M. Marshall and C.~E. Taylor, ``Malaria control with transgenic
-  mosquitoes,'' \emph{PLoS Med}, vol.~6, no.~2, p. e1000020, 2009.
+\bibitem{dennett2007associations}
+J.~A. Dennett, A.~Bala, T.~Wuithiranyagool, Y.~Randle, C.~B. Sargent,
+  H.~Guzman, M.~SIIRIN, H.~K. Hassan, M.~Reyna-Nava, T.~R. Unnasch
+  \emph{et~al.}, ``Associations between two mosquito populations and west nile
+  virus in harris county, texas, 2003--06,'' \emph{Journal of the American
+  Mosquito Control Association}, vol.~23, no.~3, p. 264, 2007.
 
 \bibitem{maliti2015development}
 D.~V. Maliti, N.~J. Govella, G.~F. Killeen, N.~Mirzai, P.~C. Johnson,
@@ -47,6 +45,15 @@ D.~V. Maliti, N.~J. Govella, G.~F. Killeen, N.~Mirzai, P.~C. Johnson,
   technique for sampling host-seeking malaria vectors,'' \emph{Malaria
   journal}, vol.~14, no.~1, p.~1, 2015.
 
+\bibitem{marshall2009malaria}
+J.~M. Marshall and C.~E. Taylor, ``Malaria control with transgenic
+  mosquitoes,'' \emph{PLoS Med}, vol.~6, no.~2, p. e1000020, 2009.
+
+\bibitem{hill2005arthropod}
+C.~A. Hill, F.~C. Kafatos, S.~K. Stansfield, and F.~H. Collins,
+  ``Arthropod-borne diseases: vector control in the genomics era,''
+  \emph{Nature Reviews Microbiology}, vol.~3, no.~3, pp. 262--268, 2005.
+
 \bibitem{anupa2014identification}
 P.~Anupa~Elizabeth, M.~Saravana~Mohan, P.~Philip~Samuel, S.~Pandian, and
   B.~Tyagi, ``Identification and eradication of mosquito breeding sites using
@@ -54,21 +61,24 @@ P.~Anupa~Elizabeth, M.~Saravana~Mohan, P.~Philip~Samuel, S.~Pandian, and
   Trends in Information Technology (ICRTIT), 2014 International Conference
   on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2014, pp. 1--6.
 
-\bibitem{kare2010build}
-J.~Kare and J.~Buffum, ``Build your own photonic fence to zap mosquitoes
-  midflight [backwards star wars],'' \emph{IEEE Spectrum}, vol.~5, no.~47, pp.
-  28--33, 2010.
+\bibitem{hur2015low}
+B.~Hur and W.~Eisenstadt, ``Low-power wireless climate monitoring system with
+  rfid security access feature for mosquito and pathogen research,'' in
+  \emph{Mobile and Secure Services (MOBISECSERV), 2015 First Conference
+  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2015, pp. 1--5.
 
 \bibitem{boonsri2012laser}
 C.~Boonsri, S.~Sumriddetchkajorn, and P.~Buranasiri, ``Laser-based mosquito
   repelling module,'' in \emph{Photonics Global Conference (PGC), 2012}.\hskip
   1em plus 0.5em minus 0.4em\relax IEEE, 2012, pp. 1--4.
 
-\bibitem{hur2015low}
-B.~Hur and W.~Eisenstadt, ``Low-power wireless climate monitoring system with
-  rfid security access feature for mosquito and pathogen research,'' in
-  \emph{Mobile and Secure Services (MOBISECSERV), 2015 First Conference
-  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2015, pp. 1--5.
+\bibitem{kare2010build}
+\BIBentryALTinterwordspacing
+J.~Kare and J.~Buffum, ``Build your own photonic fence to zap mosquitoes
+  midflight [backwards star wars],'' \emph{IEEE Spectrum}, vol.~5, no.~47, pp.
+  28--33, 2010. [Online]. Available:
+  \url{http://spectrum.ieee.org/consumer-electronics/gadgets/backyard-star-wars}
+\BIBentrySTDinterwordspacing
 
 \bibitem{Choset2001}
 H.~Choset, ``Coverage for robotics - a survey of recent results,'' \emph{Annals
@@ -96,10 +106,16 @@ D.-T. Lee and A.~K. Lin, ``Computational complexity of art gallery problems,''
   \emph{Information Theory, IEEE Transactions on}, vol.~32, no.~2, pp.
   276--282, 1986.
 
+\bibitem{Sollenberger2015}
+\BIBentryALTinterwordspacing
+R.~Sollenberger, ``Solo specs: Just the facts,'' May 2015. [Online]. Available:
+  \url{https://3dr.com/solo-gopro-drone-specs/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{gillies1976vertical}
-M.~Gillies and T.~Wilkes, ``The vertical distribution of some west african
-  mosquitoes (diptera, culicidae) over open farmland in a freshwater area of
-  the gambia,'' \emph{Bulletin of entomological research}, vol.~66, no.~01, pp.
-  5--15, 1976.
+M.~Gillies and T.~Wilkes, ``{The vertical distribution of some West African
+  mosquitoes (Diptera, Culicidae) over open farmland in a freshwater area of
+  The Gambia},'' \emph{Bulletin of entomological research}, vol.~66, no.~01,
+  pp. 5--15, 1976.
 
 \end{thebibliography}
