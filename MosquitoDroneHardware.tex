@@ -76,7 +76,7 @@ A multi-copter drone carrying a high-voltage, instrumented bug-zapping screen. A
   
   \subsection{Mosquito Control Solutions}
   
-	Mosquito control has a long history with efforts associated both with eliminating breeding grounds and destroying living mosquitoes \cite{peter2005tick}.  An array of insecticidal compounds has been used with different application methods, concentrations, and quantities, including both larvicides and compounds directed at adult mosquitoes \cite{larvicides2005guidelines}.  The Mosquito Control Division of Harris county was established in 1964.  In addition to control tasks, they perform weekly surveys of mosquito populations at 268 traps through out the county~\cite{dennett2007associations}.
+	Mosquito control has a long history of efforts associated both with monitoring mosquito populations ~\cite{dennett2007associations} and with eliminating mosquitoes.  The work involves both draining potential breeding grounds and destroying living mosquitoes \cite{peter2005tick}.  An array of insecticidal compounds has been used with different application methods, concentrations, and quantities, including both larvicides and compounds directed at adult mosquitoes \cite{larvicides2005guidelines}.
 	
 	Various traps have been designed to capture and/or kill mosquitoes with increasing sophistication in imitating human bait as designers strive to achieve a trap that can rival the attraction of a live human \cite{maliti2015development}.  In recent history, methods have also included genetically modifying mosquitoes so that they either cannot reproduce effectively or cannot transmit diseases successfully \cite{marshall2009malaria}, and with the recent genomic mapping of mosquito species, new ideas for more targeted work have been formulated \cite{hill2005arthropod}.
  
@@ -120,10 +120,9 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
   
 
   
-  \todo{Oscilloscope trace from mosquito elimination}
-  
-  \todo{Math describing the size of screen that can be carried}
-  
+  The screen is constructed with two layers of wire mesh with 3.6 mm openings with a layer of wire mesh with 0.74 mm openings suspended between them.  A balsa wood frame insulates the outer meshes from the inner mesh.  This mesh arrangement weighs $1633 ~g/m^2$.  The payload that the multi-copter can reliably carry is compared to the preferred width to find a size that satisfies the requirements.
+
+
   
   \subsection{Energy Budget}
   
@@ -131,6 +130,13 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
   how many mAh to keep an LxL screen charged?
   How many mAh to kill one mosquito: describe the experiment procedure and extrapolate the results}
   
+                \begin{figure}
+\centering
+\begin{overpic}[width=1.0\columnwidth]{FruitFlyTrace.jpg}\end{overpic}
+\caption{\label{fig:FruitFlyTrace}
+  Voltage trace as a pair of insects contact the bug-zapping screen.  They cause a voltage deflection of 575 mV that recovers within 400 ms.
+  } 
+\end{figure}
   
   
   
@@ -203,15 +209,15 @@ For the main body of the simulation, a loop runs a series of iterations in which
 
         \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SImulationSetupTime0}\end{overpic}
-\caption{\label{fig:SImulationSetupTime0}
+\begin{overpic}[width=0.9\columnwidth]{SimulationSetupTime0}\end{overpic}
+\caption{\label{fig:SimulationSetupTime0}
 A 100x100m image with one thousand simulated mosquitoes (black markers).  The mosquitoes have had 1.5 hours to bias themselves toward green areas of the image.  The robot (red circle) is shown at the upper left corner, preparing to start a bug-zapping run. } 
 \end{figure}
 
             \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SImulationSetupEnd.pdf}\end{overpic}
-\caption{\label{fig:SImulationSetupEnd}
+\begin{overpic}[width=0.9\columnwidth]{SimulationSetupEnd.pdf}\end{overpic}
+\caption{\label{fig:SimulationSetupEnd}
 A 100x100m image with the robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived it are shown in black. } 
 \end{figure}
 
@@ -235,8 +241,7 @@ One hundred trials were performed with each coverage path and the results evalua
 \centering
 \begin{overpic}[width=0.9\columnwidth]{SimulationResults.jpg}\end{overpic}
 \caption{\label{fig:SimulationResults}
-Comparison of percentage of area covered and percentage of mosquitoes killed for the boustrophedon and random bounce coverage patterns.  Plots show aggregate results of 100 trials, using the workspace shown in Fig.~\ref{fig:SImulationSetupTime0}.}
-\todo{replace results bar graph with box plot}
+Comparison of percentage of area covered and percentage of mosquitoes killed for the boustrophedon and random bounce coverage patterns.  Plots show aggregate results of 100 trials, using the workspace shown in Fig.~\ref{fig:SimulationSetupTime0}.}
 \end{figure}
 
 
@@ -256,20 +261,28 @@ Comparison of percentage of area covered and percentage of mosquitoes killed for
     
     \section{Experiment}
     
-    \todo{describe experiment results and add figures}
-    
+Before mounting an instrumented screen to a drone, a proof of concept experiment used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker.  The circuits were powered with a 9 V battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the ten-minute circuit around a body of water followed in the first trial with the kill locations superimposed upon it.        
+
             \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
+\begin{overpic}[width=0.9\columnwidth]{BugZapperOnPole.jpg}\end{overpic}
 \caption{\label{fig:BugZapperOnPole}
 To calibrate the system, three instrumented bug zappers were carried on a 2.5 m pole.} 
 \end{figure}
 
+%        \begin{figure}
+%\centering
+%\begin{overpic}[width=0.9\columnwidth]{DronePathAndKills.pdf}\end{overpic}
+%\caption{\label{fig:DronePathAndKills}
+%    GPS path (blue line) and kill locations (red markers).} 
+%\end{figure}
+
         \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SimulationResults.pdf}\end{overpic}
+\begin{overpic}[width=0.9\columnwidth]{GPSpathAndKill.jpg}\end{overpic}
 \caption{\label{fig:GPSpathAndKill}
-    map with GPS path and kill locations superimposed} 
+    Map overlaid with GPS path (red line) and kill locations (connected by blue line) ~\cite{anupa2014identification}.} 
+    \todo{cite GPS visualizer}
 \end{figure}
 
 \section{Conclusion and Future Work}
