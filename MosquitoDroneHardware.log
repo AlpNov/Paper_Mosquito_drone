@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  4 MAR 2016 22:43
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 MAR 2016 11:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -347,10 +347,10 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 File: ./pictures/DroneAndNet.pdf Graphic file (type pdf)
 
 <use ./pictures/DroneAndNet.pdf>
-Package pdftex.def Info: ./pictures/DroneAndNet.pdf used on input line 67.
+Package pdftex.def Info: ./pictures/DroneAndNet.pdf used on input line 68.
 (pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
 
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 70--70
+Overfull \hbox (1.88457pt too wide) in paragraph at lines 71--71
  [] 
  []
 
@@ -363,17 +363,17 @@ File: ./pictures/Block_Diagram_RevC.pdf Graphic file (type pdf)
 
 <use ./pictures/Block_Diagram_RevC.pdf>
 Package pdftex.def Info: ./pictures/Block_Diagram_RevC.pdf used on input line 1
-04.
+05.
 (pdftex.def)             Requested size: 221.14479pt x 95.56871pt.
 
 <./pictures/CircuitDiagram.pdf, id=95, 722.7pt x 289.08pt>
 File: ./pictures/CircuitDiagram.pdf Graphic file (type pdf)
 
 <use ./pictures/CircuitDiagram.pdf>
-Package pdftex.def Info: ./pictures/CircuitDiagram.pdf used on input line 115.
+Package pdftex.def Info: ./pictures/CircuitDiagram.pdf used on input line 116.
 (pdftex.def)             Requested size: 245.71811pt x 98.28589pt.
 
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 131--131
+Overfull \hbox (1.88457pt too wide) in paragraph at lines 132--132
 [] 
  []
 
@@ -381,14 +381,14 @@ Overfull \hbox (1.88457pt too wide) in paragraph at lines 131--131
 File: ./pictures/FruitFlyTrace.jpg Graphic file (type jpg)
 
 <use ./pictures/FruitFlyTrace.jpg>
-Package pdftex.def Info: ./pictures/FruitFlyTrace.jpg used on input line 135.
+Package pdftex.def Info: ./pictures/FruitFlyTrace.jpg used on input line 136.
 (pdftex.def)             Requested size: 245.71811pt x 154.49661pt.
 
 <./pictures/DroneConfigs.pdf, id=97, 722.7pt x 542.025pt>
 File: ./pictures/DroneConfigs.pdf Graphic file (type pdf)
 
 <use ./pictures/DroneConfigs.pdf>
-Package pdftex.def Info: ./pictures/DroneConfigs.pdf used on input line 150.
+Package pdftex.def Info: ./pictures/DroneConfigs.pdf used on input line 151.
 (pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
  [2 <./pictures/Block_Diagram_RevC.pdf> <./pictures/CircuitDiagram.pdf> <./pict
 ures/FruitFlyTrace.jpg>]
@@ -396,7 +396,7 @@ ures/FruitFlyTrace.jpg>]
 File: ./pictures/AngleVsSpeed.pdf Graphic file (type pdf)
 
 <use ./pictures/AngleVsSpeed.pdf>
-Package pdftex.def Info: ./pictures/AngleVsSpeed.pdf used on input line 190.
+Package pdftex.def Info: ./pictures/AngleVsSpeed.pdf used on input line 191.
 (pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
  [3 <./pictures/DroneConfigs.pdf> <./pictures/AngleVsSpeed.pdf>]
 <./pictures/SimulationSetupTime0.pdf, id=677, 289.08pt x 289.08pt>
@@ -404,7 +404,7 @@ File: ./pictures/SimulationSetupTime0.pdf Graphic file (type pdf)
 
 <use ./pictures/SimulationSetupTime0.pdf>
 Package pdftex.def Info: ./pictures/SimulationSetupTime0.pdf used on input line
- 212.
+ 214.
 (pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
 
 <./pictures/SimulationSetupEnd.pdf, id=678, 289.08pt x 289.08pt>
@@ -412,14 +412,14 @@ File: ./pictures/SimulationSetupEnd.pdf Graphic file (type pdf)
 
 <use ./pictures/SimulationSetupEnd.pdf>
 Package pdftex.def Info: ./pictures/SimulationSetupEnd.pdf used on input line 2
-19.
+21.
 (pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
 
 <./pictures/RandomPath.pdf, id=679, 289.08pt x 289.08pt>
 File: ./pictures/RandomPath.pdf Graphic file (type pdf)
 
 <use ./pictures/RandomPath.pdf>
-Package pdftex.def Info: ./pictures/RandomPath.pdf used on input line 226.
+Package pdftex.def Info: ./pictures/RandomPath.pdf used on input line 228.
 (pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
 
 <./pictures/BoustrophedonPath.pdf, id=680, 289.08pt x 289.08pt>
@@ -427,7 +427,7 @@ File: ./pictures/BoustrophedonPath.pdf Graphic file (type pdf)
 
 <use ./pictures/BoustrophedonPath.pdf>
 Package pdftex.def Info: ./pictures/BoustrophedonPath.pdf used on input line 23
-3.
+5.
 (pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
 
 <./pictures/SimulationResults.jpg, id=681, 353.06906pt x 303.38344pt>
@@ -435,7 +435,7 @@ File: ./pictures/SimulationResults.jpg Graphic file (type jpg)
 
 <use ./pictures/SimulationResults.jpg>
 Package pdftex.def Info: ./pictures/SimulationResults.jpg used on input line 24
-2.
+4.
 (pdftex.def)             Requested size: 221.14479pt x 190.02618pt.
  [4 <./pictures/SimulationSetupTime0.pdf> <./pictures/SimulationSetupEnd.pdf> <
 ./pictures/RandomPath.pdf>]
@@ -443,7 +443,7 @@ Package pdftex.def Info: ./pictures/SimulationResults.jpg used on input line 24
 File: ./pictures/BugZapperOnPole.jpg Graphic file (type jpg)
 
 <use ./pictures/BugZapperOnPole.jpg>
-Package pdftex.def Info: ./pictures/BugZapperOnPole.jpg used on input line 268.
+Package pdftex.def Info: ./pictures/BugZapperOnPole.jpg used on input line 270.
 
 (pdftex.def)             Requested size: 221.14479pt x 221.13666pt.
 
@@ -451,16 +451,21 @@ Package pdftex.def Info: ./pictures/BugZapperOnPole.jpg used on input line 268.
 File: ./pictures/GPSpathAndKill.jpg Graphic file (type jpg)
 
 <use ./pictures/GPSpathAndKill.jpg>
-Package pdftex.def Info: ./pictures/GPSpathAndKill.jpg used on input line 282.
+Package pdftex.def Info: ./pictures/GPSpathAndKill.jpg used on input line 284.
 (pdftex.def)             Requested size: 221.14479pt x 176.84373pt.
-
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 291--291
-[] 
+ [5 <./pictures/BoustrophedonPath.pdf> <./pictures/SimulationResults.jpg> <./pi
+ctures/BugZapperOnPole.jpg> <./pictures/GPSpathAndKill.jpg>] (./MosquitoDroneHa
+rdware.bbl
+Underfull \hbox (badness 1789) in paragraph at lines 39--44
+[]\OT1/ptm/m/n/8 sciencedaily.com. (1997, Jul.) Snap! crackle! pop!
  []
 
-[5 <./pictures/BoustrophedonPath.pdf> <./pictures/SimulationResults.jpg> <./pic
-tures/BugZapperOnPole.jpg> <./pictures/GPSpathAndKill.jpg>]
-(./MosquitoDroneHardware.bbl)
+
+Underfull \hbox (badness 1688) in paragraph at lines 39--44
+\OT1/ptm/m/n/8 elec-tric bug zap-pers are use-less for con-trol-ling
+ []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -472,35 +477,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[6
-
-] (./MosquitoDroneHardware.aux) ) 
+[6] (./MosquitoDroneHardware.aux) ) 
 Here is how much of TeX's memory you used:
- 3503 strings out of 493488
- 50802 string characters out of 3141326
- 122299 words of memory out of 3000000
- 6743 multiletter control sequences out of 15000+200000
+ 3506 strings out of 493488
+ 50869 string characters out of 3141326
+ 122311 words of memory out of 3000000
+ 6746 multiletter control sequences out of 15000+200000
  38652 words of font info for 79 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,11n,35p,1009b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/
-dvips/base/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi5.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.p
-fb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
-sr/local/texlive/2012/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local
-/texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2
-012/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2012/texmf
--dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on MosquitoDroneHardware.pdf (6 pages, 5120653 bytes).
+ 41i,11n,35p,1138b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2012/texmf-dist/fonts/en
+c/dvips/base/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi5.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5
+.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
+/usr/local/texlive/2012/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loc
+al/texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
+/2012/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2012/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on MosquitoDroneHardware.pdf (6 pages, 5121820 bytes).
 PDF statistics:
  770 PDF objects out of 1000 (max. 8388607)
  466 compressed objects within 5 object streams
