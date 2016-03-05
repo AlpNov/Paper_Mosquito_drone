@@ -62,7 +62,7 @@ plot(timeGps-149648,lat)
 xlabel('Time (s)')
 ylabel('Proble Voltage (V)')
 
-figure(3); clf; set(gcf,'color','w');set(gca,'FontSize',fs)
+figure(3); clf; 
 plot(x,y,'-',killx,killy,'*r')
 axis equal
 %legend('mesh 1','mesh 2','mesh 3')
