@@ -49,8 +49,8 @@ Using Unmanned Vehicles With Instrumented Bug Zappers\\ To Detect \& Eliminate M
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Mosquitoes are a vector for several deadly diseases which are responsible for killing millions of people each year.  Popular methods to control mosquitoes such as insecticides are effective, but long-term effects of pesticides are of concern, and mosquito species develop resistance over time.
-Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects. This paper introduces techniques using electrified screens (bug zappers) mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito elimination. Mosquito control offices could use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
+Mosquitoes are a vector for several deadly diseases which are responsible for killing millions of people each year.  Popular methods to control mosquitoes such as insecticides are effective, but long-term effects of pesticides are of concern, particularly as mosquito species develop resistance over time.
+Traditional electrified screens (bug zappers) use UV light to attract pests but have a large by-catch of non-pest insects. This paper introduces techniques using electrified screens (bug zappers) mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito elimination. Mosquito control offices could use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
 This paper examines design considerations, presents a working prototype system of a drone and instrumented bug zapper, and introduces a simulator for swarms of mosquitoes and a mosquito-eliminating drone.  
 \end{abstract}
 
@@ -193,7 +193,7 @@ To ensure the maximum number of mosquitoes are collected, the screen must be suf
 The volume cleared by a drone is a function of screen angle $\theta$ and forward velocity $v_f$. The dotted line shows the optimal angle given in \eqref{eq:OptimalScreenAngle}. } 
 \end{figure}
  
-Changing the flying height $h_d$ of the drone will target different mosquito populations   because mosquitoes are not distributed uniformly vertically.  Gillies and Wilkes demonstrated this with a series of experiments counting mosquitoes caught in suction traps at various levels above ground in open grassland in the Gambia.  These experiments showed that different species of mosquitoes prefer to fly at different heights \cite{gillies1976vertical}.
+Changing the flying height $h_d$ of the drone will target different mosquito populations   because mosquitoes are not distributed uniformly vertically.  Gillies and Wilkes have demonstrated that different species of mosquitoes prefer to fly at different heights \cite{gillies1976vertical}.
   
   
     \section{Simulation}
@@ -305,8 +305,10 @@ There are a number of refinements to the simulation algorithm that could be purs
 %\section*{APPENDIX}
 
 
+\section*{ACKNOWLEDGMENT}
 
-%\section*{ACKNOWLEDGMENT}
+The authors would like to thank the Harris County Public Health \& Environmental Services Mosquito Control Division for their assistance and advice.
+
 
 
 
