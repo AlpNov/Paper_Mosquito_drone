@@ -49,7 +49,8 @@ killx = interp1(timeGps(1:2:end),x(1:2:end),timeInS(kills2>0));
 killy = interp1(timeGps(1:2:end),y(1:2:end),timeInS(kills2>0));
 
 % plot path
-figure(1); clf
+fs = 18;
+figure(1); set(gcf,'color','w');set(gca,'FontSize',fs)
 plot(timeInS,mesh2)
 legend('mesh 1','mesh 2','mesh 3')
 xlabel('Time (s)')
@@ -61,11 +62,14 @@ plot(timeGps-149648,lat)
 xlabel('Time (s)')
 ylabel('Proble Voltage (V)')
 
-figure(3); clf
+figure(3); clf; set(gcf,'color','w');set(gca,'FontSize',fs)
 plot(x,y,'-',killx,killy,'*r')
 axis equal
 %legend('mesh 1','mesh 2','mesh 3')
 xlabel('east-west UTM (m)')
 ylabel('north-south UTM (m)')
+legend('path','mosquito kills')
+set(gcf,'PaperPositionMode','auto','PaperSize',[8,4], 'PaperPosition',[0,0,8,4] );
+print(gcf, '-dpdf', 'DronePathAndKills.pdf');
 
 %plot events
