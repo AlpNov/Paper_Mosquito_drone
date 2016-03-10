@@ -2,7 +2,7 @@
 % https://ras.papercept.net/conferences/scripts/login.pl      to submit
 % https://ras.papercept.net/conferences/scripts/pdftest.pl  to test pdf
 
-\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+\documentclass[final, letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
 
 %\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
 
@@ -32,15 +32,12 @@ Using Unmanned Vehicles With Instrumented Bug Zappers\\ To Detect \& Eliminate M
 }
 
 
-\author{Mary Burbage, An Nguyen, Kyle Walker, Nhan Phung, Vinh Truong, Erik Van Aller and Aaron Becker% <-this % stops a space
+\author{Mary Burbage, An Nguyen, Kyle Walker, Nhan Phung, Vinh Truong, Erik Van Aller and Aaron T. Becker% <-this % stops a space
 \thanks{M. Burbage, A. Nguyen, K. Walker, N. Phung, V. Truong, E. Van Aller, and A. Becker are with the ECE Department at the University of Houston, TX.
         {\tt\small atbecker@uh.edu}}%
 }
 
-
 \begin{document}
-
-
 
 \maketitle
 \thispagestyle{empty}
@@ -65,10 +62,9 @@ Initial work simulates a large number of mosquitoes within a rectangular area. E
 
   \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{DroneAndNet.pdf}\end{overpic}
+\begin{overpic}[width=0.9\columnwidth]{DroneAndNet.jpg}\end{overpic}
 \caption{\label{fig:DroneAndNet}
-A multi-copter drone carrying a high-voltage, instrumented bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, altitude, and weather information for each mosquito strike.} 
-\todo{substitute real drone picture}
+A multi-copter drone carrying a 60 cm square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, altitude, and weather information for each mosquito strike.} 
 \end{figure}
 
   
@@ -83,7 +79,7 @@ A multi-copter drone carrying a high-voltage, instrumented bug-zapping screen. A
  
     \subsection{Robotic Pest Management}
     
-As GPS technology has flourished and data processing has become cheaper and more readily available, researchers have explored options for implementing the new technologies in breeding ground removal \cite{anupa2014identification} and more effective insecticide dispersion \cite{hur2015low}.  Even optical solutions have been considered, including laser containment \cite{boonsri2012laser} or, by extension, exclusion and laser tracking and extermination \cite{kare2010build}.
+As GPS technology has flourished and data processing has become cheaper and more readily available, researchers have explored options for implementing the new technologies in breeding ground removal \cite{anupa2014identification} and more effective insecticide dispersion \cite{hur2015low}.  Low cost drones for residential spraying are under development \cite{amenyo2014medizdroids}.  Even optical solutions have been considered, including laser containment \cite{boonsri2012laser} or, by extension, exclusion and laser tracking and extermination \cite{kare2010build}.
     
     \subsection{Robotic coverage}
     Robotic coverage has a long history. The basic problem is one of designing a path for a robot that ensures the robot visits within $r$ distance of every point on the workspace.  For an overview see \cite{Choset2001}.  This work has been extended to use multiple coverage robots in a variety of ways, including using simple behaviors for the robots \cite{spears2006physics,Koenig2001}.
@@ -127,15 +123,22 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
   
   \subsection{Energy Budget}
   
+  Tests with an oscilloscope show that the screen voltage monitoring circuit shows a deflection of about 710 mV when the mosquito contacts the screen.  The recovery time is approximately 160 ms.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The voltage recovery can be modeled with an exponential fit.
+ \begin{align} \label{eq:BugZapFit}
+v=V_{ss}(1-ae^{-13.09t})
+\end{align}
+
+The fit in \eqref{eq:BugZapFit} gives us a time constant of $13.09/s$.
+  
   \todo{
   how many mAh to keep an LxL screen charged?
-  How many mAh to kill one mosquito: describe the experiment procedure and extrapolate the results}
+  How many mAh to kill one mosquito?}
   
                 \begin{figure}
 \centering
-\begin{overpic}[width=1.0\columnwidth]{FruitFlyTrace.jpg}\end{overpic}
-\caption{\label{fig:FruitFlyTrace}
-  Voltage trace as a pair of insects contact the bug-zapping screen.  They cause a voltage deflection of 575 mV that recovers within 400 ms.
+\begin{overpic}[width=1.0\columnwidth]{BugZapTrace.pdf}\end{overpic}
+\caption{\label{fig:BugZapTrace}
+  Voltage trace as a mosquito contacts the bug-zapping screen.  It causes a voltage deflection of 710 mV that recovers in 160 ms.
   } 
 \end{figure}
   
@@ -211,7 +214,7 @@ For the main body of the simulation, a loop runs a series of iterations in which
 
         \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SimulationSetupTime0}\end{overpic}
+\begin{overpic}[width=0.9\columnwidth]{SimulationSetupTime0.pdf}\end{overpic}
 \caption{\label{fig:SimulationSetupTime0}
 A 100$\times$100m image with one thousand simulated mosquitoes (black markers).  The mosquitoes have had 1.5 hours to bias themselves toward green areas of the image.  The robot (red circle) is shown at the upper left corner, preparing to start a bug-zapping run. } 
 \end{figure}

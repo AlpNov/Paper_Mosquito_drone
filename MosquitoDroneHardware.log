@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 MAR 2016 15:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 MAR 2016 11:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -439,13 +439,13 @@ Package pdftex.def Info: ./pictures/SimulationResults.jpg used on input line 24
 (pdftex.def)             Requested size: 221.14479pt x 190.02618pt.
  [4 <./pictures/SimulationSetupTime0.pdf> <./pictures/SimulationSetupEnd.pdf> <
 ./pictures/RandomPath.pdf>]
-<./pictures/BugZapperOnPole.jpg, id=704, 1284.8pt x 1284.8pt>
+<./pictures/BugZapperOnPole.jpg, id=704, 2457.18pt x 2457.18pt>
 File: ./pictures/BugZapperOnPole.jpg Graphic file (type jpg)
 
 <use ./pictures/BugZapperOnPole.jpg>
 Package pdftex.def Info: ./pictures/BugZapperOnPole.jpg used on input line 270.
 
-(pdftex.def)             Requested size: 221.14479pt x 221.13812pt.
+(pdftex.def)             Requested size: 221.14479pt x 221.13666pt.
 
 <./pictures/GPSpathAndKill.jpg, id=705, 469.755pt x 375.65344pt>
 File: ./pictures/GPSpathAndKill.jpg Graphic file (type jpg)
@@ -503,7 +503,7 @@ al/texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2012/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2012/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on MosquitoDroneHardware.pdf (6 pages, 2842773 bytes).
+Output written on MosquitoDroneHardware.pdf (6 pages, 5121820 bytes).
 PDF statistics:
  770 PDF objects out of 1000 (max. 8388607)
  466 compressed objects within 5 object streams
