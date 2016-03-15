@@ -123,22 +123,18 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
   
   \subsection{Energy Budget}
   
-  Tests with an oscilloscope show that the screen voltage monitoring circuit shows a deflection of about 710 mV when the mosquito contacts the screen.  The recovery time is approximately 160 ms.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The voltage recovery can be modeled with an exponential fit.
+  Tests with an oscilloscope show that in the steady state, a square $60 cm$ screen and electronics have a power consumption of $17.3 W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  The recovery time is approximately $80 \mu s$.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The current recovery can be modeled with an exponential fit.
  \begin{align} \label{eq:BugZapFit}
-v=V_{ss}(1-ae^{-13.09t})
+i=-69.1e^{-2.7\times10^4 t} A
 \end{align}
 
-The fit in \eqref{eq:BugZapFit} gives us a time constant of $13.09/s$.
-  
-  \todo{
-  how many mAh to keep an LxL screen charged?
-  How many mAh to kill one mosquito?}
+The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4/s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $3.4\times10^-4J$ for each zap.
   
                 \begin{figure}
 \centering
 \begin{overpic}[width=1.0\columnwidth]{BugZapTrace.pdf}\end{overpic}
 \caption{\label{fig:BugZapTrace}
-  Voltage trace as a mosquito contacts the bug-zapping screen.  It causes a voltage deflection of 710 mV that recovers in 160 ms.
+  Current trace as an \textit{Aedes triseriatus} mosquito contacts the bug-zapping screen.  It causes a brief short that recovers in $80 \mu s$.
   } 
 \end{figure}
   
@@ -230,14 +226,14 @@ A 100$\times$100m image with the robot (red circle) and the area swept out by th
 \centering
 \begin{overpic}[width=0.9\columnwidth]{RandomPath.pdf}\end{overpic}
 \caption{\label{fig:RandomPath}
-Random bounce robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in black. } 
+Random bounce robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red. } 
 \end{figure}
 
         \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{BoustrophedonPath.pdf}\end{overpic}
 \caption{\label{fig:BoustrophedonPath}
-Boustrophedon robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in black.} 
+Boustrophedon robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red.} 
 \end{figure}
 
 One hundred trials were performed with each coverage path and the results evaluated.  The boustrophedon successfully covered the entire field in every trial ($\mu$=100\%, $\sigma$=0\%) and exhaustively covered a portion of the area a second time, while the random bounce covered only 67.9\% of the field ($\mu$=67.9\%, $\sigma$=1.0\%) with an unknown amount of overlap.  As a result, the boustrophedon killed significantly more mosquitoes ($\mu$=87.7\%, $\sigma$=1.1\%) than the random bounce ($\mu$=68.6\%, $\sigma$=2.7\%).  In fact, the smallest number of mosquitoes killed in 100 trials by the boustrophedon (84.1\%) was considerably larger than the largest number killed by the random bounce (75.1\%).
