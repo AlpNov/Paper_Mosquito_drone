@@ -2,7 +2,7 @@
 % https://ras.papercept.net/conferences/scripts/login.pl      to submit
 % https://ras.papercept.net/conferences/scripts/pdftest.pl  to test pdf
 
-\documentclass[final, letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
 
 %\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
 
@@ -32,7 +32,7 @@ Using Unmanned Vehicles With Instrumented Bug Zappers\\ To Detect \& Eliminate M
 }
 
 
-\author{Mary Burbage, An Nguyen, Kyle Walker, Nhan Phung, Vinh Truong, Erik Van Aller and Aaron T. Becker% <-this % stops a space
+\author{Mary Burbage, An Nguyen, Kyle Walker, Nhan Phung, Vinh Truong, Erik Van Aller, and Aaron T. Becker% <-this % stops a space
 \thanks{M. Burbage, A. Nguyen, K. Walker, N. Phung, V. Truong, E. Van Aller, and A. Becker are with the ECE Department at the University of Houston, TX.
         {\tt\small atbecker@uh.edu}}%
 }
@@ -57,7 +57,7 @@ This paper examines design considerations, presents a working prototype system o
 
 Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global}. Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitos have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control offices can use this information to analyze the insects' activities. The device can be mounted on a remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
 
-Initial work simulates a large number of mosquitoes within a rectangular area. Each mosquito obeys a biased random walk flight pattern. Each mobile robot is capable of eliminating any modeled mosquito that intersects its path.  The mobile robots can detect the time each mosquito is eliminated, share this information with neighboring drones, and use this data as feedback for a motion policy.
+Initial work simulates a large number of mosquitoes within a rectangular area. Each mosquito obeys a biased random walk flight pattern. The flying robot can eliminate any modeled mosquito that intersects its path, detect the time each mosquito is eliminated, and use this data as feedback for a motion policy.
 
 
   \begin{figure}
@@ -117,7 +117,7 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
   
 
   
-  The screen is constructed with two layers of wire mesh with 3.6 mm openings with a layer of wire mesh with 0.74 mm openings suspended between them.  A balsa wood frame insulates the outer meshes from the inner mesh.  This mesh arrangement weighs $1633 ~g/m^2$.  The payload that the multi-copter can reliably carry is compared to the preferred width to find a size that satisfies the requirements.
+  The screen is constructed with two layers of wire mesh with 3.6 mm openings with a layer of wire mesh with 0.74 mm openings suspended between them.  A balsa wood frame insulates the outer meshes from the inner mesh.  This mesh arrangement weighs $1633 ~g/m^2$.  The payload that the drone can reliably carry is used to select a size that satisfies the requirements, $60 cm$ for this multi-coptor drone.
 
 
   
@@ -141,8 +141,12 @@ The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4/s$.  
   
   
   \subsection{Location of screen}
- The drone must carry the bug-zapping screen, and the location of this screen determines the efficacy of the mosquito drone, measured in mosquitoes eliminated per second of flight time.
- 
+ The drone carries the bug-zapping screen, which is suspended by cables at each corner.  The location of this screen determines the efficacy of the mosquito drone, measured in mosquitoes eliminated per second of flight time.
+
+For manufacturing ease, the electrified screen is a square measuring $d_s$ on each side. The mosquito species we are initially targeting fly at low altitude, so the screen is suspended a distance $h_s$ beneath the drone flying at height $h_d$.
+Suspending this screen beneath the drone improves efficiency because a hanging screen requires less weight than a rigid frame to hold the screen above the drone.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
+A key question is what distance $h_s$ the screen should be suspended from the drone, and the optimal angle $\theta$.  The goal is to clear the greatest volume of mosquitoes per second, a volume defined by the drone forward velocity $v_f$ and the cross sectional area $h_m \times d_s$ cleared by the screen, as shown in Fig.~\ref{fig:AngleVsSpeed}.
+
  To hover, the drone must push sufficient air down with velocity $v_d$ to apply a force that cancels the pull of gravity.  The drone has mass $m_{d}$ and has a square-shaped cross section of size $d_d \times d_d$.  The mass flow of air through the drone's props is equal to the product of the change in velocity of the air, the density of the air $\rho_a$, and the cross sectional area.
  
      \begin{figure}
@@ -153,7 +157,7 @@ The drone suspends a square bug-zapping screen beneath it.  Propwash pushes inco
 \end{figure}
 
 
-We assume that air above the multi-copter is quiescent, so the change in velocity of the air is $v_d$ m/s.
+We assume that air above the drone is quiescent, so the change in velocity of the air is $v_d$ m/s.
  \begin{align} \label{eq:forceBalanceForDrone}
  \text{Force gravity} & = \left(\text{mass flow}\right) \cdot \text{air velocity} \nonumber \\
  m_{d} \cdot  g &= (v_d \cdot  \rho_a \cdot  d_d^2 ) \cdot  v_d 
@@ -167,10 +171,6 @@ v_d = \sqrt{ \frac{ m_d g}{\rho_a d_d^2} }
 The drone testing site in Houston, Texas is 15 m above sea level. At sea level the density of air $\rho_a$ is 1.225 kg/m$^3$.
 The 3DR Solo drone weighs 2 kg with diameter 0.71 m~\cite{Sollenberger2015}. The acceleration due to gravity is 9.871 $\frac{m}{s^2}$.  Substituting these values into \eqref{eq:dronePropwash} gives $v_d = 5.6$ m/s.
 
-
-For manufacturing ease, the electrified screen is a square measuring $d_s$ on each side. The mosquito species we are initially targeting fly at low altitude, so the screen is suspended a distance $h_s$ beneath the drone flying at height $h_d$.
-Suspending this screen beneath the drone improves efficiency because a hanging screen requires less weight than a rigid frame to hold the screen above the drone.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
-A key question is what distance $h_s$ the screen should be suspended from the drone, and the optimal angle $\theta$.  The goal is to clear the greatest volume of mosquitoes per second, a volume defined by the drone forward velocity $v_f$ and the cross sectional area $h_m \times d_s$ cleared by the screen, as shown in Fig.~\ref{fig:AngleVsSpeed}.
 
 Due to propwash, a mosquito in level flight will fall relative to the drone at a rate of $v_d/v_f$.  As shown in Fig.~\ref{fig:DroneConfigs}, we can extend lines with slope $v_d/v_f$ from the screen's trailing edge to $h_{top}$ and from the leading edge to $h_{bottom}$
  \begin{align} \label{eq:ClearedCrossSection}
@@ -198,11 +198,11 @@ Changing the flying height $h_d$ of the drone will target different mosquito pop
     \section{Simulation}
     
    Before launching a fully-instrumented drone, this concept was simulated using \textsc{Matlab} code.  One thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  A satellite image of Houston was used as the simulation environment, and each mosquito is programmed to move according to a biased random walk at a speed up to 0.4 m/s and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes' preference for vegetative areas.  
-   The simulation is initialized by a mosquito distribution generated by running the mosquito movement routine  five thousand times, simulating 1.4 hours of flying time, before the robot begins to search.  Because mosquitoes do not care about boundaries, a toroidal mapping is used to keep them in the workspace.
+   The simulation is initialized by a mosquito distribution generated by running the mosquito movement routine  five thousand times, simulating 1.4 hours of flying time, before the robot begins to search (Fig.~\ref{fig:SimulationSetupTime0}).  Because mosquitoes do not care about boundaries, a toroidal mapping is used to keep them in the workspace.  
     
 Two different routines handle the robot's path.  The first uses a random bounce algorithm.  The robot begins in the center of the workspace and moves with a heading that varies randomly up to $\pm$0.2 rad from its previous heading and bounces off the perimeter of the workspace with a random heading equally biased between 0 and $2\pi$, excluding headings leading outside the workspace.  The velocity is set at a prescribed speed.
 
-The second algorithm uses a boustrophedon path.  The robot begins in one corner of the workspace and methodically progresses back and forth, advancing one screen width at each turn.  If it covers the entire field in the allotted time, it begins covering the field again.
+The second algorithm uses a boustrophedon path \cite{Choset2001}.  The robot begins in one corner of the workspace and methodically progresses back and forth, advancing one screen width at each turn.  If it covers the entire field in the allotted time, it begins covering the field again.
 
 To keep the routines comparable, the robots use the same speed and same number of iterations.  These simulations used 12 m/s and fifteen minutes of flying time.  They also used the same image for biasing the mosquito flight.
 
@@ -212,31 +212,31 @@ For the main body of the simulation, a loop runs a series of iterations in which
 \centering
 \begin{overpic}[width=0.9\columnwidth]{SimulationSetupTime0.pdf}\end{overpic}
 \caption{\label{fig:SimulationSetupTime0}
-A 100$\times$100m image with one thousand simulated mosquitoes (black markers).  The mosquitoes have had 1.5 hours to bias themselves toward green areas of the image.  The robot (red circle) is shown at the upper left corner, preparing to start a bug-zapping run. } 
+A 100$\times$100m image with one thousand simulated mosquitoes (red markers).  The mosquitoes have had 1.4 hours to bias themselves toward green areas of the image.  The robot (red circle) is shown at the upper left corner, preparing to start a bug-zapping run. } 
 \end{figure}
 
-            \begin{figure}
+%            \begin{figure}
+%\centering
+%\begin{overpic}[width=0.9\columnwidth]{SimulationSetupEnd.pdf}\end{overpic}
+%\caption{\label{fig:SimulationSetupEnd}
+%A 100$\times$100m image with the robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in black. } 
+%\end{figure}
+
+One hundred trials were performed with each coverage path and the results evaluated.  The boustrophedon successfully covered the entire field in every trial ($\mu$=100\%, $\sigma$=0\%) and covered a portion of the area a second time, while the random bounce covered only 67.9\% of the field ($\mu$=67.9\%, $\sigma$=1.0\%) with a considerable amount of overlap.  As a result, the boustrophedon killed significantly more mosquitoes ($\mu$=87.7\%, $\sigma$=1.1\%) than the random bounce ($\mu$=68.6\%, $\sigma$=2.7\%).  In fact, the smallest number of mosquitoes killed in 100 trials by the boustrophedon (84.1\%) was considerably larger than the largest number killed by the random bounce (75.1\%).  Fig.~\ref{fig:BoustrophedonPath} and Fig.~\ref{fig:RandomPath} show the paths for boustrophedon and random bounce trials, respectively.
+
+        \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SimulationSetupEnd.pdf}\end{overpic}
-\caption{\label{fig:SimulationSetupEnd}
-A 100$\times$100m image with the robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in black. } 
+\begin{overpic}[width=0.9\columnwidth]{BoustrophedonPath.pdf}\end{overpic}
+\caption{\label{fig:BoustrophedonPath}
+Boustrophedon robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red.} 
 \end{figure}
 
         \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{RandomPath.pdf}\end{overpic}
 \caption{\label{fig:RandomPath}
-Random bounce robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red. } 
+Random bounce robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red. } 
 \end{figure}
-
-        \begin{figure}
-\centering
-\begin{overpic}[width=0.9\columnwidth]{BoustrophedonPath.pdf}\end{overpic}
-\caption{\label{fig:BoustrophedonPath}
-Boustrophedon robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red.} 
-\end{figure}
-
-One hundred trials were performed with each coverage path and the results evaluated.  The boustrophedon successfully covered the entire field in every trial ($\mu$=100\%, $\sigma$=0\%) and exhaustively covered a portion of the area a second time, while the random bounce covered only 67.9\% of the field ($\mu$=67.9\%, $\sigma$=1.0\%) with an unknown amount of overlap.  As a result, the boustrophedon killed significantly more mosquitoes ($\mu$=87.7\%, $\sigma$=1.1\%) than the random bounce ($\mu$=68.6\%, $\sigma$=2.7\%).  In fact, the smallest number of mosquitoes killed in 100 trials by the boustrophedon (84.1\%) was considerably larger than the largest number killed by the random bounce (75.1\%).
 
         \begin{figure}
 \centering
@@ -262,7 +262,7 @@ Comparison of percentage of area covered and percentage of mosquitoes killed for
     
     \section{Experiment}
     
-Before mounting an instrumented screen to a drone, a proof of concept experiment used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker.  The circuits were powered with a 9 V battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the ten-minute circuit around a body of water followed in the first trial with the kill locations superimposed upon it.        
+Before mounting an instrumented screen to a drone, a proof of concept experiment used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker s shown in Fig. ~\ref{fig:BugZapperOnPole}.  The circuits were powered with a 9 V battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the ten-minute circuit around a body of water followed in the first trial with the kill locations superimposed upon it.        
 
             \begin{figure}
 \centering
@@ -290,7 +290,7 @@ To calibrate the system, three instrumented bug zappers were carried on a 2.5 m 
 Initial tests indicate that we can use our instrumentation to track the location of a mosquito-killing drone as it patrols a field and that we can detect and map mosquito kills.  Simulation has shown that covering the field thoroughly leads to a higher success rate when killing mosquitoes.  Because the mosquitoes move around, the robot will not kill all the mosquitoes in a single trial as some can fly into a previously covered area as the robot approaches them; however, the chances of killing the mosquitoes increase as the coverage increases.
 
 %Future work
-There are a number of refinements to the simulation algorithm that could be pursued in future work.  The mosquito biasing algorithm could be made less near-sighted and look at an array of pixels further from the current location of the mosquito.  Some modifications to the robot flight may force it to take turns more slowly or handle environmental disturbances.  A bias away from the robot may be added to the mosquito heading.  The model may be expanded to three dimensions.  An alternative search path that looks for mosquitoes randomly then exhaustively covers areas dense in mosquitoes may be compared to the existing algorithms.  These and many other considerations may be included to make a more realistic model for future work.  Full instrumentation of the multi-copter drone will allow much more extensive testing of the hardware design and will allow field tests of the simulation algorithms.
+There are a number of refinements to the simulation algorithm that could be pursued in future work.  Refinements are possible in both the mosquito-biasing algorithm and the robot flight simulation.  The model may be expanded to three dimensions.  Additional search paths may be compared to the existing algorithms.  These and other considerations will make a more realistic model for future work.  Full instrumentation of the multi-copter drone will allow more extensive testing of the hardware design and will allow field tests of the simulation algorithms.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
