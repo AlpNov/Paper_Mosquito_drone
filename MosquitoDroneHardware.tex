@@ -64,7 +64,7 @@ Initial work simulates a large number of mosquitoes within a rectangular area. E
 \centering
 \begin{overpic}[width=0.9\columnwidth]{DroneAndNet.jpg}\end{overpic}
 \caption{\label{fig:DroneAndNet}
-A multi-copter drone carrying a 60 cm square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, altitude, and weather information for each mosquito strike.} 
+A multi-copter drone carrying a $60~cm$ square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, altitude, and weather information for each mosquito strike.} 
 \end{figure}
 
   
@@ -85,16 +85,11 @@ As GPS technology has flourished and data processing has become cheaper and more
     Robotic coverage has a long history. The basic problem is one of designing a path for a robot that ensures the robot visits within $r$ distance of every point on the workspace.  For an overview see \cite{Choset2001}.  This work has been extended to use multiple coverage robots in a variety of ways, including using simple behaviors for the robots \cite{spears2006physics,Koenig2001}.
     The key difference in the mosquito coverage problem is that the mosquitoes can move, recontaminating an area previously cleared. We instead have a probability of coverage, as in~\cite{Das2011}.  This is closely related to the art gallery problem~\cite{lee1986computational} but with limited range of visibility.
     
-    
-  
   \section{Design}
-  
-  
-
   
    \subsection{Electronics}
    
-Fig. \ref{fig:Block_Diagram} shows a block diagram of the control circuit.  The system is powered by a 9 V Lithium Polymer battery applied directly to the controller. The 9 V supply is also regulated down to 3 V and applied to the voltage multiplier circuit that powers the mesh of the net, as shown in Fig. \ref{fig:CircuitDiagram}. One or more meshes may be used to enable localization of mosquito hits. The net output is a high voltage across the screen mesh.   A protection circuit steps this voltage down to a suitable level for monitoring by the ADC of the controller. The controller uses a GPS shield for monitoring the location and altitude as well as a real time clock to timestamp each data point collected from the system.     
+Fig. \ref{fig:Block_Diagram} shows a block diagram of the control circuit.  The system is powered by a $9~V$ Lithium Polymer battery applied directly to the controller. The $9~V$ supply is also regulated down to $3~V$ and applied to the voltage multiplier circuit that powers the mesh of the net, as shown in Fig. \ref{fig:CircuitDiagram}. One or more meshes may be used to enable localization of mosquito hits. The net output is a high voltage across the screen mesh.   A protection circuit steps this voltage down to a suitable level for monitoring by the ADC of the controller. The controller uses a GPS shield for monitoring the location and altitude as well as a real time clock to timestamp each data point collected from the system.     
 
                 \begin{figure}
 \centering
@@ -106,7 +101,6 @@ Block diagram of microcontroller and bug zapper.
   
 A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig:CircuitDiagram}.  The bug zapper (shown on the left) uses a BJT (Q1) and center tap transformer to invert a DC input voltage to AC and apply it to the primary winding of a step-up transformer  (1:1000). The voltage at the secondary winding of the transformer is boosted and rectified to a high voltage output capacitor that is applied to the inner layer of the mesh.  The probe (shown on the right) uses a voltage divider to lower the voltage so that it can be monitored by the microcontroller.  A Zener diode (D4) placed in parallel protects the ADC input.
   
-  
                 \begin{figure}
 \centering
 \begin{overpic}[width=1.0\columnwidth]{CircuitDiagram.pdf}\end{overpic}
@@ -115,30 +109,24 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
   } 
 \end{figure}
   
+  The screen is constructed with two layers of wire mesh with $3.6~mm$ openings with a layer of wire mesh with $0.74~mm$ openings suspended between them.  A balsa wood frame insulates the outer meshes from the inner mesh.  This mesh arrangement weighs $1633~g/m^2$.  The payload that the drone can reliably carry is used to select a size that satisfies the requirements, $60~cm$ for this multi-coptor drone.
 
-  
-  The screen is constructed with two layers of wire mesh with 3.6 mm openings with a layer of wire mesh with 0.74 mm openings suspended between them.  A balsa wood frame insulates the outer meshes from the inner mesh.  This mesh arrangement weighs $1633 ~g/m^2$.  The payload that the drone can reliably carry is used to select a size that satisfies the requirements, $60 cm$ for this multi-coptor drone.
-
-
-  
   \subsection{Energy Budget}
   
-  Tests with an oscilloscope show that in the steady state, a square $60 cm$ screen and electronics have a power consumption of $17.3 W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  The recovery time is approximately $80 \mu s$.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The current recovery can be modeled with an exponential fit.
+  Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $17.3~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  The recovery time is approximately $80~ \mu s$.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The current recovery can be modeled with an exponential fit.
  \begin{align} \label{eq:BugZapFit}
-i=-69.1e^{-2.7\times10^4 t} A
+i=-69.1e^{-2.7\times10^4 t} ~A
 \end{align}
 
-The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4/s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $3.4\times10^-4J$ for each zap.
+The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $4.2~mJ$ for each zap.  This indicates that charging the screen is the most significant use of energy for the system; killing ten thousand mosquitoes is equivalent to only $2.4~s$ of screen-charging time.
   
                 \begin{figure}
 \centering
 \begin{overpic}[width=1.0\columnwidth]{BugZapTrace.pdf}\end{overpic}
 \caption{\label{fig:BugZapTrace}
-  Current trace as an \textit{Aedes triseriatus} mosquito contacts the bug-zapping screen.  It causes a brief short that recovers in $80 \mu s$.
+  Current, voltage, and power traces as an \textit{Aedes triseriatus} mosquito contacts the bug-zapping screen.  It causes a brief short that recovers in $80~ \mu s$.
   } 
 \end{figure}
-  
-  
   
   \subsection{Location of screen}
  The drone carries the bug-zapping screen, which is suspended by cables at each corner.  The location of this screen determines the efficacy of the mosquito drone, measured in mosquitoes eliminated per second of flight time.
@@ -157,7 +145,7 @@ The drone suspends a square bug-zapping screen beneath it.  Propwash pushes inco
 \end{figure}
 
 
-We assume that air above the drone is quiescent, so the change in velocity of the air is $v_d$ m/s.
+We assume that air above the drone is quiescent, so the change in velocity of the air is $v_d~ m/s$.
  \begin{align} \label{eq:forceBalanceForDrone}
  \text{Force gravity} & = \left(\text{mass flow}\right) \cdot \text{air velocity} \nonumber \\
  m_{d} \cdot  g &= (v_d \cdot  \rho_a \cdot  d_d^2 ) \cdot  v_d 
@@ -168,9 +156,8 @@ Then the required propwash, the velocity of air beneath the drone, for hovering 
  \begin{align} \label{eq:dronePropwash}
 v_d = \sqrt{ \frac{ m_d g}{\rho_a d_d^2} }
 \end{align}
-The drone testing site in Houston, Texas is 15 m above sea level. At sea level the density of air $\rho_a$ is 1.225 kg/m$^3$.
-The 3DR Solo drone weighs 2 kg with diameter 0.71 m~\cite{Sollenberger2015}. The acceleration due to gravity is 9.871 $\frac{m}{s^2}$.  Substituting these values into \eqref{eq:dronePropwash} gives $v_d = 5.6$ m/s.
-
+The drone testing site in Houston, Texas is 15 m above sea level. At sea level the density of air $\rho_a$ is $1.225~ kg/m^3$.
+The 3DR Solo drone weighs $2~ kg$ with a diameter of $0.71~ m$~\cite{Sollenberger2015}. The acceleration due to gravity is $9.871~ m/s^2$.  Substituting these values into \eqref{eq:dronePropwash} gives $v_d = 5.6~ m/s$.
 
 Due to propwash, a mosquito in level flight will fall relative to the drone at a rate of $v_d/v_f$.  As shown in Fig.~\ref{fig:DroneConfigs}, we can extend lines with slope $v_d/v_f$ from the screen's trailing edge to $h_{top}$ and from the leading edge to $h_{bottom}$
  \begin{align} \label{eq:ClearedCrossSection}
@@ -194,17 +181,16 @@ The volume cleared by a drone is a function of screen angle $\theta$ and forward
  
 Changing the flying height $h_d$ of the drone will target different mosquito populations   because mosquitoes are not distributed uniformly vertically.  Gillies and Wilkes have demonstrated that different species of mosquitoes prefer to fly at different heights \cite{gillies1976vertical}.
   
-  
     \section{Simulation}
     
-   Before launching a fully-instrumented drone, this concept was simulated using \textsc{Matlab} code.  One thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  A satellite image of Houston was used as the simulation environment, and each mosquito is programmed to move according to a biased random walk at a speed up to 0.4 m/s and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes' preference for vegetative areas.  
+   Before launching a fully-instrumented drone, this concept was simulated using \textsc{Matlab} code.  One thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  A satellite image of Houston was used as the simulation environment, and each mosquito is programmed to move according to a biased random walk at a speed up to $0.4~ m/s$ and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes' preference for vegetative areas.  
    The simulation is initialized by a mosquito distribution generated by running the mosquito movement routine  five thousand times, simulating 1.4 hours of flying time, before the robot begins to search (Fig.~\ref{fig:SimulationSetupTime0}).  Because mosquitoes do not care about boundaries, a toroidal mapping is used to keep them in the workspace.  
     
-Two different routines handle the robot's path.  The first uses a random bounce algorithm.  The robot begins in the center of the workspace and moves with a heading that varies randomly up to $\pm$0.2 rad from its previous heading and bounces off the perimeter of the workspace with a random heading equally biased between 0 and $2\pi$, excluding headings leading outside the workspace.  The velocity is set at a prescribed speed.
+Two different routines handle the robot's path.  The first uses a random bounce algorithm.  The robot begins in the center of the workspace and moves with a heading that varies randomly up to $\pm 0.2~ rad$ from its previous heading and bounces off the perimeter of the workspace with a random heading equally biased between 0 and $2\pi$, excluding headings leading outside the workspace.  The velocity is set at a prescribed speed.
 
 The second algorithm uses a boustrophedon path \cite{Choset2001}.  The robot begins in one corner of the workspace and methodically progresses back and forth, advancing one screen width at each turn.  If it covers the entire field in the allotted time, it begins covering the field again.
 
-To keep the routines comparable, the robots use the same speed and same number of iterations.  These simulations used 12 m/s and fifteen minutes of flying time.  They also used the same image for biasing the mosquito flight.
+To keep the routines comparable, the robots use the same speed and same number of iterations.  These simulations used $12~ m/s$ and fifteen minutes of flying time.  They also used the same image for biasing the mosquito flight.
 
 For the main body of the simulation, a loop runs a series of iterations in which each mosquito moves one step and the robot moves one step.  In that step, the path traced by the bug-zapping screen is calculated, and any mosquitoes in that path are considered to have been killed.
 
@@ -212,7 +198,7 @@ For the main body of the simulation, a loop runs a series of iterations in which
 \centering
 \begin{overpic}[width=0.9\columnwidth]{SimulationSetupTime0.pdf}\end{overpic}
 \caption{\label{fig:SimulationSetupTime0}
-A 100$\times$100m image with one thousand simulated mosquitoes (red markers).  The mosquitoes have had 1.4 hours to bias themselves toward green areas of the image.  The robot (red circle) is shown at the upper left corner, preparing to start a bug-zapping run. } 
+A $100~m\times100~m$ image with one thousand simulated mosquitoes (red markers).  The mosquitoes have had 1.4 hours to bias themselves toward green areas of the image.  The robot (red circle) is shown at the upper left corner, preparing to start a bug-zapping run. } 
 \end{figure}
 
 %            \begin{figure}
@@ -222,20 +208,20 @@ A 100$\times$100m image with one thousand simulated mosquitoes (red markers).  T
 %A 100$\times$100m image with the robot (red circle) and the area swept out by the bug-zapping net in a time step (red rectangle) shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in black. } 
 %\end{figure}
 
-One hundred trials were performed with each coverage path and the results evaluated.  The boustrophedon successfully covered the entire field in every trial ($\mu$=100\%, $\sigma$=0\%) and covered a portion of the area a second time, while the random bounce covered only 67.9\% of the field ($\mu$=67.9\%, $\sigma$=1.0\%) with a considerable amount of overlap.  As a result, the boustrophedon killed significantly more mosquitoes ($\mu$=87.7\%, $\sigma$=1.1\%) than the random bounce ($\mu$=68.6\%, $\sigma$=2.7\%).  In fact, the smallest number of mosquitoes killed in 100 trials by the boustrophedon (84.1\%) was considerably larger than the largest number killed by the random bounce (75.1\%).  Fig.~\ref{fig:BoustrophedonPath} and Fig.~\ref{fig:RandomPath} show the paths for boustrophedon and random bounce trials, respectively.
+One hundred trials were performed with each coverage path and the results evaluated.  The boustrophedon successfully covered the entire field in every trial ($\mu=100\%$, $\sigma=0\%$) and covered a portion of the area a second time, while the random bounce covered only 67.9\% of the field ($\mu=67.9\%$, $\sigma=1.0\%$) with a considerable amount of overlap.  As a result, the boustrophedon killed significantly more mosquitoes ($\mu=87.7\%$, $\sigma=1.1\%$) than the random bounce ($\mu=68.6\%$, $\sigma=2.7\%$).  In fact, the smallest number of mosquitoes killed in 100 trials by the boustrophedon (84.1\%) was considerably larger than the largest number killed by the random bounce (75.1\%).  Fig.~\ref{fig:BoustrophedonPath} and Fig.~\ref{fig:RandomPath} show the paths for boustrophedon and random bounce trials, respectively.
 
         \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{BoustrophedonPath.pdf}\end{overpic}
 \caption{\label{fig:BoustrophedonPath}
-Boustrophedon robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red.} 
+Boustrophedon robot path (yellow lines) overlaid upon a $100~m\times100~m$ image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red.} 
 \end{figure}
 
         \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{RandomPath.pdf}\end{overpic}
 \caption{\label{fig:RandomPath}
-Random bounce robot path (yellow lines) overlaid upon a 100$\times$100m image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red. } 
+Random bounce robot path (yellow lines) overlaid upon a $100~m\times100~m$ image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red. } 
 \end{figure}
 
         \begin{figure}
@@ -244,10 +230,6 @@ Random bounce robot path (yellow lines) overlaid upon a 100$\times$100m image.  
 \caption{\label{fig:SimulationResults}
 Comparison of percentage of area covered and percentage of mosquitoes killed for the boustrophedon and random bounce coverage patterns.  Plots show aggregate results of 100 trials, using the workspace shown in Fig.~\ref{fig:SimulationSetupTime0}.}
 \end{figure}
-
-
-
-
 
 %Data
 %The files used for this run of simulations are as follows:
@@ -262,13 +244,13 @@ Comparison of percentage of area covered and percentage of mosquitoes killed for
     
     \section{Experiment}
     
-Before mounting an instrumented screen to a drone, a proof of concept experiment used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker s shown in Fig. ~\ref{fig:BugZapperOnPole}.  The circuits were powered with a 9 V battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the ten-minute circuit around a body of water followed in the first trial with the kill locations superimposed upon it.        
+Before mounting an instrumented screen to a drone, a proof of concept experiment used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker as shown in Fig. ~\ref{fig:BugZapperOnPole}.  The circuits were powered with a $9~ V$ battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the ten-minute circuit around a body of water followed in the first trial with the kill locations superimposed upon it.        
 
             \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{BugZapperOnPole.jpg}\end{overpic}
 \caption{\label{fig:BugZapperOnPole}
-To calibrate the system, three instrumented bug zappers were carried on a 2.5 m pole.} 
+To calibrate the system, three instrumented bug zappers were carried on a $2.5~ m$ pole.} 
 \end{figure}
 
 %        \begin{figure}
@@ -282,7 +264,7 @@ To calibrate the system, three instrumented bug zappers were carried on a 2.5 m 
 \centering
 \begin{overpic}[width=0.9\columnwidth]{GPSpathAndKill.jpg}\end{overpic}
 \caption{\label{fig:GPSpathAndKill}
-    Map overlaid with GPS path (red line) and kill locations (connected by blue line).  Visualization using~\cite{Schneider2003}.} 
+    Map overlaid with GPS path (red line) and kill locations (blue circles) from initial trial in March 2016.  Visualization using~\cite{Schneider2003}.} 
 \end{figure}
 
 \section{Conclusion and Future Work}
