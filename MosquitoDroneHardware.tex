@@ -113,12 +113,12 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
 
   \subsection{Energy Budget}
   
-  Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $17.3~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  The recovery time is approximately $80~ \mu s$.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The current recovery can be modeled with an exponential fit.
+  Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  The recovery time is approximately $80~ \mu s$.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The current recovery can be modeled with an exponential fit.
  \begin{align} \label{eq:BugZapFit}
-i=-69.1e^{-2.7\times10^4 t} ~A
+i=69.1e^{-2.7\times10^4 t} ~A
 \end{align}
 
-The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $4.2~mJ$ for each zap.  This indicates that charging the screen is the most significant use of energy for the system; killing ten thousand mosquitoes is equivalent to only $2.4~s$ of screen-charging time.
+The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $4.2~mJ$ for each zap.  This indicates that charging the screen is the most significant use of energy for the system; killing one thousand mosquitoes is equivalent to only $1.2~s$ of screen-charging time.
   
                 \begin{figure}
 \centering
@@ -244,7 +244,7 @@ Comparison of percentage of area covered and percentage of mosquitoes killed for
     
     \section{Experiment}
     
-Before mounting an instrumented screen to a drone, a proof of concept experiment used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker as shown in Fig. ~\ref{fig:BugZapperOnPole}.  The circuits were powered with a $9~ V$ battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the ten-minute circuit around a body of water followed in the first trial with the kill locations superimposed upon it.        
+Before mounting an instrumented screen to a drone, proof of concept experiments used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker as shown in Fig. ~\ref{fig:BugZapperOnPole}.  The circuits were powered with a $9~ V$ battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the circuit around a pair of buildings followed in an early trial with the kill locations superimposed upon it.        
 
             \begin{figure}
 \centering
@@ -264,7 +264,7 @@ To calibrate the system, three instrumented bug zappers were carried on a $2.5~ 
 \centering
 \begin{overpic}[width=0.9\columnwidth]{GPSpathAndKill.jpg}\end{overpic}
 \caption{\label{fig:GPSpathAndKill}
-    Map overlaid with GPS path (red line) and kill locations (blue circles) from initial trial in March 2016.  Visualization using~\cite{Schneider2003}.} 
+    Satellite image overlaid with GPS path (red line) and kill locations (yellow circles) from proof of concept trial.  Visualization using~\cite{Schneider2003}.} 
 \end{figure}
 
 \section{Conclusion and Future Work}
