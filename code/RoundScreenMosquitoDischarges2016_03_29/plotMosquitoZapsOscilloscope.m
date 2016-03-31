@@ -42,8 +42,8 @@ loadAndPlotFile('scope_15.csv', 'scope_64.csv','k');
         secondV = dataArray{:, 1};
         screenVoltage2 = dataArray{:, 2}*1000;
         batVoltage = dataArray{:, 3}; 
-        ts = -.1;
-        te = 0.6;
+        ts = -.05;
+        te = 0.3;
         
         % load data sets
         smfac = 15; %smoothing factor
