@@ -118,18 +118,19 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
 
   \subsection{Energy Budget}
   
-  Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  The recovery time is approximately $80~ \mu s$.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The current recovery can be modeled with an exponential fit.
+  Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  Fig.~\ref{fig:BugZapTrace} shows the time sequences for battery and screen voltages, current, and power during five mosquito zaps.  The initial current spike recovery can be modeled with an exponential fit.
+  
  \begin{align} \label{eq:BugZapFit}
 i=69.1e^{-2.7\times10^4 t} ~A
 \end{align}
 
-The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $4.2~mJ$ for each zap.  This indicates that charging the screen is the most significant use of energy for the system; killing one thousand mosquitoes is equivalent to only $1.2~s$ of screen-charging time.
+The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ for the short and a recovery time of $80~\mu s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $4.2~mJ$ for each zap.  Recharging the screen requires more power and is represented in the latter part of the curves.  The overall recovery time is about $160~ms$.  Most of the energy is consumed charging and maintaining the charge on the screen rather than in zapping the mosquitoes.
   
                 \begin{figure}
 \centering
-\begin{overpic}[width=1.0\columnwidth]{BugZapTrace.pdf}\end{overpic}
+\begin{overpic}[width=1.0\columnwidth]{OscilloscopeTrace.pdf}\end{overpic}
 \caption{\label{fig:BugZapTrace}
-  Current, voltage, and power traces as an \textit{Aedes triseriatus} mosquito contacts the bug-zapping screen.  It causes a brief short that recovers in $80~ \mu s$.
+  Current, voltage, and power traces for five \textit{Culex quinquefasciatus} mosquitoes as each contacts the bug-zapping screen.  Contact causes a brief short that recovers in $160~ms$.
   } 
 \end{figure}
   
