@@ -58,14 +58,14 @@ This paper examines design considerations, presents a working prototype system o
 
 \section{Introduction}
 
-Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global}. Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitos have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control offices can use this information to analyze the insects' activities. The device can be mounted on a remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
 
+Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global}. Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitos have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control offices can use this information to analyze the insects' activities. The device can be mounted on a remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
 
   \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{DroneAndNet.jpg}\end{overpic}
 \caption{\label{fig:DroneAndNet}
-A multi-copter drone carrying a $60~cm$ square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, altitude, and weather information for each mosquito strike.  Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-yTf-E8}.  \cite{DroneVideo} } 
+A multi-copter drone carrying a $60~cm$ square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, altitude, and weather information for each mosquito strike.  Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-yTf-E8}  \cite{DroneVideo}. }
 \end{figure}
 
 
@@ -78,7 +78,7 @@ Initial work simulates a large number of mosquitoes within a rectangular area. E
   
   \subsection{Mosquito Control Solutions}
   
-	Mosquito control has a long history of efforts associated both with monitoring mosquito populations ~\cite{dennett2007associations} and with eliminating mosquitoes.  The work involves both draining potential breeding grounds and destroying living mosquitoes \cite{peter2005tick}.  An array of insecticidal compounds has been used with different application methods, concentrations, and quantities, including both larvicides and compounds directed at adult mosquitoes \cite{larvicides2005guidelines}.
+	Mosquito control has a long history of efforts associated both with monitoring mosquito populations \cite{dennett2007associations} and with eliminating mosquitoes.  The work involves both draining potential breeding grounds and destroying living mosquitoes \cite{peter2005tick}.  An array of insecticidal compounds has been used with different application methods, concentrations, and quantities, including both larvicides and compounds directed at adult mosquitoes \cite{larvicides2005guidelines}.
 	
 	Various traps have been designed to capture and/or kill mosquitoes with increasing sophistication in imitating human bait as designers strive to achieve a trap that can rival the attraction of a live human \cite{maliti2015development}.  In recent history, methods have also included genetically modifying mosquitoes so that they either cannot reproduce effectively or cannot transmit diseases successfully \cite{marshall2009malaria}, and with the recent genomic mapping of mosquito species, new ideas for more targeted work have been formulated \cite{hill2005arthropod}.
  
@@ -118,18 +118,19 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
 
   \subsection{Energy Budget}
   
-  Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  The recovery time is approximately $80~ \mu s$.  Fig.~\ref{fig:BugZapTrace} shows the time sequence.  The current recovery can be modeled with an exponential fit.
+  Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  Fig.~\ref{fig:BugZapTrace} shows the time sequences for battery and screen voltages, current, and power during five mosquito zaps.  The initial current spike recovery can be modeled with an exponential fit.
+  
  \begin{align} \label{eq:BugZapFit}
 i=69.1e^{-2.7\times10^4 t} ~A
 \end{align}
 
-The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $4.2~mJ$ for each zap.  This indicates that charging the screen is the most significant use of energy for the system; killing one thousand mosquitoes is equivalent to only $1.2~s$ of screen-charging time.
+The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ for the short and a recovery time of $80~\mu s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $4.2~mJ$ for each zap.  Recharging the screen requires more power and is represented in the latter part of the curves.  The overall recovery time is about $160~ms$.  Most of the energy is consumed charging and maintaining the charge on the screen rather than in zapping the mosquitoes.
   
                 \begin{figure}
 \centering
-\begin{overpic}[width=1.0\columnwidth]{BugZapTrace.pdf}\end{overpic}
+\begin{overpic}[width=1.0\columnwidth]{OscilloscopeTrace.pdf}\end{overpic}
 \caption{\label{fig:BugZapTrace}
-  Current, voltage, and power traces as an \textit{Aedes triseriatus} mosquito contacts the bug-zapping screen.  It causes a brief short that recovers in $80~ \mu s$.
+  Current, voltage, and power traces for five \textit{Culex quinquefasciatus} mosquitoes as each contacts the bug-zapping screen.  Contact causes a brief short that recovers in $160~ms$.
   } 
 \end{figure}
   
@@ -298,7 +299,11 @@ There are a number of refinements to the simulation algorithm that could be purs
 \section*{ACKNOWLEDGMENT}
 The authors acknowledge the helpful advice and feedback from Martin Reyna Nava, MS, Medical Entomologist and Technical Operations Manager and Mustapha Debboun, Ph.D, BCE, Director Mosquito Control Division, of the Harris County Public Health \& Environmental Services, Mosquito Control Division.
 
-
+%RULES: http://www.nsf.gov/pubs/policydocs/pappguide/nsf16001/aag_6.jsp
+This material is based upon work supported by the National Science Foundation under Grant No.\ 
+\href{http://nsf.gov/awardsearch/showAward?AWD_ID=1553063}{ IIS-1553063}.
+%Optional disclaimer (mandatory for non-scientific)
+Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
