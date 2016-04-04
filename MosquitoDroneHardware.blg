@@ -1,8 +1,56 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: MosquitoDroneHardware.aux
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: MosquitoDroneHardware.aux
 The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./bib/mosquitorefs.bib
--- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
+You've used 23 entries,
+            4039 wiz_defined-function locations,
+            963 strings with 12574 characters,
+and the built_in function-call counts, 17375 in all, are:
+= -- 1425
+> -- 453
+< -- 130
++ -- 237
+- -- 88
+* -- 848
+:= -- 2665
+add.period$ -- 50
+call.type$ -- 23
+change.case$ -- 23
+chr.to.int$ -- 258
+cite$ -- 23
+duplicate$ -- 1280
+empty$ -- 1355
+format.name$ -- 105
+if$ -- 3976
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 243
+newline$ -- 102
+num.names$ -- 23
+pop$ -- 546
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1344
+stack$ -- 0
+substring$ -- 658
+swap$ -- 1058
+text.length$ -- 44
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 23
+warning$ -- 0
+while$ -- 78
+width$ -- 25
+write$ -- 261
