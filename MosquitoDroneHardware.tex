@@ -58,7 +58,6 @@ This paper examines design considerations, presents a working prototype system o
 
 \section{Introduction}
 
-
 Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global}. Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitos have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control offices can use this information to analyze the insects' activities. The device can be mounted on a remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
 
 
@@ -66,8 +65,9 @@ Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global
 \centering
 \begin{overpic}[width=0.9\columnwidth]{DroneAndNet.jpg}\end{overpic}
 \caption{\label{fig:DroneAndNet}
-A multi-copter drone carrying a $60~cm$ square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, altitude, and weather information for each mosquito strike.  Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-yTf-E8}~\cite{DroneVideo}. } 
+A multi-copter drone carrying a $60~cm$ square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, altitude, and weather information for each mosquito strike.  Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-yTf-E8}.  \cite{DroneVideo} } 
 \end{figure}
+
 
   
   
@@ -297,13 +297,6 @@ There are a number of refinements to the simulation algorithm that could be purs
 
 \section*{ACKNOWLEDGMENT}
 The authors acknowledge the helpful advice and feedback from Martin Reyna Nava, MS, Medical Entomologist and Technical Operations Manager and Mustapha Debboun, Ph.D, BCE, Director Mosquito Control Division, of the Harris County Public Health \& Environmental Services, Mosquito Control Division.
-
-%RULES: http://www.nsf.gov/pubs/policydocs/pappguide/nsf16001/aag_6.jsp
-This material is based upon work supported by the National Science Foundation under Grant No.\ 
-\href{http://nsf.gov/awardsearch/showAward?AWD_ID=1553063}{ IIS-1553063}.
-%Optional disclaimer (mandatory for non-scientific)
-Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
-
 
 
 

@@ -74,16 +74,15 @@ loadAndPlotFile('scope_15.csv', 'scope_64.csv','k');
         plot(secondC,smooth(batVoltage.*batCurrent,smfac),c)
         hold off
         xlabel('Time (s)')
-        ylabel('Circuit power (W)')
+        ylabel('Circuit power (J)')
         axis([ts,te,0.5,1.127])
         
         figure(2)
         hold on
         plot(secondC,cumsum(smooth(batVoltage.*batCurrent,smfac)),c)
         xlabel('Time (s)')
-        ylabel('Circuit energy (J)')
+        ylabel('Circuit energy (W)')
         hold off
-        legend('1','2','3','4','5')
     end
 
 end
