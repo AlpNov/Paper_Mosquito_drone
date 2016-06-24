@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{DroneVideo}
+\BIBentryALTinterwordspacing
+A.~Nguyen. (2016, Mar.) Uav with instrumented bug zapper. [Online]. Available:
+  \url{https://youtu.be/1gvJ-yTf-E8}
+\BIBentrySTDinterwordspacing
+
 \bibitem{murray2012global}
 C.~J. Murray, L.~C. Rosenfeld, S.~S. Lim, K.~G. Andrews, K.~J. Foreman,
   D.~Haring, N.~Fullman, M.~Naghavi, R.~Lozano, and A.~D. Lopez, ``Global

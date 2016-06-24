@@ -1,36 +1,19 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  5 MAR 2016 11:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.3.2)  4 APR 2016 15:30
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
-**MosquitoDroneHardware.tex
-(./MosquitoDroneHardware.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
-ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
-rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
-kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
- polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
-lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
-welsh, loaded.
-(./ieeeconf.cls
-
-LaTeX Warning: You have requested document class `ieeeconf',
-               but the document class provides `cssconf'.
-
-Document Class: cssconf 2004/1/15 revision V1.6b by Pradeep Misra
+**./MosquitoDroneHardware.tex
+(MosquitoDroneHardware.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9n> and hyphenation patterns for 69 languages loaded.
+(ieeeconf.cls
+Document Class: ieeeconf 2004/1/15 revision V1.6b by Pradeep Misra
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
 \@IEEEtrantmpcountA=\count79
 \@IEEEtrantmpcountB=\count80
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 794.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 792.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \@IEEEnormalsizefontbaselineskip=\skip41
@@ -39,54 +22,54 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \normalsizebaselineskip=\skip42
 \normaljot=\skip43
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <16> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1111.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1111.
 
 \IEEEilabelindentA=\dimen104
 \IEEEilabelindentB=\dimen105
@@ -114,35 +97,35 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 )
 ** ATTENTION: Overriding command lockouts (line 9).
 ** ATTENTION: Overriding IEEE standard margins (line 12).
-(/usr/local/texlive/2012/texmf-dist/tex/latex/overpic/overpic.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\overpic\overpic.sty"
 Package: overpic 2010/09/13 v0.53  Overwriting graphics
 
 Package: overpic v0.53 <2010/09/13> (RN)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
@@ -150,7 +133,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/eepic/epic.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\eepic\epic.sty"
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 \@@multicnt=\count92
 \d@lta=\count93
@@ -170,41 +153,41 @@ Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
 \@datafile=\read1
 )
 overpic: relative positioning in percent
-) (/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip47
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen121
 ))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen122
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count100
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count101
 \leftroot@=\count102
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count103
 \DOTSCASE@=\count104
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box28
 \strutbox@=\box29
 \big@size=\dimen123
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count105
 \c@MaxMatrixCols=\count106
 \dotsspace@=\muskip10
@@ -225,22 +208,22 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \multlinegap=\skip48
 \multlinetaggap=\skip49
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/xcolor/xcolor.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/colortbl/colortbl.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/tools/array.sty
-Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen130
 \extrarowheight=\dimen131
 \NC@list=\toks21
@@ -261,7 +244,122 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(./MosquitoDroneHardware.aux)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen132
+\Hy@linkcounter=\count113
+\Hy@pagecounter=\count114
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count115
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count116
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen133
+\Fld@menulength=\count117
+\Field@Width=\dimen134
+\Fld@charsize=\dimen135
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count118
+\c@Item=\count119
+\c@Hfootnote=\count120
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count121
+\c@bookmark@seq@number=\count122
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip53
+)
+(MosquitoDroneHardware.aux)
 \openout1 = `MosquitoDroneHardware.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -276,196 +374,141 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
-(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
-\scratchdimen=\dimen132
+\scratchcounter=\count123
+\scratchdimen=\dimen136
 \scratchbox=\box30
-\nofMPsegments=\count114
-\nofMParguments=\count115
+\nofMPsegments=\count124
+\nofMParguments=\count125
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count116
-\MPscratchDim=\dimen133
-\MPnumerator=\count117
-\makeMPintoPDFobject=\count118
+\MPscratchCnt=\count126
+\MPscratchDim=\dimen137
+\MPnumerator=\count127
+\makeMPintoPDFobject=\count128
 \everyMPtoPDFconversion=\toks24
-) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring OFF on input line 41.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+\c@section@level=\count129
 )
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+(MosquitoDroneHardware.out) (MosquitoDroneHardware.out)
+\@outlinefile=\write3
+\openout3 = `MosquitoDroneHardware.out'.
 
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 44.
 
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 45.
-
-(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<./pictures/DroneAndNet.pdf, id=1, 722.7pt x 542.025pt>
-File: ./pictures/DroneAndNet.pdf Graphic file (type pdf)
+<./pictures/DroneAndNet.jpg, id=55, 988.69376pt x 870.25125pt>
+File: ./pictures/DroneAndNet.jpg Graphic file (type jpg)
 
-<use ./pictures/DroneAndNet.pdf>
-Package pdftex.def Info: ./pictures/DroneAndNet.pdf used on input line 68.
-(pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
-
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 71--71
- [] 
- []
-
-[1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+<use ./pictures/DroneAndNet.jpg>
+Package pdftex.def Info: ./pictures/DroneAndNet.jpg used on input line 66.
+(pdftex.def)             Requested size: 221.14479pt x 194.6428pt.
+ [1{C:/Users/Mary/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
- <./pictures/DroneAndNet.pdf>]
-<./pictures/Block_Diagram_RevC.pdf, id=94, 480.79625pt x 207.77625pt>
+ <./pictures/DroneAndNet.jpg>]
+<./pictures/Block_Diagram_RevC.pdf, id=73, 480.79625pt x 207.77625pt>
 File: ./pictures/Block_Diagram_RevC.pdf Graphic file (type pdf)
 
 <use ./pictures/Block_Diagram_RevC.pdf>
 Package pdftex.def Info: ./pictures/Block_Diagram_RevC.pdf used on input line 1
-05.
+01.
 (pdftex.def)             Requested size: 221.14479pt x 95.56871pt.
 
-<./pictures/CircuitDiagram.pdf, id=95, 722.7pt x 289.08pt>
+<./pictures/CircuitDiagram.pdf, id=75, 722.7pt x 289.08pt>
 File: ./pictures/CircuitDiagram.pdf Graphic file (type pdf)
 
 <use ./pictures/CircuitDiagram.pdf>
-Package pdftex.def Info: ./pictures/CircuitDiagram.pdf used on input line 116.
+Package pdftex.def Info: ./pictures/CircuitDiagram.pdf used on input line 111.
 (pdftex.def)             Requested size: 245.71811pt x 98.28589pt.
 
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 132--132
-[] 
- []
+<./pictures/OscilloscopeTrace.pdf, id=78, 399.90735pt x 590.65297pt>
+File: ./pictures/OscilloscopeTrace.pdf Graphic file (type pdf)
 
-<./pictures/FruitFlyTrace.jpg, id=96, 602.25pt x 378.66469pt>
-File: ./pictures/FruitFlyTrace.jpg Graphic file (type jpg)
-
-<use ./pictures/FruitFlyTrace.jpg>
-Package pdftex.def Info: ./pictures/FruitFlyTrace.jpg used on input line 136.
-(pdftex.def)             Requested size: 245.71811pt x 154.49661pt.
-
-<./pictures/DroneConfigs.pdf, id=97, 722.7pt x 542.025pt>
+<use ./pictures/OscilloscopeTrace.pdf>
+Package pdftex.def Info: ./pictures/OscilloscopeTrace.pdf used on input line 13
+1.
+(pdftex.def)             Requested size: 245.71811pt x 362.91145pt.
+ [2 <./pictures/Block_Diagram_RevC.pdf> <./pictures/CircuitDiagram.pdf>]
+<./pictures/DroneConfigs.pdf, id=125, 722.7pt x 542.025pt>
 File: ./pictures/DroneConfigs.pdf Graphic file (type pdf)
 
 <use ./pictures/DroneConfigs.pdf>
-Package pdftex.def Info: ./pictures/DroneConfigs.pdf used on input line 151.
+Package pdftex.def Info: ./pictures/DroneConfigs.pdf used on input line 148.
 (pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
- [2 <./pictures/Block_Diagram_RevC.pdf> <./pictures/CircuitDiagram.pdf> <./pict
-ures/FruitFlyTrace.jpg>]
-<./pictures/AngleVsSpeed.pdf, id=133, 722.7pt x 542.025pt>
+
+<./pictures/AngleVsSpeed.pdf, id=128, 722.7pt x 542.025pt>
 File: ./pictures/AngleVsSpeed.pdf Graphic file (type pdf)
 
 <use ./pictures/AngleVsSpeed.pdf>
-Package pdftex.def Info: ./pictures/AngleVsSpeed.pdf used on input line 191.
+Package pdftex.def Info: ./pictures/AngleVsSpeed.pdf used on input line 183.
 (pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
- [3 <./pictures/DroneConfigs.pdf> <./pictures/AngleVsSpeed.pdf>]
-<./pictures/SimulationSetupTime0.pdf, id=677, 289.08pt x 289.08pt>
+ [3 <./pictures/OscilloscopeTrace.pdf> <./pictures/DroneConfigs.pdf>]
+<./pictures/SimulationSetupTime0.pdf, id=299, 289.08pt x 289.08pt>
 File: ./pictures/SimulationSetupTime0.pdf Graphic file (type pdf)
 
 <use ./pictures/SimulationSetupTime0.pdf>
 Package pdftex.def Info: ./pictures/SimulationSetupTime0.pdf used on input line
- 214.
+ 205.
 (pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
 
-<./pictures/SimulationSetupEnd.pdf, id=678, 289.08pt x 289.08pt>
-File: ./pictures/SimulationSetupEnd.pdf Graphic file (type pdf)
+<./pictures/BoustrophedonPath.pdf, id=302, 289.08pt x 289.08pt>
+File: ./pictures/BoustrophedonPath.pdf Graphic file (type pdf)
 
-<use ./pictures/SimulationSetupEnd.pdf>
-Package pdftex.def Info: ./pictures/SimulationSetupEnd.pdf used on input line 2
-21.
+<use ./pictures/BoustrophedonPath.pdf>
+Package pdftex.def Info: ./pictures/BoustrophedonPath.pdf used on input line 22
+1.
 (pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
 
-<./pictures/RandomPath.pdf, id=679, 289.08pt x 289.08pt>
+<./pictures/RandomPath.pdf, id=303, 289.08pt x 289.08pt>
 File: ./pictures/RandomPath.pdf Graphic file (type pdf)
 
 <use ./pictures/RandomPath.pdf>
 Package pdftex.def Info: ./pictures/RandomPath.pdf used on input line 228.
 (pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
 
-<./pictures/BoustrophedonPath.pdf, id=680, 289.08pt x 289.08pt>
-File: ./pictures/BoustrophedonPath.pdf Graphic file (type pdf)
-
-<use ./pictures/BoustrophedonPath.pdf>
-Package pdftex.def Info: ./pictures/BoustrophedonPath.pdf used on input line 23
-5.
-(pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
-
-<./pictures/SimulationResults.jpg, id=681, 353.06906pt x 303.38344pt>
+<./pictures/SimulationResults.jpg, id=304, 353.06906pt x 303.38344pt>
 File: ./pictures/SimulationResults.jpg Graphic file (type jpg)
 
 <use ./pictures/SimulationResults.jpg>
-Package pdftex.def Info: ./pictures/SimulationResults.jpg used on input line 24
-4.
+Package pdftex.def Info: ./pictures/SimulationResults.jpg used on input line 23
+5.
 (pdftex.def)             Requested size: 221.14479pt x 190.02618pt.
- [4 <./pictures/SimulationSetupTime0.pdf> <./pictures/SimulationSetupEnd.pdf> <
-./pictures/RandomPath.pdf>]
-<./pictures/BugZapperOnPole.jpg, id=704, 2457.18pt x 2457.18pt>
+
+<./pictures/BugZapperOnPole.jpg, id=309, 1284.8pt x 1284.8pt>
 File: ./pictures/BugZapperOnPole.jpg Graphic file (type jpg)
 
 <use ./pictures/BugZapperOnPole.jpg>
-Package pdftex.def Info: ./pictures/BugZapperOnPole.jpg used on input line 270.
+Package pdftex.def Info: ./pictures/BugZapperOnPole.jpg used on input line 257.
 
-(pdftex.def)             Requested size: 221.14479pt x 221.13666pt.
+(pdftex.def)             Requested size: 221.14479pt x 221.13812pt.
 
-<./pictures/GPSpathAndKill.jpg, id=705, 469.755pt x 375.65344pt>
+<./pictures/GPSpathAndKill.jpg, id=310, 338.01282pt x 333.49594pt>
 File: ./pictures/GPSpathAndKill.jpg Graphic file (type jpg)
 
 <use ./pictures/GPSpathAndKill.jpg>
-Package pdftex.def Info: ./pictures/GPSpathAndKill.jpg used on input line 284.
-(pdftex.def)             Requested size: 221.14479pt x 176.84373pt.
- [5 <./pictures/BoustrophedonPath.pdf> <./pictures/SimulationResults.jpg> <./pi
-ctures/BugZapperOnPole.jpg> <./pictures/GPSpathAndKill.jpg>] (./MosquitoDroneHa
-rdware.bbl
-Underfull \hbox (badness 1789) in paragraph at lines 39--44
-[]\OT1/ptm/m/n/8 sciencedaily.com. (1997, Jul.) Snap! crackle! pop!
- []
-
-
-Underfull \hbox (badness 1688) in paragraph at lines 39--44
-\OT1/ptm/m/n/8 elec-tric bug zap-pers are use-less for con-trol-ling
- []
-
-)
+Package pdftex.def Info: ./pictures/GPSpathAndKill.jpg used on input line 271.
+(pdftex.def)             Requested size: 221.14479pt x 218.19463pt.
+ [4 <./pictures/AngleVsSpeed.pdf> <./pictures/SimulationSetupTime0.pdf>] [5 <./
+pictures/BoustrophedonPath.pdf> <./pictures/RandomPath.pdf> <./pictures/Simulat
+ionResults.jpg> <./pictures/BugZapperOnPole.jpg>] (MosquitoDroneHardware.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -477,36 +520,45 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[6] (./MosquitoDroneHardware.aux) ) 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 330.
+[6 <./pictures/GPSpathAndKill.jpg>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 330.
+ (MosquitoDroneHardware.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 330.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 330.
+Package rerunfilecheck Info: File `MosquitoDroneHardware.out' has not changed.
+(rerunfilecheck)             Checksum: 5378EDBBEC5BBCB080FC41283217FC67;750.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 330.
+ ) 
 Here is how much of TeX's memory you used:
- 3506 strings out of 493488
- 50869 string characters out of 3141326
- 122311 words of memory out of 3000000
- 6746 multiletter control sequences out of 15000+200000
- 38652 words of font info for 79 fonts, out of 3000000 for 9000
- 957 hyphenation exceptions out of 8191
- 41i,11n,35p,1138b,293s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist/fonts/en
-c/dvips/base/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi5.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5
-.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
-b></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-/usr/local/texlive/2012/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loc
-al/texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2012/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2012/texmf-dist/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on MosquitoDroneHardware.pdf (6 pages, 5121820 bytes).
+ 6981 strings out of 493634
+ 102881 string characters out of 3141318
+ 205971 words of memory out of 3000000
+ 10232 multiletter control sequences out of 15000+200000
+ 38137 words of font info for 77 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 41i,11n,35p,1140b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
+w/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/u
+tmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on MosquitoDroneHardware.pdf (6 pages, 2716211 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
- 466 compressed objects within 5 object streams
- 0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 849 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
