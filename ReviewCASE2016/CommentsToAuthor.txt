@@ -1,0 +1,12 @@
+Dear Author,
+
+The expert reviewers provide a negative feedback on your
+submission. They pointed out that the scientific matter did
+not reach an acceptable threshold, hence the paper can not
+accepted to be included in the conference proceedings.
+
+----------------------------------------
+Comments on Video:
+
+The video does not present any particular scientific nor
+experimental interesting matter.

@@ -1,0 +1,51 @@
+Reviewer 1 of CASE, ISAM 2016 submission 10
+
+Comments to the author
+======================
+
+This paper proposes a system that, based on a UAV, should
+"detect and eliminate" mosquitoes.
+
+This looks as a very preliminary work: authors made just
+very simplified simulations, and a very preliminary mock-up
+that does not include the main part of the system, i.e. the
+UAV.
+
+The review of the related work is not very strong: Authors
+are encouraged to have a look at recent works, in the
+robotics community, related to the flight control of UAVs.
+
+Regarding the contribution of the paper: Authors only
+describe the electric circuit to control the zapper.
+However, the control of the motion of the UAV is totally
+neglected. Just a few things are mentioned in the
+Simulations section, where naive coverage algorithms are
+utilized: why not utilizing state-of-the-art coverage
+methodologies, as the one mentioned in the state of the art
+section?
+
+Moreover, the title claims that the system will "detect and
+eliminate". However, it seems to me that there is no
+detection. The system should be controlled to randomly
+moving in the environment, and eventually hitting the
+mosquitoes...
+I sincerely doubt that this approach can work: a UAV
+randomly moving in the environment, making a lot of noise
+and moving a lot of air... will it ever hit any single
+mosquito?
+
+Finally, as a side note: one of the main issues with UAVs
+is battery duration. Commercially available platforms
+typically guarantee ~15minutes of flight. How many
+mosquitoes can we hit, in this limited amount of time? I
+think these considerations severely limit the practical
+applicability of this system.
+
+Comments on the Video
+=====================
+
+The video itself looks quite nice. However, is it related
+to the paper? In the paper, Authors mention only
+simulations, and the preliminary integration in Fig.11,
+while in the video we see an exacopter equipped with the
+zapper... this sounds quite strange

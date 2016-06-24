@@ -1,0 +1,16 @@
+Reviewer 3 of CASE, ISAM 2016 submission 10
+
+Comments to the author
+======================
+
+The paper presents a contribution in the filed of drone
+application. Despite the idea is quite interesting,
+unfortunately the scientific matter is very limited, and
+the experiments are very limited. My suggestion is to spend
+more efforts in developing the experiments. 
+
+Comments on the Video
+=====================
+
+The quality of the video is average, the tables are well
+descriptive and clear.
