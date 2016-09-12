@@ -47,5 +47,5 @@ Comments on the Video
 The video itself looks quite nice. However, is it related
 to the paper? In the paper, Authors mention only
 simulations, and the preliminary integration in Fig.11,
-while in the video we see an exacopter equipped with the
+while in the video we see an hexacopter equipped with the
 zapper... this sounds quite strange
