@@ -35,7 +35,7 @@ Using Unmanned Vehicles With Instrumented Bug Zappers\\ To Detect \& Eliminate M
 
 \author{Mary Burbage, An Nguyen, Kyle Walker, Nhan Phung, Vinh Truong, Erik Van Aller, and Aaron T. Becker% <-this % stops a space
 \thanks{M. Burbage, A. Nguyen, K. Walker, N. Phung, V. Truong, E. Van Aller, and A. Becker are with the ECE Department at the University of Houston, TX.
-        {\tt\small atbecker@uh.edu}}%
+        {\tt\small atbecker@uh.edu}.}%
 }
 
 \begin{document}
@@ -60,6 +60,8 @@ This paper examines design considerations, presents a working prototype system o
 
 
 Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global}. Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitos have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control offices can use this information to analyze the insects' activities. The device can be mounted on a remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
+
+\todo{new image of drone and screen}
 
   \begin{figure}
 \centering
@@ -104,6 +106,9 @@ Block diagram of microcontroller and bug zapper.
 } 
 \end{figure}
   
+  
+    \todo{new description of circuit and a new image}
+  
 A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig:CircuitDiagram}.  The bug zapper (shown on the left) uses a BJT (Q1) and center tap transformer to invert a DC input voltage to AC and apply it to the primary winding of a step-up transformer  (1:1000). The voltage at the secondary winding of the transformer is boosted and rectified to a high voltage output capacitor that is applied to the inner layer of the mesh.  The probe (shown on the right) uses a voltage divider to lower the voltage so that it can be monitored by the microcontroller.  A Zener diode (D4) placed in parallel protects the ADC input.
   
                 \begin{figure}
@@ -114,9 +119,19 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
   } 
 \end{figure}
   
+  \todo{new description of screen}
   The screen is constructed with two layers of wire mesh with $3.6~mm$ openings with a layer of wire mesh with $0.74~mm$ openings suspended between them.  A balsa wood frame insulates the outer meshes from the inner mesh.  This mesh arrangement weighs $1633~g/m^2$.  The payload that the drone can reliably carry is used to select a size that satisfies the requirements, $60~cm$ for this multi-coptor drone.
 
+
+  \subsection{Drone}
+  
+  \todo{describe the drone}
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Energy Budget}
+  
+  \todo{what is the new energy usage of the screen?}
   
   Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  Fig.~\ref{fig:BugZapTrace} shows the time sequences for battery and screen voltages, current, and power during five mosquito zaps.  The initial current spike recovery can be modeled with an exponential fit.
   
@@ -134,20 +149,21 @@ The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ f
   } 
 \end{figure}
   
+  %%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Location of screen}
- The drone carries the bug-zapping screen, which is suspended by cables at each corner.  The location of this screen determines the efficacy of the mosquito drone, measured in mosquitoes eliminated per second of flight time.
+ The drone carries the bug-zapping screen, which is suspended by fishing line at each corner.  The location of this screen determines the efficacy of the mosquito drone, measured in mosquitoes eliminated per second of flight time.
 
 For manufacturing ease, the electrified screen is a square measuring $d_s$ on each side. The mosquito species we are initially targeting fly at low altitude, so the screen is suspended a distance $h_s$ beneath the drone flying at height $h_d$.
 Suspending this screen beneath the drone improves efficiency because a hanging screen requires less weight than a rigid frame to hold the screen above the drone.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
 A key question is what distance $h_s$ the screen should be suspended from the drone, and the optimal angle $\theta$.  The goal is to clear the greatest volume of mosquitoes per second, a volume defined by the drone forward velocity $v_f$ and the cross sectional area $h_m \times d_s$ cleared by the screen, as shown in Fig.~\ref{fig:AngleVsSpeed}.
 
- To hover, the drone must push sufficient air down with velocity $v_d$ to apply a force that cancels the pull of gravity.  The drone has mass $m_{d}$ and has a square-shaped cross section of size $d_d \times d_d$.  The mass flow of air through the drone's props is equal to the product of the change in velocity of the air, the density of the air $\rho_a$, and the cross sectional area.
+ To hover, the drone must push sufficient air down with velocity $v_d$ to apply a force that cancels the pull of gravity.  The drone has mass $m_{d}$ and its cross section can be approximated as square-shaped with size $d_d \times d_d$.  The mass flow of air through the drone's props is equal to the product of the change in velocity of the air, the density of the air $\rho_a$, and the cross sectional area.
  
      \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{DroneConfigs.pdf}\end{overpic}
 \caption{\label{fig:DroneConfigs}
-The drone suspends a square bug-zapping screen beneath it.  Propwash pushes incoming mosquitoes downwards, and the drone clears a volume $h_m \times d_s \times v_f$.} 
+The drone suspends a square bug-zapping screen beneath it.  Propwash pushes incoming mosquitoes downwards, and the drone clears a volume $h_m \times d_s \times v_f$. Circles show two mosquitos at equal time intervals relative to the drone.} 
 \end{figure}
 
 
@@ -165,7 +181,7 @@ v_d = \sqrt{ \frac{ m_d g}{\rho_a d_d^2} }
 The drone testing site in Houston, Texas is 15 m above sea level. At sea level the density of air $\rho_a$ is $1.225~ kg/m^3$.
 The 3DR Solo drone weighs $2~ kg$ with a diameter of $0.71~ m$~\cite{Sollenberger2015}. The acceleration due to gravity is $9.871~ m/s^2$.  Substituting these values into \eqref{eq:dronePropwash} gives $v_d = 5.6~ m/s$.
 
-Due to propwash, a mosquito in level flight will fall relative to the drone at a rate of $v_d/v_f$.  As shown in Fig.~\ref{fig:DroneConfigs}, we can extend lines with slope $v_d/v_f$ from the screen's trailing edge to $h_{top}$ and from the leading edge to $h_{bottom}$
+Due to propwash, an initially hovering mosquito will fall when under the drone at a rate of $v_d$.  Relative to the drone the mosquito moves horizontally $-v_f$.  As shown in Fig.~\ref{fig:DroneConfigs}, we can extend lines with slope $v_d/v_f$ from the screen's trailing edge to $h_{top}$ and from the leading edge to $h_{bottom}$
  \begin{align} \label{eq:ClearedCrossSection}
 h_{top} &= h_d - h_s + \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f} \nonumber \\
 h_{bottom} &= h_d - h_s - \frac{d_s}{2} \sin(\theta) +  \frac{d_d - d_s\cos(\theta)}{2}  \frac{v_d}{v_f}  \nonumber \\
@@ -188,6 +204,8 @@ The volume cleared by a drone is a function of screen angle $\theta$ and forward
 Changing the flying height $h_d$ of the drone will target different mosquito populations   because mosquitoes are not distributed uniformly vertically.  Gillies and Wilkes have demonstrated that different species of mosquitoes prefer to fly at different heights \cite{gillies1976vertical}.
   
     \section{Simulation}
+    
+    \todo{place code on matlab central, describe the new code}
     
    Before launching a fully-instrumented drone, this concept was simulated using \textsc{Matlab} code.  One thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  A satellite image of Houston was used as the simulation environment, and each mosquito is programmed to move according to a biased random walk at a speed up to $0.4~ m/s$ and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes' preference for vegetative areas.  
    The simulation is initialized by a mosquito distribution generated by running the mosquito movement routine  five thousand times, simulating 1.4 hours of flying time, before the robot begins to search (Fig.~\ref{fig:SimulationSetupTime0}).  Because mosquitoes do not care about boundaries, a toroidal mapping is used to keep them in the workspace.  
@@ -250,14 +268,17 @@ Comparison of percentage of area covered and percentage of mosquitoes killed for
     
     \section{Experiment}
     
+    \todo{replace with the new experiment description}
+    
+    
 Before mounting an instrumented screen to a drone, proof of concept experiments used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker as shown in Fig. ~\ref{fig:BugZapperOnPole}.  The circuits were powered with a $9~ V$ battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the circuit around a pair of buildings followed in an early trial with the kill locations superimposed upon it.        
 
-            \begin{figure}
-\centering
-\begin{overpic}[width=0.9\columnwidth]{BugZapperOnPole.jpg}\end{overpic}
-\caption{\label{fig:BugZapperOnPole}
-To calibrate the system, three instrumented bug zappers were carried on a $2.5~ m$ pole.} 
-\end{figure}
+%            \begin{figure}
+%\centering
+%\begin{overpic}[width=0.9\columnwidth]{BugZapperOnPole.jpg}\end{overpic}
+%\caption{\label{fig:BugZapperOnPole}
+%To calibrate the system, three instrumented bug zappers were carried on a $2.5~ m$ pole.} 
+%\end{figure}
 
 %        \begin{figure}
 %\centering
