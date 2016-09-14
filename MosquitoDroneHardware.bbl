@@ -158,6 +158,13 @@ M.~Gillies and T.~Wilkes, ``{The vertical distribution of some West African
   The Gambia},'' \emph{Bulletin of entomological research}, vol.~66, no.~01,
   pp. 5--15, 1976.
 
+\bibitem{Burbage2016matlab}
+\BIBentryALTinterwordspacing
+M.~Burbage, S.~Manzoor, and A.~T. Becker. (2016, Sep.) {Mosquito Drone Coverage
+  and Elimination, MATLAB Central File Exchange}. [Online]. Available:
+  \url{http://www.mathworks.com/matlabcentral/fileexchange/59142}
+\BIBentrySTDinterwordspacing
+
 \bibitem{Schneider2003}
 \BIBentryALTinterwordspacing
 A.~Schneider, ``Gps visualizer,'' Mar. 2003. [Online]. Available:

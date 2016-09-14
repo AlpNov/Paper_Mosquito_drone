@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 SEP 2016 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 SEP 2016 15:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -626,10 +626,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 371.
  ) 
 Here is how much of TeX's memory you used:
- 7120 strings out of 493089
- 105817 string characters out of 6134842
- 210149 words of memory out of 5000000
- 10453 multiletter control sequences out of 15000+600000
+ 7122 strings out of 493089
+ 105843 string characters out of 6134842
+ 211153 words of memory out of 5000000
+ 10454 multiletter control sequences out of 15000+600000
  39759 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,35p,1138b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -651,10 +651,10 @@ ts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on MosquitoDroneHardware.pdf (6 pages, 3004446 bytes).
+Output written on MosquitoDroneHardware.pdf (6 pages, 3004720 bytes).
 PDF statistics:
- 1171 PDF objects out of 1200 (max. 8388607)
- 765 compressed objects within 8 object streams
- 64 named destinations out of 1000 (max. 500000)
+ 1174 PDF objects out of 1200 (max. 8388607)
+ 768 compressed objects within 8 object streams
+ 65 named destinations out of 1000 (max. 500000)
  196 words of extra memory for PDF output out of 10000 (max. 10000000)
 
