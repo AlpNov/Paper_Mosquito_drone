@@ -91,8 +91,13 @@ As GPS technology has flourished and data processing has become cheaper and more
     \subsection{Robotic coverage}
     Robotic coverage has a long history. The basic problem is one of designing a path for a robot that ensures the robot visits within $r$ distance of every point on the workspace.  For an overview see \cite{Choset2001}.  This work has been extended to use multiple coverage robots in a variety of ways, including using simple behaviors for the robots \cite{spears2006physics,Koenig2001}.
     The key difference in the mosquito coverage problem is that the mosquitoes can move, recontaminating an area previously cleared. We instead have a probability of coverage, as in~\cite{Das2011}.  This is closely related to the art gallery problem~\cite{lee1986computational} but with limited range of visibility.
-    
-  \section{Design}
+   
+   
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  \section{Design}\label{Sec:Design}%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  This section examines the components of the mosquito drone system, shown in Fig.~\ref{fig:DroneAndNet}. THis includes the electronics, electrified screen, energy budget, UAV, and design paramemters. 
+  The design for the mosquito drone system been assigned U.S.\ Provisional Patent Application~\cite{Becker2016patentapp}.
   
    \subsection{Electronics}
    
@@ -118,6 +123,7 @@ A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig
   Circuit diagram of the bug zapper and probe circuit.
   } 
 \end{figure}
+  \subsection{Screen}
   
   \todo{new description of screen}
   The screen is constructed with two layers of wire mesh with $3.6~mm$ openings with a layer of wire mesh with $0.74~mm$ openings suspended between them.  A balsa wood frame insulates the outer meshes from the inner mesh.  This mesh arrangement weighs $1633~g/m^2$.  The payload that the drone can reliably carry is used to select a size that satisfies the requirements, $60~cm$ for this multi-coptor drone.
@@ -236,17 +242,29 @@ One hundred trials were performed with each coverage path and the results evalua
 
         \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{BoustrophedonPath.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{BoustrophedonPath.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{RandomPath.pdf}\end{overpic}
 \caption{\label{fig:BoustrophedonPath}
-Boustrophedon robot path (yellow lines) overlaid upon a $100~m\times100~m$ image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red.} 
+Boustrophedon robot (left) and random bounce (right) path (yellow lines) overlaid upon a $100~m\times100~m$ image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those killed during the simulation are white, and those that survived are red.} 
 \end{figure}
 
-        \begin{figure}
+
+        \begin{figure} 
 \centering
-\begin{overpic}[width=0.9\columnwidth]{RandomPath.pdf}\end{overpic}
-\caption{\label{fig:RandomPath}
-Random bounce robot path (yellow lines) overlaid upon a $100~m\times100~m$ image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red. } 
+\begin{overpic}[width=0.49\columnwidth]{300sBouncePath.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{300sBoustPath.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{300sSpiralBouncePath.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{300sSpiralBoustPath.pdf}\end{overpic}
+\caption{\label{fig:BoustrophedonPath}
+Left column random bounce, right column boustrophedon.  Bottom row adds a subroutine to perform spiral movements when the mosquito density is high.
+} 
 \end{figure}
+
+%        \begin{figure}
+%\centering
+%\caption{\label{fig:RandomPath}
+%Random bounce robot path (yellow lines) overlaid upon a $100~m\times100~m$ image.  The robot (red circle) and the area covered by the bug-zapping net in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those that were killed during the simulation are shown in white, and those that survived are shown in red. } 
+%\end{figure}
 
         \begin{figure}
 \centering
@@ -300,6 +318,8 @@ Initial tests indicate that we can use our instrumentation to track the location
 
 %Future work
 There are a number of refinements to the simulation algorithm that could be pursued in future work.  Refinements are possible in both the mosquito-biasing algorithm and the robot flight simulation.  The model may be expanded to three dimensions.  Additional search paths may be compared to the existing algorithms.  These and other considerations will make a more realistic model for future work.  Full instrumentation of the multi-copter drone will allow more extensive testing of the hardware design and will allow field tests of the simulation algorithms.
+
+New sensors are being developed that can identify and detect flying insects, \cite{chen2014flying}.  These sensors may enable a drone to proactively steer toward insect swarms and identify insects in realtime.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

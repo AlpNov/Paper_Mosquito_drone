@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 SEP 2016 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 SEP 2016 12:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -362,7 +362,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip53
 )
-(./MosquitoDroneHardware.aux)
+(./MosquitoDroneHardware.aux
+
+LaTeX Warning: Label `fig:BoustrophedonPath' multiply defined.
+
+)
 \openout1 = `MosquitoDroneHardware.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -379,8 +383,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count123
 \scratchdimen=\dimen136
@@ -436,7 +439,7 @@ Overfull \hbox (1.88457pt too wide) in paragraph at lines 64--64
 [] 
  []
 
-<./pictures/DroneAndNet.jpg, id=60, 988.69376pt x 870.25125pt>
+<./pictures/DroneAndNet.jpg, id=64, 988.69376pt x 870.25125pt>
 File: ./pictures/DroneAndNet.jpg Graphic file (type jpg)
 
 <use ./pictures/DroneAndNet.jpg>
@@ -446,29 +449,24 @@ Package pdftex.def Info: ./pictures/DroneAndNet.jpg used on input line 68.
 
 
  <./pictures/DroneAndNet.jpg>]
-<./pictures/Block_Diagram_RevC.pdf, id=78, 480.79625pt x 207.77625pt>
+<./pictures/Block_Diagram_RevC.pdf, id=83, 480.79625pt x 207.77625pt>
 File: ./pictures/Block_Diagram_RevC.pdf Graphic file (type pdf)
 
 <use ./pictures/Block_Diagram_RevC.pdf>
 Package pdftex.def Info: ./pictures/Block_Diagram_RevC.pdf used on input line 1
-03.
+08.
 (pdftex.def)             Requested size: 221.14479pt x 95.56871pt.
 
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 110--110
+Overfull \hbox (1.88457pt too wide) in paragraph at lines 115--115
 [] 
  []
 
-<./pictures/CircuitDiagram.pdf, id=80, 722.7pt x 289.08pt>
+<./pictures/CircuitDiagram.pdf, id=85, 722.7pt x 289.08pt>
 File: ./pictures/CircuitDiagram.pdf Graphic file (type pdf)
 
 <use ./pictures/CircuitDiagram.pdf>
-Package pdftex.def Info: ./pictures/CircuitDiagram.pdf used on input line 116.
+Package pdftex.def Info: ./pictures/CircuitDiagram.pdf used on input line 121.
 (pdftex.def)             Requested size: 245.71811pt x 98.28589pt.
-
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 122--122
-[] 
- []
-
 
 Overfull \hbox (1.88457pt too wide) in paragraph at lines 128--128
 [] 
@@ -479,84 +477,126 @@ Overfull \hbox (1.88457pt too wide) in paragraph at lines 134--134
 [] 
  []
 
-<./pictures/OscilloscopeTrace.pdf, id=83, 399.90735pt x 590.65297pt>
-File: ./pictures/OscilloscopeTrace.pdf Graphic file (type pdf)
 
-<use ./pictures/OscilloscopeTrace.pdf>
-Package pdftex.def Info: ./pictures/OscilloscopeTrace.pdf used on input line 14
-6.
-(pdftex.def)             Requested size: 245.71811pt x 362.91145pt.
- [2 <./pictures/Block_Diagram_RevC.pdf> <./pictures/CircuitDiagram.pdf>]
-<./pictures/DroneConfigs.pdf, id=128, 722.7pt x 542.025pt>
-File: ./pictures/DroneConfigs.pdf Graphic file (type pdf)
-
-<use ./pictures/DroneConfigs.pdf>
-Package pdftex.def Info: ./pictures/DroneConfigs.pdf used on input line 164.
-(pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
- [3 <./pictures/OscilloscopeTrace.pdf> <./pictures/DroneConfigs.pdf>]
-<./pictures/AngleVsSpeed.pdf, id=548, 722.7pt x 542.025pt>
-File: ./pictures/AngleVsSpeed.pdf Graphic file (type pdf)
-
-<use ./pictures/AngleVsSpeed.pdf>
-Package pdftex.def Info: ./pictures/AngleVsSpeed.pdf used on input line 199.
-(pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
-
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 208--208
+Overfull \hbox (1.88457pt too wide) in paragraph at lines 140--140
 [] 
  []
 
-<./pictures/SimulationSetupTime0.pdf, id=552, 289.08pt x 289.08pt>
+[2 <./pictures/Block_Diagram_RevC.pdf> <./pictures/CircuitDiagram.pdf>]
+<./pictures/OscilloscopeTrace.pdf, id=130, 399.90735pt x 590.65297pt>
+File: ./pictures/OscilloscopeTrace.pdf Graphic file (type pdf)
+
+<use ./pictures/OscilloscopeTrace.pdf>
+Package pdftex.def Info: ./pictures/OscilloscopeTrace.pdf used on input line 15
+2.
+(pdftex.def)             Requested size: 245.71811pt x 362.91145pt.
+
+<./pictures/DroneConfigs.pdf, id=133, 722.7pt x 542.025pt>
+File: ./pictures/DroneConfigs.pdf Graphic file (type pdf)
+
+<use ./pictures/DroneConfigs.pdf>
+Package pdftex.def Info: ./pictures/DroneConfigs.pdf used on input line 170.
+(pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
+
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+ [3 <./pictures/OscilloscopeTrace.pdf> <./pictures/DroneConfigs.pdf>]
+<./pictures/AngleVsSpeed.pdf, id=551, 722.7pt x 542.025pt>
+File: ./pictures/AngleVsSpeed.pdf Graphic file (type pdf)
+
+<use ./pictures/AngleVsSpeed.pdf>
+Package pdftex.def Info: ./pictures/AngleVsSpeed.pdf used on input line 205.
+(pdftex.def)             Requested size: 221.14479pt x 165.8591pt.
+
+Overfull \hbox (1.88457pt too wide) in paragraph at lines 214--214
+[] 
+ []
+
+<./pictures/SimulationSetupTime0.pdf, id=555, 289.08pt x 289.08pt>
 File: ./pictures/SimulationSetupTime0.pdf Graphic file (type pdf)
 
 <use ./pictures/SimulationSetupTime0.pdf>
 Package pdftex.def Info: ./pictures/SimulationSetupTime0.pdf used on input line
- 223.
+ 229.
 (pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
 
-<./pictures/BoustrophedonPath.pdf, id=555, 289.08pt x 289.08pt>
+
+LaTeX Warning: Reference `fig:RandomPath' on page 4 undefined on input line 241
+.
+
+[4 <./pictures/AngleVsSpeed.pdf> <./pictures/SimulationSetupTime0.pdf>]
+<./pictures/BoustrophedonPath.pdf, id=969, 269.70917pt x 288.44383pt>
 File: ./pictures/BoustrophedonPath.pdf Graphic file (type pdf)
 
 <use ./pictures/BoustrophedonPath.pdf>
-Package pdftex.def Info: ./pictures/BoustrophedonPath.pdf used on input line 23
-9.
-(pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
+Package pdftex.def Info: ./pictures/BoustrophedonPath.pdf used on input line 24
+5.
+(pdftex.def)             Requested size: 120.40321pt x 128.76862pt.
 
-<./pictures/RandomPath.pdf, id=556, 289.08pt x 289.08pt>
+<./pictures/RandomPath.pdf, id=970, 270.94536pt x 288.45627pt>
 File: ./pictures/RandomPath.pdf Graphic file (type pdf)
 
 <use ./pictures/RandomPath.pdf>
 Package pdftex.def Info: ./pictures/RandomPath.pdf used on input line 246.
-(pdftex.def)             Requested size: 221.14479pt x 221.14546pt.
+(pdftex.def)             Requested size: 120.40321pt x 128.18437pt.
 
-<./pictures/SimulationResults.jpg, id=557, 353.06906pt x 303.38344pt>
+<./pictures/300sBouncePath.pdf, id=971, 289.08pt x 289.08pt>
+File: ./pictures/300sBouncePath.pdf Graphic file (type pdf)
+
+<use ./pictures/300sBouncePath.pdf>
+Package pdftex.def Info: ./pictures/300sBouncePath.pdf used on input line 254.
+(pdftex.def)             Requested size: 120.40321pt x 120.40265pt.
+
+<./pictures/300sBoustPath.pdf, id=972, 289.08pt x 289.08pt>
+File: ./pictures/300sBoustPath.pdf Graphic file (type pdf)
+
+<use ./pictures/300sBoustPath.pdf>
+Package pdftex.def Info: ./pictures/300sBoustPath.pdf used on input line 255.
+(pdftex.def)             Requested size: 120.40321pt x 120.40265pt.
+
+<./pictures/300sSpiralBouncePath.pdf, id=973, 289.08pt x 289.08pt>
+File: ./pictures/300sSpiralBouncePath.pdf Graphic file (type pdf)
+
+<use ./pictures/300sSpiralBouncePath.pdf>
+Package pdftex.def Info: ./pictures/300sSpiralBouncePath.pdf used on input line
+ 256.
+(pdftex.def)             Requested size: 120.40321pt x 120.40265pt.
+
+<./pictures/300sSpiralBoustPath.pdf, id=974, 289.08pt x 289.08pt>
+File: ./pictures/300sSpiralBoustPath.pdf Graphic file (type pdf)
+
+<use ./pictures/300sSpiralBoustPath.pdf>
+Package pdftex.def Info: ./pictures/300sSpiralBoustPath.pdf used on input line 
+257.
+(pdftex.def)             Requested size: 120.40321pt x 120.40265pt.
+
+<./pictures/SimulationResults.jpg, id=975, 353.06906pt x 303.38344pt>
 File: ./pictures/SimulationResults.jpg Graphic file (type jpg)
 
 <use ./pictures/SimulationResults.jpg>
-Package pdftex.def Info: ./pictures/SimulationResults.jpg used on input line 25
-3.
+Package pdftex.def Info: ./pictures/SimulationResults.jpg used on input line 27
+1.
 (pdftex.def)             Requested size: 221.14479pt x 190.02618pt.
 
-Overfull \hbox (1.88457pt too wide) in paragraph at lines 271--271
+Overfull \hbox (1.88457pt too wide) in paragraph at lines 289--289
 [] 
  []
 
 
-LaTeX Warning: Reference `fig:BugZapperOnPole' on page 4 undefined on input lin
-e 274.
+LaTeX Warning: Reference `fig:BugZapperOnPole' on page 5 undefined on input lin
+e 292.
 
-[4 <./pictures/AngleVsSpeed.pdf> <./pictures/SimulationSetupTime0.pdf>]
-<./pictures/GPSpathAndKill.jpg, id=973, 338.01282pt x 333.49594pt>
+<./pictures/GPSpathAndKill.jpg, id=979, 338.01282pt x 333.49594pt>
 File: ./pictures/GPSpathAndKill.jpg Graphic file (type jpg)
 
 <use ./pictures/GPSpathAndKill.jpg>
-Package pdftex.def Info: ./pictures/GPSpathAndKill.jpg used on input line 292.
+Package pdftex.def Info: ./pictures/GPSpathAndKill.jpg used on input line 310.
 (pdftex.def)             Requested size: 221.14479pt x 218.19463pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [5 <./pictures/BoustrophedonPath.pdf> <./pictures/RandomPath.pdf> <./pictures/
-SimulationResults.jpg> <./pictures/GPSpathAndKill.jpg>] (./MosquitoDroneHardwar
-e.bbl)
+300sBouncePath.pdf> <./pictures/300sBoustPath.pdf> <./pictures/300sSpiralBounce
+Path.pdf> <./pictures/300sSpiralBoustPath.pdf> <./pictures/SimulationResults.jp
+g> <./pictures/GPSpathAndKill.jpg>]
+(./MosquitoDroneHardware.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -568,28 +608,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 351.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 371.
 [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 351.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 371.
  (./MosquitoDroneHardware.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 351.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 351.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 371.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 371.
 Package rerunfilecheck Info: File `MosquitoDroneHardware.out' has not changed.
-(rerunfilecheck)             Checksum: B63513602E4613378A4A397E0E9406BB;792.
+(rerunfilecheck)             Checksum: AB76454BB6932E2B09AC47BBAC9FAAE0;848.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 351.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 371.
  ) 
 Here is how much of TeX's memory you used:
- 7093 strings out of 493089
- 105062 string characters out of 6134842
- 210630 words of memory out of 5000000
- 10433 multiletter control sequences out of 15000+600000
+ 7120 strings out of 493089
+ 105817 string characters out of 6134842
+ 210149 words of memory out of 5000000
+ 10453 multiletter control sequences out of 15000+600000
  39759 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,35p,1138b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,35p,1138b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -608,10 +651,10 @@ ts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on MosquitoDroneHardware.pdf (6 pages, 1485889 bytes).
+Output written on MosquitoDroneHardware.pdf (6 pages, 3004446 bytes).
 PDF statistics:
- 1105 PDF objects out of 1200 (max. 8388607)
- 715 compressed objects within 8 object streams
- 61 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1171 PDF objects out of 1200 (max. 8388607)
+ 765 compressed objects within 8 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 196 words of extra memory for PDF output out of 10000 (max. 10000000)
 
