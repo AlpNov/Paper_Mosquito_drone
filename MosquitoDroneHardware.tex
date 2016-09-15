@@ -48,7 +48,7 @@ A UAV for Destructive Surveys of Mosquito Population
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-This paper introduces techniques for mosquito population surveys in the wild using electrified screens (bug zappers) mounted to a UAV. Instrumentation on the UAV logs the UAV path and the GPS location, altitude, and time of each mosquito elimination. Changing the path of the UAV changes the number of mosquitoes encountered.  We pose this as a new problem in robotic coverage and provide a simulator for mosquitoes swarms and a UAV with a screen. We compare four baseline algorithms.
+This paper introduces techniques for mosquito population surveys in the wild using electrified screens (bug zappers) mounted to a UAV. Instrumentation on the UAV logs the UAV path and the GPS location, altitude, and time of each mosquito elimination. Changing the path of the UAV changes the number of mosquitoes encountered.  We pose this as a new problem in robotic coverage and provide a simulator for mosquitoes in flight and a UAV with a screen. We compare four baseline algorithms.
   Hardware experiments with a UAV equipped with an electrified screen provide real-time measurements of (former) mosquito locations and mosquito-free volumes. 
 %Mosquitoes are a vector for several deadly diseases which are responsible for killing millions of people each year.  Popular methods to control mosquitoes such as insecticides are effective, but long-term effects of pesticides are of concern, particularly as mosquito species develop resistance over time.
 %Traditional electrified screens (bug zappers) use UV light to attract pests but have a large by-catch of non-pest insects. This paper introduces techniques using electrified screens (bug zappers) mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito elimination. Mosquito control offices could use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
@@ -64,12 +64,11 @@ This paper introduces techniques for mosquito population surveys in the wild usi
 Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global}. 
  Because of this threat governments worldwide track mosquito populations.
  Tracking individual mosquitoes is difficult because of their small size, wide-ranging flight, and preference for low-light.
- Tracking studies have chosen to use small (1.2 x 2.4 m) indoor regions \cite{parker2015infrared}, or of mating swarms outdoors~\cite{butail20113d}.
+ Tracking studies have chosen to use small ($1.2~m \times 2.4~m$) indoor regions \cite{parker2015infrared} or mating swarms outdoors~\cite{butail20113d}.
 
-The dominant tools for tracking mosquito populations are stationary traps that are checked at weekly intervals (Encephalitis Vector Surveillance traps and/or gravid traps \cite{williams2007comparison}). 
-Recent research has focused on making these traps smaller, cheaper, and provide real-time data~\cite{chen2014flying,linn2016building}. 
- However, they still rely on attracting mosquitoes to the trap. 
- This paper presents an alternate solution using electrified bug zappers mounted on an unmanned aerial vehicle (UAV).  As the UAV follows a path it sweeps out a volume of air, temporarily removing all the mosquitoes in this volume.  By monitoring the voltage across this screen we can track individual mosquito contacts.
+The dominant tools for tracking mosquito populations are stationary traps that are checked at weekly intervals (\textit{e.g.} Encephalitis Vector Surveillance traps and/or gravid traps \cite{williams2007comparison}). 
+Recent research has focused on making these traps smaller, cheaper, and capable of providing real-time data~\cite{chen2014flying,linn2016building}; however, they still rely on attracting mosquitoes to the trap. 
+ This paper presents an alternate solution using an electrified bug-zapping screen mounted on an unmanned aerial vehicle (UAV) as shown in Fig.\ref{fig:DroneAndNet} to seek out the mosquitoes in their habitat.  As the UAV follows a path it sweeps out a volume of air, temporarily removing all the mosquitoes in this volume.  By monitoring the voltage across this screen we can track individual mosquito contacts.
  
 
 \todo{new image of UAV and screen.  must have scale bars and annotation.  Must have downward facing camera}
@@ -83,22 +82,18 @@ Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-
 \end{figure}
 
 
-      \subsection{Robotic coverage}
-    Robotic coverage has a long history. The basic problem is one of designing a path for a robot that ensures the robot visits within $r$ distance of every point on the workspace.  For an overview see \cite{Choset2001}.  This work has been extended to use multiple coverage robots in a variety of ways, including using simple behaviors for the robots \cite{spears2006physics,Koenig2001}.
-    The key difference in the mosquito coverage problem is that the mosquitoes can move, recontaminating an area previously cleared. We instead have a probability of coverage, as in~\cite{Das2011}.  This is closely related to the art gallery problem~\cite{lee1986computational} but with limited range of visibility.
-    
     This process can be modeled as sampling without replacement from a point cloud of mobile particles using a mobile agent.  The point cloud particles are generated from a known or unknown distribution, and the mobile agent clears all particles in a swept-out region each time step. 
-    UAVs have strict energy budgets, which limit the flight time.
-    The goal is to design a trajectory for the mosquito screen with duration $\le T$ that, in probability, samples the most particles.  
+    UAVs have strict energy budgets, which limit the flight time to a maximum denoted by $T$.
+    The goal is to design a trajectory for the mosquito screen with duration less than $T$ that, in probability, samples the most particles.  
    We assume the agent can detect each particle collision, which the agent can use to modify a planned trajectory.
     This paper presents both open-loop trajectories and policies with feedback. 
   
-      \subsection{Overview}
+%      \subsection{Overview}
 
   The paper is arranged as follows.  
   After a review of related work in \S \ref{sec:relatedWork},
     we present a benchmark simulation for comparing trajectories in \S \ref{sec:Simulation}.
-     Simulation results comparing four baseline simulations are in \S \ref{subsec:SimulationResults}.
+     Simulation results comparing four baseline simulations are in \S \ref{subsec:SimulationResults} and four benchmark simulations in \S \ref{subsec:SimulationResults2}.
   We present a design and rationale for a UAV with bug zapper in \S  \ref{Sec:HardwareDesign}.
   We then present hardware experiments with the UAV  in \S  \ref{sec:Experiments} and conclude with directions for future research  in \S  \ref{sec:conclusion}.
   
@@ -109,6 +104,10 @@ Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-
   \section{Related Work}\label{sec:relatedWork}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
   
+      \subsection{Robotic coverage}
+    Robotic coverage has a long history. The basic problem is one of designing a path for a robot that ensures the robot visits within $r$ distance of every point on the workspace.  For an overview see \cite{Choset2001}.  This work has been extended to use multiple coverage robots in a variety of ways, including using simple behaviors for the robots \cite{spears2006physics,Koenig2001}.
+    The key difference in the mosquito coverage problem is that the mosquitoes can move, recontaminating an area previously cleared. We instead have a probability of coverage, as in~\cite{Das2011}.  This is closely related to the art gallery problem~\cite{lee1986computational} but with limited range of visibility.
+    
   \subsection{Mosquito Control Solutions}
   
 	Mosquito control has a long history of efforts associated both with monitoring mosquito populations \cite{dennett2007associations} and with eliminating mosquitoes.  The work involves both draining potential breeding grounds and destroying living mosquitoes \cite{peter2005tick}.  An array of insecticidal compounds has been used with different application methods, concentrations, and quantities, including both larvicides and compounds directed at adult mosquitoes \cite{larvicides2005guidelines}.
@@ -117,7 +116,8 @@ Traditional electrified screens (bug zappers) use UV light to attract pests but 
 
 	Various traps have been designed to capture and/or kill mosquitoes with increasing sophistication in imitating human bait as designers strive to achieve a trap that can rival the attraction of a live human \cite{maliti2015development}.  In recent history, methods have also included genetically modifying mosquitoes so that they either cannot reproduce effectively or cannot transmit diseases successfully \cite{marshall2009malaria}, and with the recent genomic mapping of mosquito species, new ideas for more targeted work have been formulated \cite{hill2005arthropod}.
 	
-	Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitoes have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control offices can use this information to analyze the insects' activities. The device can be mounted on a remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified screen as feedback to improve the effectiveness of the motion plan. 
+	Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitoes have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. 
+%	This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek %out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers %logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control %offices can use this information to analyze the insects' activities. The device can be mounted on a %remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected %from the electrified screen as feedback to improve the effectiveness of the motion plan. 
 	
  
     \subsection{Robotic Pest Management}
@@ -128,9 +128,9 @@ As GPS technology has flourished and data processing has become cheaper and more
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
     \section{Simulation}\label{sec:Simulation}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
-     The goal is to design a trajectory with duration $\le T$ that, in probability, eliminates the most mosquitoes.  
-   We assume the UAV can detect each collision, which the UAV can use to modify a planned trajectory. 
-  This section introduces a open-source simulation platform for comparing the control policies.  This concept was simulated using \textsc{Matlab} code, and is available at \cite{Burbage2016matlab}. 
+     The goal is to design a trajectory with duration less than $T$ that, in probability, eliminates the most mosquitoes.  
+   We assume the UAV can detect each collision and use that information to modify a planned trajectory. 
+  This section introduces an open-source simulation platform for comparing the control policies.  The \textsc{Matlab} code used is available at \cite{Burbage2016matlab}. 
     
      Ten thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  A satellite image of Houston was used as the simulation environment, and each mosquito is programmed to move according to a biased random walk at a speed up to $0.4~ m/s$ and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes' preference for vegetative areas.  
 
@@ -181,6 +181,7 @@ Comparison of percentage of area covered and percentage of mosquitoes killed in 
 
 One hundred trials were performed with each coverage path and the results evaluated.  The boustrophedon successfully covered the entire field in every trial ($\mu=100\%$, $\sigma=0\%$), while the random bounce covered only 64.7\% of the field ($\mu=64.7\%$, $\sigma=1.1\%$) on average.  The boustrophedon with spiral covered 91.5\% of the field ($\mu=91.5\%$, $\sigma=0.6\%$), and the random bounce with spiral covered 66.0\% ($\mu=66.0\%$, $\sigma=1.3\%$).  Due to the higher coverage rates, the boustrophedon killed significantly more mosquitoes ($\mu=84.9\%$, $\sigma=0.4\%$) than the random bounce ($\mu=65.9\%$, $\sigma=2.5\%$), though the addition of the spiral to the random bounce showed an improvement over the plain random bounce ($\mu=71.9\%$, $\sigma=3.8\%$).  Including the spiral with the boustrophedon degraded it’s performance ($\mu=79.8\%$, $\sigma=1.7\%$).  Fig.~\ref{fig:900sPaths} and Fig.~\ref{fig:900sComparison} show the paths for the baseline trials and their success rates, respectively.
 
+\subsection{Benchmark Results} \label{subsec:SimulationResults2}
 
 Having set a baseline in which full coverage was clearly the best method, we next considered the problem of a field which is too large for full coverage within the allotted time.  To simulate this, we used the same environment but set the flight time to five minutes and repeated the hundred iterations of each method.  
 
@@ -234,7 +235,7 @@ The UAV is a custom-built, 177 cm wingspan hexacopter, controlled by a Pixhawk f
   The screen is constructed from laser-cut acrylic and plywood.  The frame is $35~cm \times 74~cm$ with a   $30.5~cm \times 61~cm$  opening.  
   this opening is spanned by a row of steel wires.  These wires are spaced $??~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $??~V$ above the reference.
 
-
+\todo{fill in missing values}
 
   %%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Location of screen}
@@ -379,16 +380,14 @@ Simulation has shown that covering the field thoroughly leads to a higher succes
 
 This paper presented a new problem in robotic coverage that attempts to maximize the number of moving particles detected when they are sampled without replacement.  We provided a benchmark simulation and showed that techniques exist that outperform a simple boustrophedon search.
 
-Initial experiments with the UAV and electrified screen track the location of a mosquito-killing UAV as it patrols a field and map mosquito kills.  
+Initial experiments with the UAV and electrified screen track the location of a mosquito-killing UAV as it patrols a field and maps mosquito kills.  
 
 %Future work
-There are a number of refinements to the simulation algorithm that could be pursued in future work.  Refinements are possible in both the mosquito-biasing algorithm and the robot flight simulation.  The model may be expanded to three dimensions.  Additional search paths may be compared to the existing algorithms.  These and other considerations will make a more realistic model for future work.  Full instrumentation of the multi-copter UAV will allow more extensive testing of the hardware design and will allow field tests of the simulation algorithms.
+There are a number of refinements to the simulation algorithm that could be pursued in future work, including changes to both the mosquito-biasing algorithm and the robot flight simulation.  The model may be expanded to three dimensions.  Additional search paths may be compared to the existing algorithms.  These and other considerations will make a more realistic model for future work.  
 
-New sensors are being developed that can identify and detect flying insects, \cite{chen2014flying}.  These sensors may enable a UAV to proactively steer toward insect swarms and identify insects in realtime.
+Further testing of the multi-copter UAV is indicated and will allow more extensive testing of the robustness and accuracy of the hardware design.  This includes field tests of the simulation algorithms.  New sensors that can identify and detect flying insects \cite{chen2014flying} may be added to the UAV and enable it to proactively steer toward insect swarms and identify insects in realtime.
 
-For a non-destructive population survey, the screen could be replaced with a net and, with appropriate lighting, the camera used to record capture events.
-
-Teams of UAVs could work together to map areas more quickly and measure gradients of the distribution to quickly find large mosquito populations.
+The concept may be extended to a non-destructive population survey in which the screen could be replaced with a net and, with appropriate lighting, the camera used to record capture events.  Teams of UAV's could work together to map areas more quickly and measure gradients of the distribution to find large mosquito populations quickly.
 
 
 %\section*{ACKNOWLEDGMENT}
