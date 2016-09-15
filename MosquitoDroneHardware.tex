@@ -312,7 +312,7 @@ To ensure the maximum number of mosquitoes are collected, the screen must be suf
 \centering
 \begin{overpic}[width=0.9\columnwidth]{AngleVsSpeed.pdf}\end{overpic}
 \caption{\label{fig:AngleVsSpeed}
-The volume cleared by a drone is a function of screen angle $\theta$ and forward velocity $v_f$. The dotted line shows the optimal angle given in \eqref{eq:OptimalScreenAngle}. } 
+The volume cleared by a drone is a function of screen angle $\theta$ and forward velocity $v_f$.  Dotted line shows the optimal angle given in \eqref{eq:OptimalScreenAngle}. } 
 \end{figure}
  
  Tests with $h_s > 2$ $m$ were abandoned because the long length caused the screen to act as a pendulum, introducing dynamics that made the system difficult to fly.
@@ -338,9 +338,10 @@ For the main body of the simulation, a loop runs a series of iterations in which
 
         \begin{figure}
 \centering
-\begin{overpic}[width=0.9\columnwidth]{SimulationSetupTime0.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{100SImulationSetupTime0.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{SimulationSetupTime0.pdf}\end{overpic}
 \caption{\label{fig:SimulationSetupTime0}
-A $100~m\times100~m$ image with one thousand simulated mosquitoes (red markers).  The mosquitoes have had 1.4 hours to bias themselves toward green areas of the image.  The robot (red circle) is shown at the upper left corner, preparing to start a bug-zapping run. } 
+A $100~m\times100~m$ image with one thousand simulated mosquitoes (red markers).  The mosquitoes, initially uniformly distributed, have had 1.4 hours to bias themselves toward green areas of the image.   A robot (red circle) at the upper left corner, is preparing to start a bug-zapping run. } 
 \end{figure}
 
 %            \begin{figure}
@@ -357,7 +358,7 @@ One hundred trials were performed with each coverage path and the results evalua
 \begin{overpic}[width=0.49\columnwidth]{BoustrophedonPath.pdf}\end{overpic}
 \begin{overpic}[width=0.49\columnwidth]{RandomPath.pdf}\end{overpic}
 \caption{\label{fig:BoustrophedonPath}
-Boustrophedon robot (left) and random bounce (right) path (yellow lines) overlaid upon a $100~m\times100~m$ image.  The robot (red circle) and the area covered by the bug-zapping screen in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those killed during the simulation are white, and those that survived are red.} 
+Boustrophedon robot (left) and random bounce (right) path (yellow lines) overlaid upon a $100~m\times100~m$ image.  The robot (red circle) and the area covered by the bug-zapping screen in an iteration (red rectangle) are shown along with a population of a thousand mosquitoes.  Those killed simulation are white, and those that survived are red.} 
 \end{figure}
 
 
