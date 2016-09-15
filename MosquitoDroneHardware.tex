@@ -148,7 +148,7 @@ A $100~m\times100~m$ image with ten thousand simulated mosquitoes (red markers).
   The flying robot eliminates any modeled mosquito that intersects its path. The robot can detect the time each mosquito is eliminated and use this data as feedback for a motion policy. 
 The robot is tested with four different policies.  The first is a plain boustrophedon or lawn-mowing path \cite{Choset2001}.  The robot begins in one corner of the workspace and methodically progresses back and forth, advancing one screen width at each turn.  If it covers the entire field in the allotted time, it begins covering the field again.
 
-The second uses a random bounce algorithm.  The robot begins in the center of the workspace and moves with a heading that varies randomly up to $\pm 0.2~ rad$ from its previous heading and bounces off the perimeter of the workspace with a random heading equally biased between $0$ and $2\pi rad$, excluding headings leading outside the workspace.
+The second uses a random bounce algorithm.  The robot begins in the center of the workspace and moves with a heading that varies randomly up to $\pm 0.2~ rad$ from its previous heading and bounces off the perimeter of the workspace with a random heading equally biased between $0$ and $2\pi~rad$, excluding headings leading outside the workspace.
 
 The third path begins with the boustrophedon path but switches to a square spiral path when the rate of mosquito kills exceeds a threshold.  Once the kill rate falls below another threshold, the path returns to a boustrophedon path.  The final path combines the random bounce path with the square spiral in the same way as the third path.
 
@@ -227,12 +227,12 @@ Comparison of percentage of area covered and percentage of mosquitoes killed in 
   
   \subsection{UAV}
   
-  \todo{describe the UAV}
+The UAV is a custom-built, 177 cm wingspan hexacopter, controlled by a Pixhawk flight controller running ArduPilot Mega flight software. The UAV has a 3DR GPS module using the UBlox NEO-7 chipset.
 
   \subsection{Screen}
   
-  \todo{new description of screen}
-  The screen is constructed of a $35~cm \times 74~cm$ plywood and acrylic frame with a series of steel wires crossing the open area of the frame.  These wires are spaced $??~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $??~V$ above the reference.
+  The screen is constructed from laser-cut acrylic and plywood.  The frame is $35~cm \times 74~cm$ with a   $30.5~cm \times 61~cm$  opening.  
+  this opening is spanned by a row of steel wires.  These wires are spaced $??~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $??~V$ above the reference.
 
 
 
@@ -240,7 +240,7 @@ Comparison of percentage of area covered and percentage of mosquitoes killed in 
   \subsection{Location of screen}
  The UAV carries the bug-zapping screen, which is suspended by fishing line at each corner.  The location of this screen determines the efficacy of the mosquito UAV, measured in mosquitoes detected per second of flight time.
 
-For manufacturing ease, the electrified screen is a rectangle with a width of $d_s$. The screen is suspended a distance $h_s$ beneath the UAV flying at height $h_d$.  We chose to suspend the screen beneath the UAV in order to avoid the weight of a rigid frame, which would be required if the screen were above the UAV.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
+For manufacturing ease, the electrified screen is a rectangle with a width of $d_s$. The screen is suspended a distance $h_s$ beneath the UAV flying at height $h_d$.  We chose to suspend the screen beneath the UAV to avoid the weight of a rigid frame, which would be required if the screen were above the UAV.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
 Two key parameters are the distance $h_s$ and the optimal angle $\theta$.  The goal is to clear the greatest volume of mosquitoes per second, a volume defined by the UAV forward velocity $v_f$ and the cross sectional area $h_m \times d_s$ cleared by the screen, as shown in Fig.~\ref{fig:AngleVsSpeed}.
 
  To hover, the UAV must push sufficient air down with velocity $v_d$ to apply a force that cancels the pull of gravity.  The UAV and screen combined have mass $m_{d}$ and its cross section can be approximated as square-shaped with size $d_d \times d_d$.  The mass flow of air through the UAV's propellers is equal to the product of the change in velocity of the air, the density of the air $\rho_a$, and the cross sectional area.
@@ -314,7 +314,7 @@ The power circuit uses a BJT and center tap transformer to invert a DC input vol
   
   \todo{what is the new energy usage of the screen?}
   
-  Tests with an oscilloscope show that in the steady state, a $60~ cm \times 60~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  Fig.~\ref{fig:BugZapTrace} shows the time sequences for battery and screen voltages, current, and power during five mosquito zaps.  The initial current spike recovery can be modeled with an exponential fit.
+  Tests with an oscilloscope show that in the steady state, a $30.5~cm?61~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  Fig.~\ref{fig:BugZapTrace} shows the time sequences for battery and screen voltages, current, and power during five mosquito zaps.  The initial current spike recovery can be modeled with an exponential fit.
   
  \begin{align} \label{eq:BugZapFit}
 i=69.1e^{-2.7\times10^4 t} ~A
