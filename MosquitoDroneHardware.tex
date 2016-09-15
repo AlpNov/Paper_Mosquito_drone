@@ -61,19 +61,16 @@ This paper introduces techniques for mosquito population surveys in the wild usi
 
 \section{Introduction}
 
-
-
 Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global}. 
  Because of this threat governments worldwide track mosquito populations.
  Tracking individual mosquitos is difficult because of their small size, wide-ranging flight, and preference for low-light.
  Tracking studies have chosen to use small (1.2 x 2.4 m) indoor regions \cite{parker2015infrared}, or of mating swarms outdoors~\cite{butail20113d}.
 
 The dominant tools for tracking mosquito populations are stationary traps that are checked at weekly intervals (Encephalitis Vector Surveillance traps and/or gravid traps \cite{williams2007comparison}). 
-Recent research has focused on making these traps smaller, cheaper, and provide real-time data~\cite{chen2014flying}. \todo{microsoft research paper on drone delivery of traps (U Penn)?}  
+Recent research has focused on making these traps smaller, cheaper, and provide real-time data~\cite{chen2014flying,linn2016building}. 
  However, they still rely on attracting mosquitos to the trap. 
  This paper presents an alternate solution using electrified bug zappers mounted on a UAV.  As the UAV follows a path it sweeps out a volume of air, temporarily removing all the mosquitos in this volume.  By monitoring the voltage across this screen we can track individual mosquito contacts.
  
-
 
 \todo{new image of drone and screen.  must have scale bars and annotation.  Must have downward facing camera}
 
@@ -85,31 +82,32 @@ A hexcopter drone carrying a $60~cm$ square bug-zapping screen. An onboard micro
 Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-yTf-E8}  \cite{DroneVideo}. }
 \end{figure}
 
-  The paper is arranged as follows.  
-  After a review of related work,
-  We present a design and rationale for a UAV with bug zapper.
-   We introduce a new robotic coverage problem in 
-  We present a benchmark simulation for comparing trajectories
-  Followed by simulation results comparing four baseline simulations.
-  We then present hardware experiments with the UAV and conclude with directions for future research.
-  
-  
-  
-Here we discuss simulations of a large number of mosquitoes within a rectangular area. Each mosquito obeys a biased random walk flight pattern. The flying robot follows a set of four path plans and can eliminate any modeled mosquito that intersects its path, detect the time each mosquito is eliminated, and use this data as feedback for a motion policy.  After setting a benchmark with modeled mosquitoes and robots, we describe a prototype multi-copter and screen.
 
-
-  \section{Related Work}\label{sec:coverage}
-  
       \subsection{Robotic coverage}
     Robotic coverage has a long history. The basic problem is one of designing a path for a robot that ensures the robot visits within $r$ distance of every point on the workspace.  For an overview see \cite{Choset2001}.  This work has been extended to use multiple coverage robots in a variety of ways, including using simple behaviors for the robots \cite{spears2006physics,Koenig2001}.
     The key difference in the mosquito coverage problem is that the mosquitoes can move, recontaminating an area previously cleared. We instead have a probability of coverage, as in~\cite{Das2011}.  This is closely related to the art gallery problem~\cite{lee1986computational} but with limited range of visibility.
     
     This process can be modeled as sampling without replacement from a point cloud of mobile particles using a mobile agent.  The point cloud particles are generated from a known or unknown distribution, and the mobile agent clears all particles in a swept-out region each time step. 
     UAVs have strict energy budgets, which limit the flight time.
-    The goal is to design a trajectory with duration $\le T$ that, in probability, samples the most particles.  
+    The goal is to design a trajectory for the mosquito screen with duration $\le T$ that, in probability, samples the most particles.  
    We assume the agent can detect each particle collision, which the agent can use to modify a planned trajectory.
     This paper presents both open-loop trajectories and policies with feedback. 
   
+      \subsection{Overview}
+
+  The paper is arranged as follows.  
+  After a review of related work in \S \ref{sec:relatedWork},
+    we present a benchmark simulation for comparing trajectories \S \ref{sec:Simulation}
+     Simulation results comparing four baseline simulations are in \S \ref{subsec:SimulationResults}.
+  We present a design and rationale for a UAV with bug zapper in \S  \ref{Sec:HardwareDesign}.
+  We then present hardware experiments with the UAV  in \S  \ref{sec:Experiments} and conclude with directions for future research  in \S  \ref{sec:conclusion}.
+  
+  
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section{Related Work}\label{sec:relatedWork}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
   
   \subsection{Mosquito Control Solutions}
   
@@ -127,11 +125,14 @@ Traditional electrified screens (bug zappers) use UV light to attract pests but 
 As GPS technology has flourished and data processing has become cheaper and more readily available, researchers have explored options for implementing the new technologies in breeding ground removal \cite{anupa2014identification} and more effective insecticide dispersion \cite{hur2015low}.  Low cost drones for residential spraying are under development \cite{amenyo2014medizdroids}.  Even optical solutions have been considered, including laser containment \cite{boonsri2012laser} or, by extension, exclusion and laser tracking and extermination \cite{kare2010build}.
     
    
-   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-    \section{Simulation}
+    \section{Simulation}\label{sec:Simulation}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+     The goal is to design a trajectory with duration $\le T$ that, in probability, eliminates the most mosquitos.  
+   We assume the UAV can detect each collision, which the UAV can use to modify a planned trajectory. 
+  This section introduces a open-source simulation platform for comparing the control policies.  This concept was simulated using \textsc{Matlab} code, and is available at \cite{Burbage2016matlab}. 
     
-Before launching a fully-instrumented drone, this concept was simulated using \textsc{Matlab} code, which is available at \cite{Burbage2016matlab}.  Ten thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  A satellite image of Houston was used as the simulation environment, and each mosquito is programmed to move according to a biased random walk at a speed up to $0.4~ m/s$ and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes' preference for vegetative areas.  
+     Ten thousand mosquitoes are randomly placed within a square area one hundred meters on a side.  A satellite image of Houston was used as the simulation environment, and each mosquito is programmed to move according to a biased random walk at a speed up to $0.4~ m/s$ and with a direction heading biased toward the greenest of the pixels surrounding its current position.  This imitates the live mosquitoes' preference for vegetative areas.  
 
 The simulation is initialized by a mosquito distribution generated by running the mosquito movement routine five thousand times, simulating 1.4 hours of flying time, before the robot begins to search.  Because mosquitoes do not care about boundaries, a toroidal mapping is used to keep them in the workspace.  Fig.~\ref{fig:SimulationSetupTime0} shows the biased mosquitoes.
 
@@ -144,7 +145,8 @@ A $100~m\times100~m$ image with one thousand simulated mosquitoes (red markers).
 \end{figure}
    
 
-The robot is tested with four different paths.  The first is a plain boustrophedon or lawn-mowing path \cite{Choset2001}.  The robot begins in one corner of the workspace and methodically progresses back and forth, advancing one screen width at each turn.  If it covers the entire field in the allotted time, it begins covering the field again.
+  The flying robot eliminates any modeled mosquito that intersects its path. The robot can detect the time each mosquito is eliminated and use this data as feedback for a motion policy. 
+The robot is tested with four different policies.  The first is a plain boustrophedon or lawn-mowing path \cite{Choset2001}.  The robot begins in one corner of the workspace and methodically progresses back and forth, advancing one screen width at each turn.  If it covers the entire field in the allotted time, it begins covering the field again.
 
 The second uses a random bounce algorithm.  The robot begins in the center of the workspace and moves with a heading that varies randomly up to $\pm 0.2~ rad$ from its previous heading and bounces off the perimeter of the workspace with a random heading equally biased between $0$ and $2\pi rad$, excluding headings leading outside the workspace.
 
@@ -154,7 +156,9 @@ For the main body of the simulation, a loop runs a series of iterations in which
 
 To keep the routines comparable, the robots use the same speed and same number of iterations in each test as well as the same image for biasing the mosquito flight.  The baseline simulations used $12~ m/s$ and fifteen minutes of flying time, which is enough time for the robot to completely cover the $100m$ workspace.  
 
-One hundred trials were performed with each coverage path and the results evaluated.  The boustrophedon successfully covered the entire field in every trial ($\mu=100\%$, $\sigma=0\%$), while the random bounce covered only 64.7\% of the field ($\mu=64.7\%$, $\sigma=1.1\%$) on average.  The boustrophedon with spiral covered 91.5\% of the field ($\mu=91.5\%$, $\sigma=0.6\%$), and the random bounce with spiral covered 66.0\% ($\mu=66.0\%$, $\sigma=1.3\%$).  Due to the higher coverage rates, the boustrophedon killed significantly more mosquitoes ($\mu=84.9\%$, $\sigma=0.4\%$) than the random bounce ($\mu=65.9\%$, $\sigma=2.5\%$), though the addition of the spiral to the random bounce showed an improvement over the plain random bounce ($\mu=71.9\%$, $\sigma=3.8\%$).  Including the spiral with the boustrophedon degraded it’s performance ($\mu=79.8\%$, $\sigma=1.7\%$).  Fig.~\ref{fig:900sPaths} and Fig.~\ref{fig:900sComparison} show the paths for the baseline trials and their success rates, respectively.
+
+\subsection{Baseline Results} \label{subsec:SimulationResults}
+
 
         \begin{figure}
 \centering
@@ -166,13 +170,16 @@ One hundred trials were performed with each coverage path and the results evalua
 Four sample simulations.  The robot (blue circle) and the area covered by the bug-zapping net in an iteration (blue rectangle) are shown along with a population of ten thousand mosquitoes.  Those killed during the simulation are white, and those that survived are red.  Left column random bounce, right column boustrophedon.  Bottom row adds a subroutine to perform spiral movements when the mosquito density is high.} 
 \end{figure}
 
-
         \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{900s4MethodComparison.pdf}\end{overpic}
 \caption{\label{fig:900sComparison}
 Comparison of percentage of area covered and percentage of mosquitoes killed in fifteen minutes for the four coverage patterns.  Plots show aggregate results of 100 trials, using the workspace shown in Fig.~\ref{fig:SimulationSetupTime0}.}
 \end{figure}
+
+
+
+One hundred trials were performed with each coverage path and the results evaluated.  The boustrophedon successfully covered the entire field in every trial ($\mu=100\%$, $\sigma=0\%$), while the random bounce covered only 64.7\% of the field ($\mu=64.7\%$, $\sigma=1.1\%$) on average.  The boustrophedon with spiral covered 91.5\% of the field ($\mu=91.5\%$, $\sigma=0.6\%$), and the random bounce with spiral covered 66.0\% ($\mu=66.0\%$, $\sigma=1.3\%$).  Due to the higher coverage rates, the boustrophedon killed significantly more mosquitoes ($\mu=84.9\%$, $\sigma=0.4\%$) than the random bounce ($\mu=65.9\%$, $\sigma=2.5\%$), though the addition of the spiral to the random bounce showed an improvement over the plain random bounce ($\mu=71.9\%$, $\sigma=3.8\%$).  Including the spiral with the boustrophedon degraded it’s performance ($\mu=79.8\%$, $\sigma=1.7\%$).  Fig.~\ref{fig:900sPaths} and Fig.~\ref{fig:900sComparison} show the paths for the baseline trials and their success rates, respectively.
 
 
 Having set a baseline in which full coverage was clearly the best method, we next considered the problem of a field which is too large for full coverage within the allotted time.  To simulate this, we used the same environment but set the flight time to five minutes and repeated the hundred iterations of each method.  
@@ -337,7 +344,7 @@ Changing the flying height $h_d$ of the drone will target different mosquito pop
 %Raw data are located in the Excel file Simulation Results.xlsx.
 %    
     
-    \section{Experiments}
+    \section{Experiments}\label{sec:Experiments}
     
     \todo{replace with the new experiment description}
     
@@ -367,7 +374,8 @@ Changing the flying height $h_d$ of the drone will target different mosquito pop
 
 Simulation has shown that covering the field thoroughly leads to a higher success rate when killing mosquitoes.  Because the mosquitoes move around, the robot will not kill all the mosquitoes in a single trial as some can fly into a previously covered area as the robot approaches them; however, the chances of killing the mosquitoes increase as the coverage increases.
 
-\section{Conclusion and Future Work}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion and Future Work}\label{sec:conclusion}
 
 This paper presented a new problem in robotic coverage that attempts to maximize the number of moving particles detected when they are sampled without replacement.  We provided a benchmark simulation and showed that techniques exist that outperform a simple boustrophedon search.
 
@@ -382,21 +390,8 @@ For a non-destructive population survey, the screen could be replaced with a net
 
 Teams of UAVs could work together to map areas more quickly and measure gradients of the distribution to quickly find large mosquito populations.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section*{APPENDIX}
-
 
 %\section*{ACKNOWLEDGMENT}
-%
-%The authors would like to thank the Harris County Public Health \& Environmental Services Mosquito Control Division for their assistance and advice.
 
 \section*{ACKNOWLEDGMENT}
 The authors acknowledge the helpful advice and feedback from Martin Reyna Nava, MS, Medical Entomologist and Technical Operations Manager and Mustapha Debboun, Ph.D, BCE, Director Mosquito Control Division, of the Harris County Public Health \& Environmental Services, Mosquito Control Division.
