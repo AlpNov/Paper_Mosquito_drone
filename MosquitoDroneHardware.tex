@@ -48,7 +48,7 @@ A UAV for Destructive Surveys of Mosquito Population
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-This paper introduces techniques for mosquito population surveys in the wild using electrified screens (bug zappers) mounted to a UAV. Instrumentation on the UAV logs the UAV path and the GPS location, altitude, and time of each mosquito elimination. Changing the path of the UAV changes the number of mosquitos encountered.  We pose this as a new problem in robotic coverage and provide a simulator for mosquitos swarms and a UAV with a screen. We compare four baseline algorithms.
+This paper introduces techniques for mosquito population surveys in the wild using electrified screens (bug zappers) mounted to a UAV. Instrumentation on the UAV logs the UAV path and the GPS location, altitude, and time of each mosquito elimination. Changing the path of the UAV changes the number of mosquitoes encountered.  We pose this as a new problem in robotic coverage and provide a simulator for mosquitoes swarms and a UAV with a screen. We compare four baseline algorithms.
   Hardware experiments with a UAV equipped with an electrified screen provide real-time measurements of (former) mosquito locations and mosquito-free volumes. 
 %Mosquitoes are a vector for several deadly diseases which are responsible for killing millions of people each year.  Popular methods to control mosquitoes such as insecticides are effective, but long-term effects of pesticides are of concern, particularly as mosquito species develop resistance over time.
 %Traditional electrified screens (bug zappers) use UV light to attract pests but have a large by-catch of non-pest insects. This paper introduces techniques using electrified screens (bug zappers) mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito elimination. Mosquito control offices could use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
@@ -63,13 +63,13 @@ This paper introduces techniques for mosquito population surveys in the wild usi
 
 Mosquito-borne diseases kill millions of humans each year~\cite{murray2012global}. 
  Because of this threat governments worldwide track mosquito populations.
- Tracking individual mosquitos is difficult because of their small size, wide-ranging flight, and preference for low-light.
+ Tracking individual mosquitoes is difficult because of their small size, wide-ranging flight, and preference for low-light.
  Tracking studies have chosen to use small (1.2 x 2.4 m) indoor regions \cite{parker2015infrared}, or of mating swarms outdoors~\cite{butail20113d}.
 
 The dominant tools for tracking mosquito populations are stationary traps that are checked at weekly intervals (Encephalitis Vector Surveillance traps and/or gravid traps \cite{williams2007comparison}). 
 Recent research has focused on making these traps smaller, cheaper, and provide real-time data~\cite{chen2014flying,linn2016building}. 
- However, they still rely on attracting mosquitos to the trap. 
- This paper presents an alternate solution using electrified bug zappers mounted on a UAV.  As the UAV follows a path it sweeps out a volume of air, temporarily removing all the mosquitos in this volume.  By monitoring the voltage across this screen we can track individual mosquito contacts.
+ However, they still rely on attracting mosquitoes to the trap. 
+ This paper presents an alternate solution using electrified bug zappers mounted on a UAV.  As the UAV follows a path it sweeps out a volume of air, temporarily removing all the mosquitoes in this volume.  By monitoring the voltage across this screen we can track individual mosquito contacts.
  
 
 \todo{new image of drone and screen.  must have scale bars and annotation.  Must have downward facing camera}
@@ -78,7 +78,7 @@ Recent research has focused on making these traps smaller, cheaper, and provide 
 \centering
 \begin{overpic}[width=0.9\columnwidth]{DroneAndNet.jpg}\end{overpic}
 \caption{\label{fig:DroneAndNet}
-A hexcopter drone carrying a $60~cm$ square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, and altitude for each mosquito strike.  
+A hexcopter drone carrying a $35~cm \times 74~cm$ rectangular bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, and altitude for each mosquito strike.  
 Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-yTf-E8}  \cite{DroneVideo}. }
 \end{figure}
 
@@ -117,7 +117,7 @@ Traditional electrified screens (bug zappers) use UV light to attract pests but 
 
 	Various traps have been designed to capture and/or kill mosquitoes with increasing sophistication in imitating human bait as designers strive to achieve a trap that can rival the attraction of a live human \cite{maliti2015development}.  In recent history, methods have also included genetically modifying mosquitoes so that they either cannot reproduce effectively or cannot transmit diseases successfully \cite{marshall2009malaria}, and with the recent genomic mapping of mosquito species, new ideas for more targeted work have been formulated \cite{hill2005arthropod}.
 	
-	Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitos have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control offices can use this information to analyze the insects' activities. The device can be mounted on a remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified screen as feedback to improve the effectiveness of the motion plan. 
+	Popular methods to control mosquitoes such as insecticides are effective, but they have the potential to introduce long-term environmental damage and mosquitoes have demonstrated the ability to become resistant to pesticides~\cite{ndiath2012resistance}. Traditional electrified screens (bug zappers) use UV light to attract pests but have a large bycatch of non-pest insects~\cite{University-Of-Florida1997}. This paper introduces techniques using bug zappers mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds and swarms. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito hit.  Mosquito control offices can use this information to analyze the insects' activities. The device can be mounted on a remote-controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified screen as feedback to improve the effectiveness of the motion plan. 
 	
  
     \subsection{Robotic Pest Management}
@@ -128,7 +128,7 @@ As GPS technology has flourished and data processing has become cheaper and more
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
     \section{Simulation}\label{sec:Simulation}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
-     The goal is to design a trajectory with duration $\le T$ that, in probability, eliminates the most mosquitos.  
+     The goal is to design a trajectory with duration $\le T$ that, in probability, eliminates the most mosquitoes.  
    We assume the UAV can detect each collision, which the UAV can use to modify a planned trajectory. 
   This section introduces a open-source simulation platform for comparing the control policies.  This concept was simulated using \textsc{Matlab} code, and is available at \cite{Burbage2016matlab}. 
     
@@ -138,8 +138,8 @@ The simulation is initialized by a mosquito distribution generated by running th
 
         \begin{figure}
 \centering
-\begin{overpic}[width=0.49\columnwidth]{1000SImulationSetupTime0.pdf}\end{overpic}
-\begin{overpic}[width=0.49\columnwidth]{SimulationSetupTime0.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{UnbiasedMosquitoes.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{BiasedMosquitoes.pdf}\end{overpic}
 \caption{\label{fig:SimulationSetupTime0}
 A $100~m\times100~m$ image with one thousand simulated mosquitoes (red markers).  The mosquitoes, initially uniformly distributed, have had 1.4 hours to bias themselves toward green areas of the image.   A robot (red circle) at the upper left corner, is preparing to start a bug-zapping run. } 
 \end{figure}
@@ -222,14 +222,82 @@ Comparison of percentage of area covered and percentage of mosquitoes killed in 
     
   \section{Hardware Design}\label{Sec:HardwareDesign}%%%%%%%%%%%%%%%%%%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  This section examines the components of the mosquito drone system, shown in Fig.~\ref{fig:DroneAndNet}. This includes the electronics, electrified screen, energy budget, UAV, and design paramemters. 
+  This section examines the components of the mosquito drone system, shown in Fig.~\ref{fig:DroneAndNet}. This includes the UAV, electrified screen, and surveying electronics as well as discussion of the energy budget. 
   The design for the mosquito drone system been assigned U.S.\ Provisional Patent Application~\cite{Becker2016patentapp}.
   
+  \subsection{Drone}
+  
+  \todo{describe the drone}
+
+  \subsection{Screen}
+  
+  \todo{new description of screen}
+  The screen is constructed of a $35~cm \times 74~cm$ plywood and acrylic frame with a series of steel wires crossing the open area of the frame.  These wires are spaced $??~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $??~V$ above the reference.
+
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{Location of screen}
+ The drone carries the bug-zapping screen, which is suspended by fishing line at each corner.  The location of this screen determines the efficacy of the mosquito drone, measured in mosquitoes detected per second of flight time.
+
+For manufacturing ease, the electrified screen is a rectangle with a width of $d_s$. The screen is suspended a distance $h_s$ beneath the drone flying at height $h_d$.  We chose to suspend the screen beneath the drone in order to avoid the weight of a rigid frame, which would be required if the screen were above the drone.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
+Two key parameters are the distance $h_s$ and the optimal angle $\theta$.  The goal is to clear the greatest volume of mosquitoes per second, a volume defined by the drone forward velocity $v_f$ and the cross sectional area $h_m \times d_s$ cleared by the screen, as shown in Fig.~\ref{fig:AngleVsSpeed}.
+
+ To hover, the drone must push sufficient air down with velocity $v_d$ to apply a force that cancels the pull of gravity.  The drone and screen combined have mass $m_{d}$ and its cross section can be approximated as square-shaped with size $d_d \times d_d$.  The mass flow of air through the drone's propellers is equal to the product of the change in velocity of the air, the density of the air $\rho_a$, and the cross sectional area.
+ 
+     \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{DroneConfigs.pdf}\end{overpic}
+\caption{\label{fig:DroneConfigs}
+The drone suspends a rectangular bug-zapping screen beneath it.  Propwash pushes incoming mosquitoes downwards, and the drone clears a volume $h_m \times d_s \times v_f$. Circles show two mosquitoes at equal time intervals relative to the drone.} 
+\end{figure}
+
+
+We assume that air above the drone is quiescent, so the change in velocity of the air is $v_d~ m/s$.
+ \begin{align} \label{eq:forceBalanceForDrone}
+ \text{Force gravity} & = \left(\text{mass flow}\right) \cdot \text{air velocity} \nonumber \\
+ m_{d} \cdot  g &= (v_d \cdot  \rho_a \cdot  d_d^2 ) \cdot  v_d 
+% \text{kg} \cdot \frac{ \text{m}}{ \text{s}^2}&= \left( \frac{ \text{m}}{\text{s}} \cdot  \frac{ \text{kg}}{\text{m}^3}  \cdot \text{m}^2 \right) \cdot  \frac{ \text{m}}{\text{s}}\nonumber
+\end{align}
+
+Then the required propwash, the velocity of air beneath the drone, for hovering is
+ \begin{align} \label{eq:dronePropwash}
+v_d = \sqrt{ \frac{ m_d g}{\rho_a d_d^2} }
+\end{align}
+The flight testing site in Houston, Texas is $15 m$ above sea level. At sea level the density of air $\rho_a$ is $1.225~ kg/m^3$.
+The drone weighs $5.1~ kg$ with a width of $0.75~ m$. The acceleration due to gravity is $9.871~ m/s^2$.  Substituting these values into \eqref{eq:dronePropwash} gives $v_d = 8.5~ m/s$.
+
+Due to propwash, an initially hovering mosquito will fall when under the drone at a rate of $v_d$.  Relative to the drone the mosquito moves horizontally $-v_f$.  As shown in Fig.~\ref{fig:DroneConfigs}, we can extend lines with slope $-v_d/v_f$ from the screen's trailing edge to $h_{top}$ and from the leading edge to $h_{bottom}$
+ \begin{align} \label{eq:ClearedCrossSection}
+h_{top} &= h_d - h_s + \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f} \nonumber \\
+h_{bottom} &= h_d - h_s - \frac{d_s}{2} \sin(\theta) +  \frac{d_d - d_s\cos(\theta)}{2}  \frac{v_d}{v_f}  \nonumber \\
+h_m &= h_{top} - h_{bottom} =  d_s\left(\frac{v_d}{v_f}\cos(\theta) + \sin(\theta) \right)
+\end{align}
+The optimal angle is therefore a function of forward and propwash velocity:
+\begin{align} \label{eq:OptimalScreenAngle}
+\ \theta = \mathrm{ArcTan}\left(\frac{v_f}{v_d}\right)
+\end{align}
+
+To ensure the maximum number of mosquitoes are collected, the screen must be sufficiently far below the drone $ h_s > \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f}$  and the bottom of the screen must not touch the ground, $ h_d > h_s + \frac{d_s}{2} \sin(\theta) $.
+
+      \begin{figure}
+\centering
+\begin{overpic}[width=0.9\columnwidth]{AngleVsSpeed.pdf}\end{overpic}
+\caption{\label{fig:AngleVsSpeed}
+The volume cleared by a drone is a function of screen angle $\theta$ and forward velocity $v_f$.  Dotted line shows the optimal angle given in \eqref{eq:OptimalScreenAngle}. } 
+\end{figure}
+ 
+There are practical limits to $h_s$ as well.  Tests with $h_s > 2~m$ were abandoned because the long length caused the screen to act as a pendulum, introducing dynamics that made the system difficult to fly.
+ 
+Changing the flying height $h_d$ of the drone will target different mosquito populations because mosquitoes are not distributed uniformly vertically. 
+ Gillies and Wilkes have demonstrated that different species of mosquitoes prefer to fly at different heights \cite{gillies1976vertical}. 
+
+  %%%%%%%%%%%%%%%%%%%%%%%
    \subsection{Electronics}
    
-   The system is powered by a 9 V Lithium Ion battery applied directly to the controller and two AA 3 V Lithium Ion batteries applied to the power circuit for the screen. The power circuit outputs a high DC voltage across the screen. A protection circuit, shown in Fig. \ref{fig:CircuitDiagram}, steps this voltage down to a suitable level for monitoring by the ADC of the controller. The controller uses a GPS shield for monitoring the location and altitude as well as a real time clock to timestamp each data point collected from the system.
+   The electrical detection and logging system is powered by a $9~V$ lithium ion battery applied directly to the controller and two AA $3~V$ lithium ion batteries applied to the power circuit for the screen. The power circuit outputs a high DC voltage across the screen. A protection circuit, shown in Fig. \ref{fig:CircuitDiagram}, steps this voltage down to a suitable level for monitoring by the ADC of the controller. The controller uses a GPS shield for monitoring the location and altitude as well as a real time clock to timestamp each data point collected from the system.
 
-The power circuit uses a BJT and center tap transformer to invert a DC input voltage to AC and apply it to the primary winding of a step-up transformer. The voltage at the secondary winding of the transformer is boosted and rectified to two high voltage output capacitors. The protection circuit utilizes a voltage divider to reduce the voltage to a level suitable for the controller, this divider utilizes a potentiometer to adjust the ratio of screen output voltage and the voltage seen by the controller. A capacitor is used at the input of this circuit to smooth the unstable DC voltage at the screen output. A small series resistor is also used to limit residual low frequency current. A bidirectional transient voltage suppression (TVS) diode is then used to restrict both positive and negative high voltage transients that will propagate through the divider and capacitor. Buffering the controller are a Schottky diode and isolation amplifier. Both are powered by the controller supply rail and are used to protect against imminent voltage spikes that would destroy the TVS diode.
+The power circuit uses a BJT and center tap transformer to invert a DC input voltage to AC and apply it to the primary winding of a step-up transformer. The voltage at the secondary winding of the transformer is boosted and rectified to two high voltage output capacitors. The protection circuit utilizes a voltage divider to reduce the voltage to a level suitable for the controller; this divider utilizes a potentiometer to adjust the ratio of screen output voltage and the voltage seen by the controller. A capacitor is used at the input of this circuit to smooth the unstable DC voltage at the screen output. A small series resistor is also used to limit residual low frequency current. A bidirectional transient voltage suppression (TVS) diode is then used to restrict both positive and negative high voltage transients that will propagate through the divider and capacitor. Buffering the controller are a Schottky diode and isolation amplifier. Both are powered by the controller supply and are used to protect against imminent voltage spikes that would destroy the TVS diode.
    
 
   
@@ -240,16 +308,6 @@ The power circuit uses a BJT and center tap transformer to invert a DC input vol
   Circuit diagram of the bug zapper and probe circuit.
   } 
 \end{figure}
-  \subsection{Screen}
-  
-  \todo{new description of screen}
-  The screen is constructed with two layers of wire mesh with $3.6~mm$ openings with a layer of wire mesh with $0.74~mm$ openings suspended between them.  A balsa wood frame insulates the outer meshes from the inner mesh.  This mesh arrangement weighs $1633~g/m^2$.  The payload that the drone can reliably carry is used to select a size that satisfies the requirements, $60~cm$ for this multi-coptor drone.
-
-
-  \subsection{Drone}
-  
-  \todo{describe the drone}
-
 
   %%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Energy Budget}
@@ -272,64 +330,6 @@ The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ f
   } 
 \end{figure}
   
-  %%%%%%%%%%%%%%%%%%%%%%%
-  \subsection{Location of screen}
- The drone carries the bug-zapping screen, which is suspended by fishing line at each corner.  The location of this screen determines the efficacy of the mosquito drone, measured in mosquitoes eliminated per second of flight time.
-
-For manufacturing ease, the electrified screen is a square measuring $d_s$ on each side. The mosquito species we are initially targeting fly at low altitude, so the screen is suspended a distance $h_s$ beneath the drone flying at height $h_d$.
-Suspending this screen beneath the drone improves efficiency because a hanging screen requires less weight than a rigid frame to hold the screen above the drone.  This screen can be suspended at any desired angle $\theta$ in comparison to horizontal, as shown in Fig.~\ref{fig:DroneConfigs}.
-A key question is what distance $h_s$ the screen should be suspended from the drone, and the optimal angle $\theta$.  The goal is to clear the greatest volume of mosquitoes per second, a volume defined by the drone forward velocity $v_f$ and the cross sectional area $h_m \times d_s$ cleared by the screen, as shown in Fig.~\ref{fig:AngleVsSpeed}.
-
- To hover, the drone must push sufficient air down with velocity $v_d$ to apply a force that cancels the pull of gravity.  The drone has mass $m_{d}$ and its cross section can be approximated as square-shaped with size $d_d \times d_d$.  The mass flow of air through the drone's props is equal to the product of the change in velocity of the air, the density of the air $\rho_a$, and the cross sectional area.
- 
-     \begin{figure}
-\centering
-\begin{overpic}[width=0.9\columnwidth]{DroneConfigs.pdf}\end{overpic}
-\caption{\label{fig:DroneConfigs}
-The drone suspends a rectangular bug-zapping screen beneath it.  Propwash pushes incoming mosquitoes downwards, and the drone clears a volume $h_m \times d_s \times v_f$. Circles show two mosquitos at equal time intervals relative to the drone.} 
-\end{figure}
-
-
-We assume that air above the drone is quiescent, so the change in velocity of the air is $v_d~ m/s$.
- \begin{align} \label{eq:forceBalanceForDrone}
- \text{Force gravity} & = \left(\text{mass flow}\right) \cdot \text{air velocity} \nonumber \\
- m_{d} \cdot  g &= (v_d \cdot  \rho_a \cdot  d_d^2 ) \cdot  v_d 
-% \text{kg} \cdot \frac{ \text{m}}{ \text{s}^2}&= \left( \frac{ \text{m}}{\text{s}} \cdot  \frac{ \text{kg}}{\text{m}^3}  \cdot \text{m}^2 \right) \cdot  \frac{ \text{m}}{\text{s}}\nonumber
-\end{align}
-
-Then the required propwash, the velocity of air beneath the drone, for hovering is
- \begin{align} \label{eq:dronePropwash}
-v_d = \sqrt{ \frac{ m_d g}{\rho_a d_d^2} }
-\end{align}
-The flight testing site in Houston, Texas is $15 m$ above sea level. At sea level the density of air $\rho_a$ is $1.225~ kg/m^3$.
-The drone weighs $5.1~ kg$ with a width of $0.74~ m$~\cite{Sollenberger2015}. The acceleration due to gravity is $9.871~ m/s^2$.  Substituting these values into \eqref{eq:dronePropwash} gives $v_d = 8.5~ m/s$.
-
-Due to propwash, an initially hovering mosquito will fall when under the drone at a rate of $v_d$.  Relative to the drone the mosquito moves horizontally $-v_f$.  As shown in Fig.~\ref{fig:DroneConfigs}, we can extend lines with slope $v_d/v_f$ from the screen's trailing edge to $h_{top}$ and from the leading edge to $h_{bottom}$
- \begin{align} \label{eq:ClearedCrossSection}
-h_{top} &= h_d - h_s + \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f} \nonumber \\
-h_{bottom} &= h_d - h_s - \frac{d_s}{2} \sin(\theta) +  \frac{d_d - d_s\cos(\theta)}{2}  \frac{v_d}{v_f}  \nonumber \\
-h_m &= h_{top} - h_{bottom} =  d_s\left(\frac{v_d}{v_f}\cos(\theta) + \sin(\theta) \right)
-\end{align}
-The optimal angle is therefore a function of forward and propwash velocity:
-\begin{align} \label{eq:OptimalScreenAngle}
-\ \theta = \mathrm{ArcTan}\left(\frac{v_f}{v_d}\right)
-\end{align}
-
-To ensure the maximum number of mosquitoes are collected, the screen must be sufficiently far below the drone $ h_s > \frac{d_s}{2} \sin(\theta) +  \frac{d_d + d_s\cos(\theta)}{2}  \frac{v_d}{v_f}$  and the bottom of the screen must not touch the ground, $ h_d > h_s + \frac{d_s}{2} \sin(\theta) $.
-
-      \begin{figure}
-\centering
-\begin{overpic}[width=0.9\columnwidth]{AngleVsSpeed.pdf}\end{overpic}
-\caption{\label{fig:AngleVsSpeed}
-The volume cleared by a drone is a function of screen angle $\theta$ and forward velocity $v_f$.  Dotted line shows the optimal angle given in \eqref{eq:OptimalScreenAngle}. } 
-\end{figure}
- 
- Tests with $h_s > 2$ $m$ were abandoned because the long length caused the screen to act as a pendulum, introducing dynamics that made the system difficult to fly.
- 
-Changing the flying height $h_d$ of the drone will target different mosquito populations because mosquitoes are not distributed uniformly vertically. 
- Gillies and Wilkes have demonstrated that different species of mosquitoes prefer to fly at different heights \cite{gillies1976vertical}. 
-
-
 
 
 
