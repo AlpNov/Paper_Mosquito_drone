@@ -81,10 +81,8 @@ Recent research has focused on making these traps smaller, cheaper, and provide 
 \centering
 \begin{overpic}[width=0.9\columnwidth]{DroneAndNet.jpg}\end{overpic}
 \caption{\label{fig:DroneAndNet}
-
 A hexcopter drone carrying a $60~cm$ square bug-zapping screen. An onboard microcontroller monitors the voltage across the screen and records the time, GPS location, and altitude for each mosquito strike.  
 Video is available at \href{https://youtu.be/1gvJ-yTf-E8}{https://youtu.be/1gvJ-yTf-E8}  \cite{DroneVideo}. }
-
 \end{figure}
 
   The paper is arranged as follows.  
@@ -220,20 +218,9 @@ Comparison of percentage of area covered and percentage of mosquitoes killed in 
   
    \subsection{Electronics}
    
-Fig. \ref{fig:Block_Diagram} shows a block diagram of the control circuit.  The system is powered by a $9~V$ Lithium Polymer battery applied directly to the controller. The $9~V$ supply is also regulated down to $3~V$ and applied to the voltage multiplier circuit that powers the mesh of the screen, as shown in Fig. \ref{fig:CircuitDiagram}. One or more meshes may be used to enable localization of mosquito hits. The screen output is a high voltage across the screen mesh.   A protection circuit steps this voltage down to a suitable level for monitoring by the ADC of the controller. The controller uses a GPS shield for monitoring the location and altitude as well as a real time clock to timestamp each data point collected from the system.     
+   The system is powered by a 9 V Lithium Ion battery applied directly to the controller and two AA 3 V Lithium Ion batteries applied to the power circuit for the screen. The power circuit outputs a high DC voltage across the screen. A protection circuit, shown in Fig. \ref{fig:CircuitDiagram}, steps this voltage down to a suitable level for monitoring by the ADC of the controller. The controller uses a GPS shield for monitoring the location and altitude as well as a real time clock to timestamp each data point collected from the system.The power circuit uses a BJT and center tap transformer to invert a DC input voltage to AC and apply it to the primary winding of a step-up transformer. The voltage at the secondary winding of the transformer is boosted and rectified to two high voltage output capacitors. The protection circuit utilizes a voltage divider to reduce the voltage to a level suitable for the controller, this divider utilizes a potentiometer to adjust the ratio of screen output voltage and the voltage seen by the controller. A capacitor is used at the input of this circuit to smooth the unstable DC voltage at the screen output. A small series resistor is also used to limit residual low frequency current. A bidirectional transient voltage suppression (TVS) diode is then used to restrict both positive and negative high voltage transients that will propagate through the divider and capacitor. Buffering the controller are a Schottky diode and isolation amplifier. Both are powered by the controller supply rail and are used to protect against imminent voltage spikes that would destroy the TVS diode.
+   
 
-                \begin{figure}
-\centering
-\begin{overpic}[width=0.9\columnwidth]{Block_Diagram_RevC.pdf}\end{overpic}
-\caption{\label{fig:Block_Diagram}
-Block diagram of microcontroller and bug zapper.
-} 
-\end{figure}
-  
-  
-    \todo{new description of circuit and a new image}
-  
-A circuit diagram of both the bug zapper and the probe is shown in Fig. \ref{fig:CircuitDiagram}.  The bug zapper (shown on the left) uses a BJT (Q1) and center tap transformer to invert a DC input voltage to AC and apply it to the primary winding of a step-up transformer  (1:1000). The voltage at the secondary winding of the transformer is boosted and rectified to a high voltage output capacitor that is applied to the inner layer of the mesh.  The probe (shown on the right) uses a voltage divider to lower the voltage so that it can be monitored by the microcontroller.  A Zener diode (D4) placed in parallel protects the ADC input.
   
                 \begin{figure}
 \centering
