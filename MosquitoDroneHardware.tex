@@ -233,9 +233,8 @@ The UAV is a custom-built, 177 cm wingspan hexacopter, controlled by a Pixhawk f
   \subsection{Screen}
   
   The screen is constructed from laser-cut acrylic and plywood.  The frame is $35~cm \times 74~cm$ with a   $30.5~cm \times 61~cm$  opening.  
-  this opening is spanned by a row of steel wires.  These wires are spaced $??~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $??~V$ above the reference.
+  this opening is spanned by a row of spring-steel $1.1~mm$ diameter wires.  These wires are spaced $3~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $1.4~kV$ above the reference.
 
-\todo{fill in missing values}
 
   %%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Location of screen}
@@ -313,9 +312,17 @@ The power circuit uses a BJT and center tap transformer to invert a DC input vol
   %%%%%%%%%%%%%%%%%%%%%%%
   \subsection{Energy Budget}
   
-  \todo{what is the new energy usage of the screen?}
+                  \begin{figure}
+\centering
+\begin{overpic}[width=1.0\columnwidth]{OscilloscopeTrace.pdf}\end{overpic}
+\caption{\label{fig:BugZapTrace}
+  Current, voltage, and power traces for five \textit{Culex quinquefasciatus} mosquitoes as each contacts the bug-zapping screen.  Contact causes a brief short that recovers in $160~ms$.
+  } 
+\end{figure}
+ % \todo{what is the new energy usage of the screen?}
   
-  Tests with an oscilloscope show that in the steady state, a $30.5~cm?61~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  Fig.~\ref{fig:BugZapTrace} shows the time sequences for battery and screen voltages, current, and power during five mosquito zaps.  The initial current spike recovery can be modeled with an exponential fit.
+  
+  Tests with an oscilloscope show that in the steady state, a $30.5~cm \times 61~cm$ screen and electronics have a power consumption of $3.6~ W$.  During a zap, the screen voltage monitoring circuit shorts briefly when the mosquito contacts the screen.  Fig.~\ref{fig:BugZapTrace} shows the time sequences for battery and screen voltages, current, and power during five mosquito zaps.  The initial current spike recovery can be modeled with an exponential fit.
   
  \begin{align} \label{eq:BugZapFit}
 i=69.1e^{-2.7\times10^4 t} ~A
@@ -323,13 +330,6 @@ i=69.1e^{-2.7\times10^4 t} ~A
 
 The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ for the short and a recovery time of $80~\mu s$.  Multiplying voltage by current to find the instantaneous power ($p=iv$) and integrating the area under the power curve show a total energy consumption of $4.2~mJ$ for each zap.  Recharging the screen requires more power and is represented in the latter part of the curves.  The overall recovery time is about $160~ms$.  Most of the energy is consumed charging and maintaining the charge on the screen rather than in zapping the mosquitoes.
   
-                \begin{figure}
-\centering
-\begin{overpic}[width=1.0\columnwidth]{OscilloscopeTrace.pdf}\end{overpic}
-\caption{\label{fig:BugZapTrace}
-  Current, voltage, and power traces for five \textit{Culex quinquefasciatus} mosquitoes as each contacts the bug-zapping screen.  Contact causes a brief short that recovers in $160~ms$.
-  } 
-\end{figure}
   
 
 
@@ -347,7 +347,20 @@ The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ f
     
     \section{Experiments}\label{sec:Experiments}
     
-    \todo{replace with the new experiment description}
+The results for two trial flights are described below. 
+A boustrophedon path with $2~m$ spacing was generated to cover a 
+region $90~m \times 50~m$. The path was generated using Mission Planner software from ardupilot.org.
+For the first trial, at 21:10 pm on Sept 13, the flight was 11 minutes in duration, with an average velocity of $3~m/s$ at a nominal altitude of $7~m$.  Wind was $3.5~m/s$ from the east. The net recorded 5 mosquito kills. 
+For the second trial, at 19:42 pm on Sept 14, the flight was 4 minutes in duration, with an average velocity of $4~m/s$ at a nominal altitude of $2.5~m$. Wind was $3.2~m/s$ from the southeast.
+The net recorded 58 mosquito kills. 
+
+This corresponds with the pilot's estimation, receiving 1 mosquito bite (3 mosquito landings) the first night and over ten bites the second night. The flight paths in an orthographic and side view, are shown in Fig.~\ref{fig:Flight1and2}.
+
+For each trial, the UAV took off from a plywood landing pad, from a resting position on top of the net.
+The micro-controllers powered, the net was energized, and the UAV was powered on.  After establishing a stable hover at 7~m flight control was switched to the autonomous mission.
+
+These results not only tell where mosquitos were, they also show were mosquitos were not.  This is a key difference from stationary traps such as \cite{chen2014flying,linn2016building}.
+
     
     
 %Before mounting an instrumented screen to a UAV, proof of concept experiments used three commercial bug zappers mounted on a pole with two controllers and a GPS tracker as shown in Fig. ~\ref{fig:BugZapperOnPole}.  The circuits were powered with a $9~ V$ battery as described above.  One controller logged the GPS data at one second intervals while the other continuously tracked the voltage across each bug zapper mesh.  Both sets of data are time-stamped so that they can be correlated to determine the location of each kill.  Fig.~\ref{fig:GPSpathAndKill} shows the circuit around a pair of buildings followed in an early trial with the kill locations superimposed upon it.        
@@ -366,6 +379,17 @@ The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ f
 %    GPS path (blue line) and kill locations (red markers).} 
 %\end{figure}
 
+%Flight1and2a.pdf%Flight1and2b.pdf
+        \begin{figure}
+\centering
+\begin{overpic}[width=0.49\columnwidth]{Flight1and2a.pdf}\end{overpic}
+\begin{overpic}[width=0.49\columnwidth]{Flight1and2b.pdf}\end{overpic}
+\caption{\label{fig:Flight1and2}
+    Flight data from two runs over the same area, the first at $7~m$ elevation and the second at $2~m$.  Both trials used 
+   $2~m$ spacing between rows and covered a region $90~m \times 50~m$. The landing pad is located at [0,10,0]. The UAV flies to 30 m when autonomous flight finishes, and the pilot resumes command.
+    } 
+\end{figure}
+
         \begin{figure}
 \centering
 \begin{overpic}[width=0.9\columnwidth]{GPSpathAndKill.jpg}\end{overpic}
@@ -373,7 +397,7 @@ The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ f
     Satellite image overlaid with GPS path (red line) and kill locations (yellow circles) from proof of concept trial.  Visualization using~\cite{Schneider2003}.} 
 \end{figure}
 
-Simulation has shown that covering the field thoroughly leads to a higher success rate when killing mosquitoes.  Because the mosquitoes move around, the robot will not kill all the mosquitoes in a single trial as some can fly into a previously covered area as the robot approaches them; however, the chances of killing the mosquitoes increase as the coverage increases.
+%Simulation has shown that covering the field thoroughly leads to a higher success rate when killing mosquitoes.  Because the mosquitoes move around, the robot will not kill all the mosquitoes in a single trial as some can fly into a previously covered area as the robot approaches them; however, the chances of killing the mosquitoes increase as the coverage increases.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion and Future Work}\label{sec:conclusion}
