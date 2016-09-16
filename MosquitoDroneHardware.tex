@@ -51,7 +51,7 @@ A UAV for Destructive Surveys of Mosquito Population
 This paper introduces techniques for mosquito population surveys in the wild using electrified screens (bug zappers) mounted to a UAV. Instrumentation on the UAV logs the UAV path and the GPS location, altitude, and time of each mosquito elimination. Changing the path of the UAV changes the number of mosquitoes encountered.  We pose this as a new problem in robotic coverage and provide a simulator for mosquitoes in flight and a UAV with a screen. We compare four baseline algorithms to establish a benchmark.
   Hardware experiments with a UAV equipped with an electrified screen provide real-time measurements of (former) mosquito locations and mosquito-free volumes. 
 %Mosquitoes are a vector for several deadly diseases which are responsible for killing millions of people each year.  Popular methods to control mosquitoes such as insecticides are effective, but long-term effects of pesticides are of concern, particularly as mosquito species develop resistance over time.
-%Traditional electrified screens (bug zappers) use UV light to attract pests but have a large by-catch of non-pest insects. This paper introduces techniques using electrified screens (bug zappers) mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito elimination. Mosquito control offices could use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified net as feedback to improve the effectiveness of the motion plan. 
+%Traditional electrified screens (bug zappers) use UV light to attract pests but have a large by-catch of non-pest insects. This paper introduces techniques using electrified screens (bug zappers) mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito elimination. Mosquito control offices could use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified screen as feedback to improve the effectiveness of the motion plan. 
 %This paper examines design considerations, presents a working prototype system of a UAV and instrumented bug zapper, and introduces a simulator for swarms of mosquitoes and a mosquito-eliminating UAV.  
 \end{abstract}
 
@@ -164,7 +164,7 @@ To keep the routines comparable, the robots use the same speed and same number o
 \begin{overpic}[width=0.49\columnwidth]{900sSpiralBouncePath.pdf}\end{overpic}
 \begin{overpic}[width=0.49\columnwidth]{900sSpiralBoustPath.pdf}\end{overpic}
 \caption{\label{fig:900sPaths}
-Four sample simulations.  The robot (blue circle) and the area covered by the bug-zapping net in an iteration (blue rectangle) are shown along with a population of ten thousand mosquitoes.  Those killed during the simulation are white, and those that survived are red.  Left column:  random bounce, right column:  boustrophedon.  Bottom row adds a subroutine to perform spiral movements when the mosquito density is high.} 
+Four sample simulations.  The robot (blue circle) and the area covered by the bug-zapping screen in an iteration (blue rectangle) are shown along with a population of ten thousand mosquitoes.  Those killed during the simulation are white, and those that survived are red.  Left column:  random bounce, right column:  boustrophedon.  Bottom row adds a subroutine to perform spiral movements when the mosquito density is high.} 
 \end{figure}
 
         \begin{figure}
@@ -229,7 +229,7 @@ The UAV is a custom-built, $177~cm$ wingspan hexacopter, controlled by a Pixhawk
 
   \subsection{Screen}
   
-  The screen is constructed from laser-cut acrylic and plywood.  The frame is $35~cm \times 74~cm$ with a   $30.5~cm \times 61~cm$  opening.  
+  The screen is constructed from laser-cut acrylic and plywood and reinforced by fiberglass rods.  The frame is $35~cm \times 74~cm$ with a $30.5~cm \times 61~cm$  opening.  
   this opening is spanned by a row of spring-steel $1.1~mm$ diameter wires.  These wires are spaced $3~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $1.4~kV$ above the reference.
 
 
@@ -347,9 +347,9 @@ The fit in \eqref{eq:BugZapFit} gives us a time constant of $2.7\times10^4~/s$ f
 The results for two trial flights are described below. 
 A boustrophedon path with $2~m$ spacing was generated to cover a 
 region $90~m \times 50~m$. The path was generated using Mission Planner software from ardupilot.org \cite{Ardupilot}.
-For the first trial, at 21:10 on September 13, the flight was 11 minutes in duration with an average velocity of $3~m/s$ at a nominal altitude of $7~m$.  Wind was $3.5~m/s$ from the east. The net recorded 5 mosquito kills. 
+For the first trial, at 21:10 on September 13, the flight was 11 minutes in duration with an average velocity of $3~m/s$ at a nominal altitude of $7~m$.  Wind was $3.5~m/s$ from the east. The screen recorded 5 mosquito kills. 
 For the second trial, at 19:42 on September 14, the flight was 4 minutes in duration with an average velocity of $4~m/s$ at a nominal altitude of $2.5~m$. Wind was $3.2~m/s$ from the southeast.
-The net recorded 58 mosquito kills. 
+The screen recorded 58 mosquito kills. 
 
 This corresponds with the pilot's estimation, receiving one mosquito bite (and three mosquito landings) the first night and over ten bites the second night. The flight paths in an orthographic and side view are shown in Fig.~\ref{fig:Flight1and2}.
 
@@ -363,10 +363,10 @@ This corresponds with the pilot's estimation, receiving one mosquito bite (and t
 \end{figure}
 
 
-For each trial the UAV took off from a resting position on top of the net which in turn was atop a plywood landing pad.
-The micro-controllers were started up, the net was energized, and the UAV was powered on.  After establishing a stable hover at $7~m$, flight control was switched to the autonomous mission.  Fig.\ref{fig:DroneAndNetOutside} shows the drone during a flight test.
+For each trial the UAV took off from a resting position on top of the screen which in turn was atop a plywood landing pad.
+The micro-controllers were started up, the screen was energized, and the UAV was powered on.  After establishing a stable hover at $7~m$, flight control was switched to the autonomous mission.  
 
-These results not only tell where mosquitoes were but also show were mosquitoes were not.  This is a key difference from stationary traps such as \cite{chen2014flying,linn2016building}.
+These results not only tell where mosquitoes were but also show were mosquitoes were not.  This is a key difference from stationary traps such as \cite{chen2014flying,linn2016building}. Fig.\ref{fig:DroneAndNetOutside} shows the drone during a dawn flight test near the ocean.
 
     
     
@@ -390,9 +390,9 @@ These results not only tell where mosquitoes were but also show were mosquitoes 
 %Flight1and2b.pdf
         \begin{figure}
 \centering
-\begin{overpic}[width=1.0\columnwidth]{DroneAndNetOutside.jpg}\end{overpic}
+\begin{overpic}[width=1.0\columnwidth]{OutdoorMosquitoDrone.jpg}\end{overpic}
 \caption{\label{fig:DroneAndNetOutside}
-    The drone and net during a flight trial.
+    The UAV and screen during a flight trial at Galveston State Park.
     } 
 \end{figure}
 
