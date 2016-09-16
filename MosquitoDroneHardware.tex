@@ -351,12 +351,22 @@ For the first trial, at 21:10 on September 13, the flight was 11 minutes in dura
 For the second trial, at 19:42 on September 14, the flight was 4 minutes in duration with an average velocity of $4~m/s$ at a nominal altitude of $2.5~m$. Wind was $3.2~m/s$ from the southeast.
 The net recorded 58 mosquito kills. 
 
-This corresponds with the pilot's estimation, receiving 1 mosquito bite (3 mosquito landings) the first night and over ten bites the second night. The flight paths in an orthographic and side view are shown in Fig.~\ref{fig:Flight1and2}.
+This corresponds with the pilot's estimation, receiving one mosquito bite (and three mosquito landings) the first night and over ten bites the second night. The flight paths in an orthographic and side view are shown in Fig.~\ref{fig:Flight1and2}.
+
+        \begin{figure}
+\centering
+\begin{overpic}[width=1.0\columnwidth]{Flight1and2a.pdf}\end{overpic}
+\begin{overpic}[width=1.0\columnwidth]{Flight1and2b.pdf}\end{overpic}
+\caption{\label{fig:Flight1and2}
+    Flight data from two runs over the same area, the first at $7~m$ elevation and the second at $2~m$.  Both trials used $2~m$ spacing between rows and covered a region $90~m \times 50~m$. The landing pad is located at $[0,10,0]$. The UAV flies to $30~m$ when autonomous flight finishes, and the pilot resumes command.
+    } 
+\end{figure}
+
 
 For each trial the UAV took off from a resting position on top of the net which in turn was atop a plywood landing pad.
-The micro-controllers were started up, the net was energized, and the UAV was powered on.  After establishing a stable hover at $7~m$, flight control was switched to the autonomous mission.
+The micro-controllers were started up, the net was energized, and the UAV was powered on.  After establishing a stable hover at $7~m$, flight control was switched to the autonomous mission.  Fig.\ref{fig:DroneAndNetOutside} shows the drone during a flight test.
 
-These results not only tell where mosquitos were but also show were mosquitos were not.  This is a key difference from stationary traps such as \cite{chen2014flying,linn2016building}.
+These results not only tell where mosquitoes were but also show were mosquitoes were not.  This is a key difference from stationary traps such as \cite{chen2014flying,linn2016building}.
 
     
     
@@ -380,10 +390,9 @@ These results not only tell where mosquitos were but also show were mosquitos we
 %Flight1and2b.pdf
         \begin{figure}
 \centering
-\begin{overpic}[width=1.0\columnwidth]{Flight1and2a.pdf}\end{overpic}
-\begin{overpic}[width=1.0\columnwidth]{Flight1and2b.pdf}\end{overpic}
-\caption{\label{fig:Flight1and2}
-    Flight data from two runs over the same area, the first at $7~m$ elevation and the second at $2~m$.  Both trials used $2~m$ spacing between rows and covered a region $90~m \times 50~m$. The landing pad is located at $[0,10,0]$. The UAV flies to $30~m$ when autonomous flight finishes, and the pilot resumes command.
+\begin{overpic}[width=1.0\columnwidth]{DroneAndNetOutside.jpg}\end{overpic}
+\caption{\label{fig:DroneAndNetOutside}
+    The drone and net during a flight trial.
     } 
 \end{figure}
 
