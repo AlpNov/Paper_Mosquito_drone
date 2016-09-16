@@ -1,8 +1,8 @@
 
 %  links for ICRA 2016, 
-%     to submit
+%     to submit https://ras.papercept.net
 %     to test pdf
-
+%  compress using: gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH      -sOutputFile=MosquitoUAVcompressed.pdf MosquitoDroneHardware.pdf
 
 \documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
 %\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
@@ -48,11 +48,9 @@ A UAV for Destructive Surveys of Mosquito Population
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-This paper introduces techniques for mosquito population surveys in the wild using electrified screens (bug zappers) mounted to a UAV. Instrumentation on the UAV logs the UAV path and the GPS location, altitude, and time of each mosquito elimination. Changing the path of the UAV changes the number of mosquitoes encountered.  We pose this as a new problem in robotic coverage and provide a simulator for mosquitoes in flight and a UAV with a screen. We compare four baseline algorithms to establish a benchmark.
-  Hardware experiments with a UAV equipped with an electrified screen provide real-time measurements of (former) mosquito locations and mosquito-free volumes. 
-%Mosquitoes are a vector for several deadly diseases which are responsible for killing millions of people each year.  Popular methods to control mosquitoes such as insecticides are effective, but long-term effects of pesticides are of concern, particularly as mosquito species develop resistance over time.
-%Traditional electrified screens (bug zappers) use UV light to attract pests but have a large by-catch of non-pest insects. This paper introduces techniques using electrified screens (bug zappers) mounted on unmanned vehicles to autonomously seek out and eliminate mosquitoes in their breeding grounds. Instrumentation on the bug zappers logs the GPS location, altitude, weather details, and time of each mosquito elimination. Mosquito control offices could use this information to analyze the insects' activities. The device can be mounted on a remote controlled or autonomous unmanned vehicle. If autonomous, the vehicle can use the data collected from the electrified screen as feedback to improve the effectiveness of the motion plan. 
-%This paper examines design considerations, presents a working prototype system of a UAV and instrumented bug zapper, and introduces a simulator for swarms of mosquitoes and a mosquito-eliminating UAV.  
+This paper introduces techniques for mosquito population surveys in the wild using electrified screens (bug zappers) mounted to a UAV. Instrumentation on the UAV logs the UAV path and the GPS location, altitude, and time of each mosquito elimination. Changing the path of the UAV changes the number of mosquitoes encountered.  We pose this as a new problem in robotic coverage and provide a simulator for
+mosquitoes in flight and a UAV with an electrified screen. We compare four baseline algorithms to establish a benchmark. 
+Hardware experiments with a UAV equipped with an electrified screen provide real-time measurements of (former) mosquito locations and mosquito-free volumes.
 \end{abstract}
 
 
@@ -230,7 +228,7 @@ The UAV is a custom-built, $177~cm$ wingspan hexacopter, controlled by a Pixhawk
   \subsection{Screen}
   
   The screen is constructed from laser-cut acrylic and plywood and reinforced by fiberglass rods.  The frame is $35~cm \times 74~cm$ with a $30.5~cm \times 61~cm$  opening.  
-  this opening is spanned by a row of spring-steel $1.1~mm$ diameter wires.  These wires are spaced $3~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $1.4~kV$ above the reference.
+  this opening is spanned by a row of spring-steel $1.1~mm$ diameter wires.  These wires are spaced $3~mm$ apart.  They are divided into two sets of alternate wires, one of which is held at the reference voltage and the other of which is held at $1.4~kV$ above the reference. Design files and build instructions are available at~\cite{Vinh2016BugNet}.
 
 
   %%%%%%%%%%%%%%%%%%%%%%%
@@ -376,7 +374,7 @@ The micro-controllers were started up, the screen was energized, and the UAV was
     } 
 \end{figure}
 
-These results not only tell where mosquitoes were but also show were mosquitoes were not.  This is a key difference from stationary traps such as \cite{chen2014flying,linn2016building}. Fig.\ref{fig:DroneAndNetOutside} shows the drone during a dawn flight test near the ocean.
+These results not only tell where mosquitoes were but also show were mosquitoes were not.  This is a key difference from stationary traps such as \cite{chen2014flying,linn2016building}. Fig.\ref{fig:DroneAndNetOutside} shows the UAV during a dawn flight test near the ocean.
 
     
     
