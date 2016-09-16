@@ -294,7 +294,7 @@ Changing the flying height $h_d$ of the UAV will target different mosquito popul
   %%%%%%%%%%%%%%%%%%%%%%%
    \subsection{Electronics}
    
-   The electrical detection and logging system is powered by a $9~V$ lithium ion battery applied directly to the controller and two AA $3~V$ lithium ion batteries applied to the power circuit for the screen. The power circuit outputs a high DC voltage across the screen. A protection circuit, shown in Fig. \ref{fig:CircuitDiagram}, steps this voltage down to a suitable level for monitoring by the ADC of the controller. The controller uses a GPS shield for monitoring the location and altitude as well as a real time clock to timestamp each data point collected from the system.
+   The electrical detection and logging system is powered by a $9~V$ lithium ion battery applied directly to the controller and two AA $3~V$ lithium ion batteries applied to the power circuit for the screen. The power circuit outputs a high DC voltage across the screen. A protection circuit, shown in Fig. \ref{fig:ProtectionCircuit}, steps this voltage down to a suitable level for monitoring by the ADC of the controller. The controller uses a GPS shield for monitoring the location and altitude as well as a real time clock to timestamp each data point collected from the system.
 
 The power circuit uses a BJT and center tap transformer to invert a DC input voltage to AC and apply it to the primary winding of a step-up transformer. The voltage at the secondary winding of the transformer is boosted and rectified to two high voltage output capacitors. The protection circuit utilizes a voltage divider to reduce the voltage to a level suitable for the controller; this divider utilizes a potentiometer to adjust the ratio of screen output voltage and the voltage seen by the controller. A capacitor is used at the input of this circuit to smooth the unstable DC voltage at the screen output. A small series resistor is also used to limit residual low frequency current. A bidirectional transient voltage suppression (TVS) diode is then used to restrict both positive and negative high voltage transients that might otherwise propagate through the divider and capacitor. Buffering the controller are a Schottky diode and isolation amplifier. Both are powered by the controller supply and are used to protect against voltage spikes that would destroy the TVS diode.
    
@@ -303,7 +303,7 @@ The power circuit uses a BJT and center tap transformer to invert a DC input vol
                 \begin{figure}
 \centering
 \begin{overpic}[width=1.0\columnwidth]{ProtectionCircuit.pdf}\end{overpic}
-\caption{\label{ProtectionCircuit}
+\caption{\label{fig:ProtectionCircuit}
   Circuit diagram of the probe circuit for the electrified screen.
   } 
 \end{figure}
@@ -382,20 +382,19 @@ These results not only tell where mosquitos were but also show were mosquitos we
 %Flight1and2b.pdf
         \begin{figure}
 \centering
-\begin{overpic}[width=0.49\columnwidth]{Flight1and2a.pdf}\end{overpic}
-\begin{overpic}[width=0.49\columnwidth]{Flight1and2b.pdf}\end{overpic}
+\begin{overpic}[width=1.0\columnwidth]{Flight1and2a.pdf}\end{overpic}
+\begin{overpic}[width=1.0\columnwidth]{Flight1and2b.pdf}\end{overpic}
 \caption{\label{fig:Flight1and2}
-    Flight data from two runs over the same area, the first at $7~m$ elevation and the second at $2~m$.  Both trials used 
-   $2~m$ spacing between rows and covered a region $90~m \times 50~m$. The landing pad is located at [0,10,0]. The UAV flies to 30 m when autonomous flight finishes, and the pilot resumes command.
+    Flight data from two runs over the same area, the first at $7~m$ elevation and the second at $2~m$.  Both trials used $2~m$ spacing between rows and covered a region $90~m \times 50~m$. The landing pad is located at $[0,10,0]$. The UAV flies to $30~m$ when autonomous flight finishes, and the pilot resumes command.
     } 
 \end{figure}
 
-        \begin{figure}
-\centering
-\begin{overpic}[width=0.9\columnwidth]{GPSpathAndKill.jpg}\end{overpic}
-\caption{\label{fig:GPSpathAndKill}
-    Satellite image overlaid with GPS path (red line) and kill locations (yellow circles) from proof of concept trial.  Visualization using~\cite{Schneider2003}.} 
-\end{figure}
+%        \begin{figure}
+%\centering
+%\begin{overpic}[width=0.9\columnwidth]{GPSpathAndKill.jpg}\end{overpic}
+%\caption{\label{fig:GPSpathAndKill}
+%    Satellite image overlaid with GPS path (red line) and kill locations (yellow circles) from proof of concept trial.  Visualization using~\cite{Schneider2003}.} 
+%\end{figure}
 
 %Simulation has shown that covering the field thoroughly leads to a higher success rate when killing mosquitoes.  Because the mosquitoes move around, the robot will not kill all the mosquitoes in a single trial as some can fly into a previously covered area as the robot approaches them; however, the chances of killing the mosquitoes increase as the coverage increases.
 
