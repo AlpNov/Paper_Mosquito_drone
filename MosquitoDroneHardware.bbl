@@ -180,4 +180,10 @@ M.~Gillies and T.~Wilkes, ``{The vertical distribution of some West African
   The Gambia},'' \emph{Bulletin of entomological research}, vol.~66, no.~01,
   pp. 5--15, 1976.
 
+\bibitem{Ardupilot}
+\BIBentryALTinterwordspacing
+ardupilot.org. (2016) Motion planner overview. [Online]. Available:
+  \url{http://ardupilot.org/planner/docs/mission-planner-overview.html}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
