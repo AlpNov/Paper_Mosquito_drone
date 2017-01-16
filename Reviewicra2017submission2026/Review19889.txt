@@ -1,0 +1,88 @@
+Reviewer 3 of ICRA 2017 submission 2026
+
+Comments to the author
+======================
+
+This paper presents an unmanned aerial system for the
+destructive survey of mosquitos in the wild. The main
+contribution of the paper is the presented hardware system,
+which consists of a custom UAV with a custom electrified
+screen. The results of two flight trials at different
+altitudes are presented. The authors also present a
+software simulation including a heuristic mosquito model
+and compare the efficacy of four basic coverage planners.
+
+I feel that the presented software simulation and the
+associated results lack sufficient novelty and significance
+to be considered a contribution to the field. The
+simulation appears to be quite basic, as are the four
+tested coverage planners (boustrophedon, random bounce,
+boustrophedon with spiral, random bounce with spiral). The
+performance changes between the spiral and non-spiral paths
+when the available flight time restricted coverage
+completion warrants further discussion and can potentially
+lead to more compelling adaptive planning algorithms. I am
+also curious to know why the swath width changes between
+the two boustrophedon paths (right column Fig. 5). This
+does not seem to provide a fair comparison, nor is the
+calculation of the new width ever described.
+
+As the main contribution of the paper, the hardware design
+section is quite light on the UAV and electric screen build
+details, with readers referred to an external website for a
+description of the latter. The analysis of the screen
+location seems sound; however a more thorough analysis of
+the system in a wider variety of realistic scenarios would
+have been beneficial in understanding the limitations of a
+fixed screen position. For example, using a higher fidelity
+attraction/repulsion model to estimate mosquito motion, and
+varying the level of stochasticity in the mosquito swarm
+motion. Since the UAV can travel an order of magnitude
+faster than the mosquitoes, is capture inevitable for
+mosquitoes in some volume of space ahead of the screen?
+
+The presented results of the hardware flight trials do not
+provide substantial insight into the efficacy of the
+system. Firstly the overall goal of the experiment is
+unclear: is it to survey the region for mosquitoes in order
+to build a heat map of mosquito locations, or is it to
+intercept as many mosquitoes as possible, or something else
+entirely? If it was the first, then no effort was made to
+compare against existing methods for modelling
+environmental phenomena from point observations. If the
+goal was the second, the authors do not provide any scale
+to the results and do not compare against any conventional
+techniques (static traps, etc.) The results provided: 5
+kills in 11 minutes in flight 1 and 51 kills in 4 minutes
+in flight 2, are isolated data points without context.
+
+Although the overall application of surveying mosquito
+populations is compelling, I believe that the work
+presented in this paper is too preliminary in its technical
+and theoretical contributions to warrant publication.
+
+Minor comments:
+- Section II.B mentions that traditional electrified
+screens have a large bycatch of no-pest insects, however
+the authors do not show in their results that their
+proposed system does not suffer from the same problem.
+- In Section III, please provide a citation for your claim
+that mosquitoes prefer vegetative areas.
+- In Section IV.A the UAV is stated to have a span of
+177cm, however this does not support the scale shown in
+Fig. 1, which suggests that the UAV is much smaller.
+- Fig. 11 is not that useful.
+- Figs 2, 12 do not stand up to B&W printing (the red
+flight path is washed out)
+- Fig. 13 does not show the system operating during either
+of the presented fight trials and also does not add
+anything to the paper.
+
+Comments on the Video Attachment
+================================
+
+The video is poorly edited and does not help to explain the
+work that was conducted. Include captions or a voice over
+to explain what is happening and restructure the whole
+thing such that it is not simply a collage of your
+available videos and figures.

@@ -1,0 +1,64 @@
+Reviewer 1 of ICRA 2017 submission 2026
+
+Comments to the author
+======================
+
+This paper describes a novel system for surveying mosquito
+populations using a UAV equipped with an electric bug
+zapper.  There is an interesting collection of simulation
+results along with description of the hardware
+implementation and a small number of hardware results.
+
+The theoretical contribution is a comparison of techniques
+for coverage in which the goal is to optimally cover an
+unknown and non-uniform distribution over the workspace. 
+Coverage algorithms generally attempt to cover the entire
+workspace as efficiently as possible, but since the UAV may
+not have sufficient power to do this, the authors suggest
+ways to cover a portion of the environment in such a way
+that it covers the most useful portion (here, with the most
+mosquitos).  Unfortunately, the authors tested only one
+data set, and even here, the uncertainty across the
+different techniques was quite large.	  As such, it is
+not clear if there is really not
+much practical difference among them or if the choice of
+path is dependent
+on the environment.  Also, it would appear that the robot
+covers a 1 meter
+wide swath (based on 12 m/s * 15 min / 100 m square) but
+this is not explicit - and in fact the robot will have to
+turn instantaneously for this to be sufficient for complete
+coverage.
+
+Since the hardware testing used only the boustrophedon, it
+cannot offer additional insight into the different path
+options. In fact, I was hoping for a bit more in the way of
+analysis - what should we have expected from these
+experiments, and what do the results tell us?
+
+In general, I felt that the different parts of the paper
+did not hang together particularly well.  That is, the
+hardware experiments did not discuss why the plain
+boustrophedon path was chosen, after all the simulation
+data previously presented.  The electronics section IV-D
+also did not seem to add much to the paper - what are we
+intended to learn from this circuit diagram?  How critical
+is this design to the overall success of the project? 
+Also,
+when deriving the optimal angle for the screen, it seems
+that you should
+take into account the movement of the UAV which would cause
+a screen to trail behind and presumably at a greater angle
+than it would have at rest.
+
+Overall, this is definitely interesting research, but could
+perhaps be a bit more mature before publication.
+
+
+Comments on the Video Attachment
+================================
+
+Much of the video showed images from the figures, or a path
+of the UAV using GPS (which is not really part of this
+research). Showing the UAV with screen flying around was
+useful to get an idea of the speed and scale of the system.
