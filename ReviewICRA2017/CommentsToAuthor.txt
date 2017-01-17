@@ -1,0 +1,14 @@
+The research described in this paper is very interesting
+and appealing. Unfortunately, as all reviewers articulate,
+the work seems immature and requires further development,
+particularly in regard to the experimental results. I
+encourage the authors to take into account the helpful
+comments of the reviewers to improve the research
+contribution of the work.
+
+
+----------------------------------------
+Comments on Video Attachment:
+
+The video is interesting in showing the novelty of the
+approach

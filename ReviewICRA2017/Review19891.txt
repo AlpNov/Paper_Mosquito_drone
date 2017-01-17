@@ -1,0 +1,60 @@
+Reviewer 4 of ICRA 2017 submission 2026
+
+Comments to the author
+======================
+
+This paper presents an unmanned aerial vehicle (UAV)-based
+system for conducting mosquito surveys. The paper evaluates
+a number of motion-planning solutions for such a system.
+Further, the paper describes the design of the mosquito
+capturing system that is mounted on the UAV. Finally, the
+paper presents results from a series of flight trials.
+The contributions of this paper are not clear to this
+reviewer. The reviewer sees two potential areas of
+contributions based on the nature of the work presented.
+First, there is the algorithmic contribution of planning
+the route of the UAV to maximise accuracy in estimating the
+size and distribution of the mosquito population. However,
+the approaches evaluated in this paper are empirically
+rather than theoretically motivated and there does not
+appear to be any novelty in either the motion planning
+approaches (random bounce, boustrophedon) or their analysis
+for this application. While the simulation results are
+interesting, it is not clear how the evaluation of motion
+planning approaches relates to the motivating problem of
+surveying mosquito populations – the metric evaluated in
+this simulation was the number of mosquitoes killed rather
+than an evaluation of how well the population distribution
+or numbers were estimated. To this end, this reviewer
+recommends the authors review the algorithmic approaches
+used for informative path planning, in particular in the
+Bayesian target search problem (where a robot searches for
+a potentially unknown number of targets in the environment)
+and the problem of monitoring a time-dependent geo-spatial
+process (for example, salinity in the ocean, or a wind
+field) with a robot.
+The second potential area of contribution is in the
+development of a system for performing mosquito surveys.
+While the paper presents some design aspects such as the
+mounting of the screen and detection of a mosquito “zap”,
+the validation and evaluation of these hardware design
+aspects were insufficiently rigorous to be considered a key
+contribution of this paper. For example, while a parametric
+study of the screen angle was considered, there was no
+experimental assessment of the accuracy of the aerodynamic
+models used to predict the volume that is “cleared” of
+mosquitoes. Further, the paper does not suggest methods for
+disambiguating a single mosquito strike from multiple
+simultaneous strikes (which one would expect to be a
+consideration if counting the number of mosquitoes was the
+problem), nor how to disambiguate mosquitoes from other
+insects. The review would consider addressing these aspects
+to be important if the core contribution was the system
+development of a UAV platform for mosquito surveys.
+
+
+Comments on the Video Attachment
+================================
+
+The video was well constructed and communicated the essence
+of the paper.
