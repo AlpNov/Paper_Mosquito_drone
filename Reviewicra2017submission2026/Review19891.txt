@@ -33,20 +33,17 @@ a potentially unknown number of targets in the environment)
 and the problem of monitoring a time-dependent geo-spatial
 process (for example, salinity in the ocean, or a wind
 field) with a robot.
-The second potential area of contribution is in the
-development of a system for performing mosquito surveys.
-While the paper presents some design aspects such as the
-mounting of the screen and detection of a mosquito “zap”,
-the validation and evaluation of these hardware design
-aspects were insufficiently rigorous to be considered a key
-contribution of this paper. For example, while a parametric
-study of the screen angle was considered, there was no
-experimental assessment of the accuracy of the aerodynamic
-models used to predict the volume that is “cleared” of
-mosquitoes. Further, the paper does not suggest methods for
-disambiguating a single mosquito strike from multiple
-simultaneous strikes (which one would expect to be a
-consideration if counting the number of mosquitoes was the
+The second potential area ofClass,
+Tomorrow is perhaps the trickiest math of the semester.  You must read 2.5&2.6 before class.  The problem is: "Given a rotation matrix R, what are the simpler rotations that compose R?"
+It is like a puzzle, and we'll have fun with it.  This is Important for Ch. 3.3 when we solve inverse kinematics.
+For practice, it might be helpful to play with
+¥http://demonstrations.wolfram.com/EulerAnglesPrecessionNutationAndSpin/
+¥http://demonstrations.wolfram.com/RandomizeMotionForSixDegreesOfFreedom/
+¥http://demonstrations.wolfram.com/EulerAnglesForSpaceShuttle/   (note they use Euler Z-X-Z, we use Euler Z-Y-Z )
+
+Please stick with this -- the rest of the semester will get easier, but these concepts are critical. I've also loaded some notes on similarity transforms to lecture 03, because there is an easier way to explain this.
+Thank you,
+Aaron Beckerosquitoes was the
 problem), nor how to disambiguate mosquitoes from other
 insects. The review would consider addressing these aspects
 to be important if the core contribution was the system
